@@ -26,5 +26,9 @@ class Contact(models.Model):
     message = models.CharField(max_length=600)
     email = models.CharField(max_length=100)
 
-
-
+class Appointment(models.Model):
+    name = models.CharField(max_length=40)
+    message = models.CharField(max_length=600)
+    email = models.CharField(max_length=100)
+    cel_phone = models.CharField(max_length=12)
+    dia = models.DateField()

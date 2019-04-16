@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<div style="font-family: courier new;">
+    <div style="background-color: azure;">
+    <h2>Solicitud de cita Freenet</h2>
+    <p>Señor(@): {{ context.name }} agradecemos por agendar su cita con Freenet</p>
+    <p>Resibimos su solicitud del correo {{ context.email }}</p>
+    <p>su mensaje es el siguiente: {{ context.message }}</p>
+    <p>el numero que tenemos para contactarte es el siguiente: {{ context.phone }}</p>
+    <p>se ha agendado su cita para el dia: {{ context.dia }}</p>
+    <img src="https://pbs.twimg.com/profile_images/961972205700767744/pAU3vtYC_400x400.jpg" alt=""width="400" height="200" style="border-radius: 50%; float: right;">
+    </div>
+    <div>
+        <table width="100%" style="background-color: dodgerblue; border-radius:2%; color: white;">
+            <tr>
+                <td>freenet-business.com</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>

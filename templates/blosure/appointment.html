@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}freenet º Contactos{% endblock title %}
+
+{% block seccion1 %}
+{% endblock seccion1 %}
+
+{% block seccion2 %}
+{% endblock seccion2 %}
+
+
+{% block seccion3 %}
+    <section class="uza-services-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-4">
+                    <div class="section-heading text-center">
+
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="section-heading text-center">
+                        <legend style="color: dodgerblue; ">{{ enviado }}</legend>
+                        <legend>Contactanos</legend>
+                        <form action="{% url 'appointment' %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="name" placeholder="Nombre" class="form-control" required="">
+                            <input type="mail" name="email" placeholder="Email" class="form-control" required="">
+                            <input type="number" name="phone" placeholder="phone" class="form-control" required="">
+                            <label for="message">Mensage</label><br>
+                            <textarea name="message" id="" cols="30" rows="10" width="400" height="100" class="form-control" required=""></textarea>
+                            <input type="date" name="dia" class="form-control">
+                            <input type="submit" class="btn btn-info">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="section-heading text-center">
+
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    {% endblock seccion3 %}
+
+    {% block seccion4 %}
+
+    {% endblock seccion4 %}
+    {% block seccion5 %}
+
+    {% endblock seccion5 %}
+    {% block seccion6 %}
+
+    {% endblock seccion6 %}
+    {% block seccion7 %}
+
+    {% endblock seccion7 %}
+
+
+
+
