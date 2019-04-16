@@ -68,6 +68,15 @@ TEMPLATES = [
     },
 ]
 
+
+DEFAULT_FROM_EMAIL = 'brayan.bautista@megaterios.co'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.megaterios.co'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'brayan.bautista@megaterios.co'
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = 'Bautista1998'
+
 WSGI_APPLICATION = 'business.wsgi.application'
 
 

@@ -21,5 +21,10 @@ class Service_plus(models.Model):
     developer_service = models.CharField(max_length=255)
     id_service = models.ForeignKey(Service, on_delete=models.CASCADE)
 
+class Contact(models.Model):
+    name = models.CharField(max_length=40)
+    message = models.CharField(max_length=600)
+    email = models.CharField(max_length=100)
+
 
 
