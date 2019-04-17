@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.pagina.models import Service, Service_plus, Contact, Appointment
+from apps.pagina.models import Service, Service_plus, Contact, Appointment, About
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
@@ -17,6 +17,12 @@ def services(request):
 		statement_services = Service_plus.objects.filter(id_service=request.GET.get('id'))
 		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
 		return render(request, 'blosure/services.html', context)
+	else:
+		statement_services_all = Service.objects.all()
+		statement_services = Service_plus.objects.all()
+		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
+		return render(request, 'blosure/services.html', context)
+		
 
 def contact(request):
 	if request.method == "POST":
@@ -75,3 +81,11 @@ def appointment(request):
 		return render(request, 'blosure/appointment.html', context)
 	statement_services_all = Service.objects.all()
 	return render(request, 'blosure/appointment.html', {'statement_services_all': statement_services_all } )
+
+
+def about(request):
+	statement_services_all = Service.objects.all()
+	statement_about = About.objects.all()
+	context = {'statement_about': statement_about, 'statement_services_all': statement_services_all}
+	return render(request, 'blosure/about.html', context)
+		

@@ -32,3 +32,12 @@ class Appointment(models.Model):
     email = models.CharField(max_length=100)
     cel_phone = models.CharField(max_length=12)
     dia = models.DateField()
+
+class About(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=900)
+    image = models.ImageField(upload_to='static/img/images_about/')
+
+
+
+

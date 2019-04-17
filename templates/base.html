@@ -76,7 +76,7 @@
                         <div class="classynav">
                             <ul id="nav">
                                 <li class="current-item"><a href="/">Home</a></li>
-                                <li><a href="#">servicios</a>
+                                <li><a href="#services">servicios</a>
                                     <ul class="dropdown">
                                         {% if statement_services_all %}
                                         {% for services_all in statement_services_all %}
@@ -87,7 +87,7 @@
                                         {% endif %}
                                     </ul>
                                 </li>
-                                <li><a href="./about.html">Nosotros</a></li>
+                                <li><a href="/about">Nosotros</a></li>
                                 <li><a href="/contact">Contacto</a></li>
                             </ul>
 
@@ -238,7 +238,7 @@
                             liquyam erat.</p>
                         {% endblock paragrafoSeccion2 %}
 
-                        {% block linkVideoSeccion2 %}<a href="#" class="btn uza-btn btn-2 mt-4">Start Exploring</a>{% endblock linkVideoSeccion2 %}
+                        {% block linkVideoSeccion2 %}{% endblock linkVideoSeccion2 %}
                     </div>
                 </div>
             </div>
@@ -254,7 +254,9 @@
     <!-- ***** About Us Area End ***** -->
 
     <!-- ***** Services Area Start ***** -->
+    <a name="services"></a>
     {% block seccion3 %}
+
     <section class="uza-services-area section-padding-80-0">
         <div class="container">
             <div class="row">
@@ -282,7 +284,7 @@
                             <img src="{{ services.image_service }}" alt="">
                         </div>
                         <h5>{{ services.name_service }}</h5>
-                        <p>{{ services.description_services</p>
+                        <p>{{ services.description_services }}</p>
                         </a>
                     </div>
                 </div>
