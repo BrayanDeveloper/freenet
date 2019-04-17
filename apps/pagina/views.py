@@ -37,9 +37,8 @@ def contact(request):
 
 		html_message = render_to_string('template_email/email.html', {'context': context})
 		plain_message = strip_tags(html_message)
-
-		send_mail('solicitud de contacto', plain_message, settings.EMAIL_HOST_USER,
-				  ['ganbetacool@gmail.com'], html_message=html_message, fail_silently=False)
+		#mail_send =
+		#send_mail('solicitud de contacto', plain_message, settings.EMAIL_HOST_USER,['ganbetacool@gmail.com'], html_message=html_message, fail_silently=False)
 
 		#if mail_send_request:
 		#	send_mail('solicitud de contacto', plain_message, settings.EMAIL_HOST_USER,
