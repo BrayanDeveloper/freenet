@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}freenet º Services details{% endblock title %}
+
+{% block seccion1 %}
+<br><br><br><br><br>
+{% endblock seccion1 %}
+
+
+{% block seccion2 %}
+{% if statement_services %}
+{% for services in statement_services %}
+    <section class="uza-about-us-area">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- About Thumbnail -->
+                <div class="col-12 col-md-6">
+                    <div class="about-us-thumbnail mb-80">
+                        {% block imgSeccion2 %}<img src="/{{ services.image_service }}" alt="">{% endblock imgSeccion2 %}
+                        <!-- Video Area -->
+                        <div class="uza-video-area hi-icon-effect-8">
+                            {% block linkVideo %}<a href="https://www.youtube.com/watch?v=9Y1oHw2cPxs" autoplay="" class="hi-icon video-play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>{% endblock linkVideo %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Us Content -->
+                <div class="col-12 col-md-6">
+                    <div class="about-us-content mb-80">
+                        {% block titleSeccion2 %}<h2>{{ services.name_service }}</h2>{% endblock titleSeccion2 %}
+                        {% block paragrafoSeccion2 %}
+                        <p>{{ services.description_service }}</p>
+                        {% endblock paragrafoSeccion2 %}
+                        <i class="btn btn-succes"> Precio: {{ services.price_service }}</i>
+                        {% block linkVideoSeccion2 %}{% endblock linkVideoSeccion2 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+
+        <!-- About Background Pattern -->
+        <div class="about-bg-pattern">
+            <img src="{% static './img/core-img/curve-2.png' %}" alt="">
+        </div>
+    </section>
+{% endif %}
+    {% endblock seccion2 %}
+
+
+
+{% block seccion3 %}
+
+    {% endblock seccion3 %}
+
+    {% block seccion4 %}
+
+    {% endblock seccion4 %}
+    {% block seccion5 %}
+
+    {% endblock seccion5 %}
+    {% block seccion6 %}
+
+    {% endblock seccion6 %}
+    {% block seccion7 %}
+
+    {% endblock seccion7 %}
+
+
+
+

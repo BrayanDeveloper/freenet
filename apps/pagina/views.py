@@ -88,4 +88,11 @@ def about(request):
 	statement_about = About.objects.all()
 	context = {'statement_about': statement_about, 'statement_services_all': statement_services_all}
 	return render(request, 'blosure/about.html', context)
-		
+
+
+def services_details(request):
+	if request.method == "GET":
+		statement_services_all = Service.objects.all()
+		statement_services = Service_plus.objects.filter(id=request.GET.get('id'))
+		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
+		return render(request, 'blosure/services_details.html', context)
