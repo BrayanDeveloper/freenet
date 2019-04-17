@@ -95,3 +95,15 @@ def services_details(request):
 		statement_services = Service_plus.objects.filter(id=request.GET.get('id'))
 		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
 		return render(request, 'blosure/services_details.html', context)
+
+def search_services(request):
+	if request.method == "POST":
+		statement_services_all = Service.objects.all()
+		statement_services = Service_plus.objects.filter(name_service__contains=request.POST.get('search'), description_service__contains=request.POST.get('search'))
+		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
+		return render(request, 'blosure/search_services.html', context)
+	else:
+		statement_services_all = Service.objects.all()
+		statement_services = Service_plus.objects.all()
+		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
+		return render(request, 'blosure/search_services.html', context)

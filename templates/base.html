@@ -37,8 +37,9 @@
                         <!-- Close Button -->
                         <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
                         <!-- Form -->
-                        <form action="index.html" method="post">
-                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+                        <form action="{% url 'search_services' %}" method="post">
+                            {% csrf_token %}
+                            <input type="search" name="search" class="form-control" required="" placeholder="Buscar Servicio...">
                             <button type="submit">Search</button>
                         </form>
                     </div>
@@ -99,7 +100,8 @@
                             <!-- Login / Register -->
 
                             <!-- Search Icon -->
-                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal" placeholder="Buscar Servicio">
                                 <i class="icon_search"></i>
                             </div>
                         </div>

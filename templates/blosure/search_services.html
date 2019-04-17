@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}freenet º Services{% endblock title %}
+
+{% block seccion1 %}
+{% endblock seccion1 %}
+
+{% block seccion2 %}
+{% endblock seccion2 %}
+
+
+{% block seccion3 %}
+    <section class="uza-services-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Nuestros Servicios</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Single Service Area -->
+
+
+                <!-- Single Service Area -->
+                {% if statement_services %}
+                {% for services in statement_services %}
+                    <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+
+                        <a href="/services_details?id={{ services.id }}">
+                            <div class="service-icon">
+                            <img src="/{{ services.image_service }}" alt="">
+                        </div>
+                        <h5>{{ services.name_service }}</h5>
+                        <p>{{ services.description_service }}</p>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <div class="service-icon">
+                            <i class="icon_piechart"></i>
+                        </div>
+                        <h5>No hay servicios Relacionados</h5>
+                        <p>ahora</p>
+                    </div>
+                </div>
+                {% endif %}
+
+
+
+                <!-- Single Service Area -->
+
+            </div>
+        </div>
+    </section>
+    {% endblock seccion3 %}
+
+    {% block seccion4 %}
+
+    {% endblock seccion4 %}
+    {% block seccion5 %}
+
+    {% endblock seccion5 %}
+    {% block seccion6 %}
+
+    {% endblock seccion6 %}
+    {% block seccion7 %}
+
+    {% endblock seccion7 %}
+
+
+
+
