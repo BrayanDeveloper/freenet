@@ -26,10 +26,10 @@ SECRET_KEY = 'zy^)9*z5ent=6^d@lqd%9d6c8b)r)ui4i!adk!6oexrim-m%jh'
 DEBUG = True
 
 #para usar desde servidor web o vps
-#ALLOWED_HOSTS = ['freenet-business.herokuapp.com']
+ALLOWED_HOSTS = ['freenet-business.herokuapp.com']
 
 #para usar localmente la app
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -135,11 +135,11 @@ USE_TZ = True
 #STATIC_URL = '/static/'
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
 
-#para usar desde servidor web o vps
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+para usar desde servidor web o vps
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #para usar localmente
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
