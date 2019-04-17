@@ -135,7 +135,7 @@ USE_TZ = True
 #STATIC_URL = '/static/'
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
 
-para usar desde servidor web o vps
+#para usar desde servidor web o vps
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #para usar localmente
