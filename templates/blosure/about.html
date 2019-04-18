@@ -3,6 +3,7 @@
 {% block title %}freenet º About{% endblock title %}
 
 {% block seccion1 %}
+<br><br><br><br><br>
 {% endblock seccion1 %}
 
 {% block seccion2 %}
@@ -14,107 +15,69 @@
     {% endblock seccion3 %}
 
     {% block seccion4 %}
-
+    
     {% endblock seccion4 %}
     
 
     {% block seccion5 %}
-    <section class="uza-portfolio-area section-padding-80">
+    
+    {% endblock seccion5 %}
+
+    
+
+    {% block seccion6 %}
+    <section class="uza-blog-area">
+        <!-- Background Curve -->
+        
+
+        <!-- CTA Area Start -->
+        <div class="uza-cta-area section-padding-0-80">
+            <div class="container">
+                
+            </div>
+        </div>
+        <!-- CTA Area End -->
+
         <div class="container">
             <div class="row">
                 <!-- Section Heading -->
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h2>Acerca de Nosotros</h2>
+                        <h2>Nosotros</h2>
                         <p></p>
                     </div>
                 </div>
             </div>
-        </div>
 
-    
+            <div class="row">
 
-        <!-- Client Feedback Area Start -->
-        <div class="clients-feedback-area mt-80 section-padding-80 clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Testimonial Slides -->
-                        {% if statement_about %}
-                        {% for about in statement_about %}
-                        <div class="testimonial-slides owl-carousel">
-
-                            <!-- Single Testimonial Slide -->
-                            <div class="single-testimonial-slide d-flex align-items-center">
-
-                                <div class="author-info">
-                                        <h5>{{ about.title }}<span></span></h5>
-                                </div>
-                                <!-- Testimonial Thumbnail -->
-                                <div class="testimonial-thumbnail">
-                                    <img src="/{{ about.image }}" alt="">
-                                </div>
-                                <!-- Testimonial Content -->
-                                <div class="testimonial-content">
-                                    <h4>{{ about.description }}</h4>
-                                    <!-- Ratings -->
-                                    <div class="ratings">
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                    </div>
-                                    <!-- Author Info -->
-                                    
-                                    <!-- Quote Icon -->
-                                    <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
-                                </div>
-                            </div>
-
-                            <!-- Single Testimonial Slide -->
-                            
-
-                            <!-- Single Testimonial Slide -->
-
+                <!-- Single Blog Post -->
+                {% if statement_about %}
+                {% for about in statement_about %}
+                <div class="col-12 col-lg-6">
+                    <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/8.jpg);">
+                        <!-- Post Content -->
+                        <div class="post-content">
+                            <span class="post-date"><span></span></span>
+                            <a href="#" class="post-title">{{ about.title }}</a>
+                            <img src="/{{ about.image }}" alt="">
+                            <p>{{ about.description }}</p>
+                            {% comment %} <a href="#" class="read-more-btn"><i class="arrow_carrot-2right"></i></a> {% endcomment %}
                         </div>
-                        {% endfor %}
-                        {% else %}
-                        <div class="col-12 col-lg-4">
-                            <div class="single-service-area mb-80">
-                                <!-- Service Icon -->
-                                <div class="service-icon">
-                                    <i class="icon_piechart"></i>
-                                </div>
-                                <h5>Acerca de Nosotros</h5>
-                            </div>
-                        </div>
-                        {% endif %}
                     </div>
                 </div>
+                {% endfor %}
+                {% else %}
+                <h1>sobre nosotros</h1>
+                {% endif %}
+
+                <!-- Single Blog Post -->
+                
             </div>
         </div>
-        <!-- Client Feedback Area End -->
-
-        <!-- Border -->
-        <div class="container">
-            <div class="border-line"></div>
-        </div>
-
-        <!-- Background Curve -->
-        <div class="portfolio-bg-curve">
-            <img src="./img/core-img/curve-3.png" alt="">
-        </div>
     </section>
-    {% endblock seccion5 %}
-
-
-    {% block seccion6 %}
-
     {% endblock seccion6 %}
-    {% block seccion7 %}
-
-    {% endblock seccion7 %}
+    
 
 
 
