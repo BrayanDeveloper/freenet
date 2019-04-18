@@ -63,7 +63,7 @@ def appointment(request):
 		email = request.POST.get('email', None)
 		message = request.POST.get('message')
 		name = request.POST.get('name')
-		title = "Cita agendada por " + name + " a FreenetBusiness"
+		qqtitle = "Cita agendada por " + name + " a FreenetBusiness"
 		context = {'email': email, 'phone':phone, 'dia':dia, 'message': message, 'name':name, 'enviado':'Cita agendada exitosamente', 'statement_services_all': statement_services_all}
 
 		#html_message = render_to_string('template_email/mail_appointment.html', {'context': context})
