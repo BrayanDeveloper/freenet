@@ -6,7 +6,7 @@ from django.db import models
 class Service(models.Model):
     name_service = models.CharField(max_length=500)
     description_service = models.CharField(max_length=6000)
-    image_service = models.ImageField(upload_to='staticfiles/img/images_services/')
+    image_service = models.ImageField(upload_to='static/img/images_services/')
     link_service = models.CharField(max_length=255)
     def __str__(self):
         return 'id servicio: ' + self.name_service
@@ -15,7 +15,7 @@ class Service(models.Model):
 class Service_plus(models.Model):
     name_service = models.CharField(max_length=500)
     description_service = models.CharField(max_length=9000)
-    image_service = models.ImageField(upload_to='staticfiles/img/images_services/')
+    image_service = models.ImageField(upload_to='static/img/images_services/')
     link_service = models.CharField(max_length=255)
     price_service = models.CharField(max_length=255)
     developer_service = models.CharField(max_length=255)
@@ -36,7 +36,7 @@ class Appointment(models.Model):
 class About(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=9000)
-    image = models.ImageField(upload_to='staticfiles/img/images_about/')
+    image = models.ImageField(upload_to='static/img/images_about/')
 
 
 
