@@ -66,15 +66,15 @@ def appointment(request):
 		title = "Cita agendada por " + name + " a FreenetBusiness"
 		context = {'email': email, 'phone':phone, 'dia':dia, 'message': message, 'name':name, 'enviado':'Cita agendada exitosamente', 'statement_services_all': statement_services_all}
 
-		html_message = render_to_string('template_email/mail_appointment.html', {'context': context})
-		plain_message = strip_tags(html_message)
+		#html_message = render_to_string('template_email/mail_appointment.html', {'context': context})
+		#plain_message = strip_tags(html_message)
 
-		send_priority = send_mail(title, plain_message, settings.EMAIL_HOST_USER,
-					  ['ganbetacool@gmail.com'], html_message=html_message, fail_silently=False)
+		#send_priority = send_mail(title, plain_message, settings.EMAIL_HOST_USER,
+		#			  ['ganbetacool@gmail.com'], html_message=html_message, fail_silently=False)
 
-		if send_priority:
-			send_mail(title, plain_message, settings.EMAIL_HOST_USER,
-					  [email], html_message=html_message, fail_silently=False)
+		#if send_priority:
+		#	send_mail(title, plain_message, settings.EMAIL_HOST_USER,
+		#			  [email], html_message=html_message, fail_silently=False)
 
 
 		return render(request, 'blosure/appointment.html', context)
