@@ -28,7 +28,7 @@ def contact(request):
 	if request.method == "POST":
 		statement_services_all = Service.objects.all()
 		statement = Contact(name=request.POST.get('name'), message=request.POST.get('message'), email=request.POST.get('email'),)
-		statement.save()
+		#statement.save()
 
 		email = request.POST.get('email', None)
 		message = request.POST.get('message')
