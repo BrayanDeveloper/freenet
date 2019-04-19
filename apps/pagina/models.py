@@ -38,6 +38,11 @@ class About(models.Model):
     description = models.CharField(max_length=9000)
     image = models.ImageField(upload_to='static/img/images_about/')
 
+class Ask_frecuent(models.Model):
+    ask = models.CharField(max_length=600)
+    answer = models.CharField(max_length=600)
+    image = models.ImageField(upload_to='static/img/images_ask_frecuent/')
+
 
 
 

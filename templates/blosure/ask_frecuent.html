@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}freenet º FAQ{% endblock title %}
+
+{% block seccion1 %}
+{% endblock seccion1 %}
+
+{% block seccion2 %}
+{% endblock seccion2 %}
+
+
+    {% block seccion3 %}
+    <br><br><br><br><br>
+    <section class="container">
+    
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- Section: Blog v.1 -->
+<section class="my-5">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold text-center my-5">Preguntas Frecuentes</h2>
+  <!-- Section description -->
+  {% comment %} <p class="text-center w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum.</p> {% endcomment %}
+
+  <!-- Grid row -->
+  {% if ask_frecuents %}
+    {% for ask in ask_frecuents %}
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+
+      <!-- Featured image -->
+      <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+        <img class="img-fluid" src="/{{ ask.image }}" alt="Sample image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7">
+
+      <!-- Category -->
+      <a href="#!" class="green-text">
+        <h6 class="font-weight-bold mb-3"><i class="fas fa-utensils pr-2"></i>Food</h6>
+      </a>
+      <!-- Post title -->
+      <h3 class="font-weight-bold mb-3"><strong>{{ ask.ask}}</strong></h3>
+      <!-- Excerpt -->
+      <p>{{ ask.answer}}</p>
+      <!-- Post data -->
+      {% comment %} <p>by <a><strong>Carine Fox</strong></a>, 19/08/2018</p>
+      <!-- Read more button -->
+      <a class="btn btn-success btn-md">Read more</a> {% endcomment %}
+
+    </div>
+    <!-- Grid column -->
+    {% endfor %}
+  </div>
+  <!-- Grid row -->
+    
+    {% else %}
+    <legend>no hay preguntas relacionadas</legend>
+    {% endif %}
+ 
+
+</section>
+<!-- Section: Blog v.1 -->
+            </div>
+        </div>
+    </section>
+    {% endblock seccion3 %}
+
+    {% block seccion4 %}
+
+    {% endblock seccion4 %}
+    {% block seccion5 %}
+
+    {% endblock seccion5 %}
+    {% block seccion6 %}
+
+    {% endblock seccion6 %}
+    {% block seccion7 %}
+
+    {% endblock seccion7 %}
+
+
+
+

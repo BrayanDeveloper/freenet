@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.pagina.models import Service, Service_plus, Contact, Appointment, About
+from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
@@ -107,3 +107,8 @@ def search_services(request):
 		statement_services = Service_plus.objects.all()
 		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
 		return render(request, 'blosure/search_services.html', context)
+
+def ask_frecuent(request):
+	statement = Ask_frecuent.objects.all()
+	context = {'ask_frecuents':statement}
+	return render(request, 'blosure/ask_frecuent.html', context)
