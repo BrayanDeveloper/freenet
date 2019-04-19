@@ -109,6 +109,7 @@ def search_services(request):
 		return render(request, 'blosure/search_services.html', context)
 
 def ask_frecuent(request):
+	statement_services_all = Service.objects.all()
 	statement = Ask_frecuent.objects.all()
-	context = {'ask_frecuents':statement}
+	context = {'ask_frecuents':statement, 'statement_services_all':statement_services_all}
 	return render(request, 'blosure/ask_frecuent.html', context)
