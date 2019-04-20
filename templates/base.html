@@ -15,8 +15,9 @@
     <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
 
     <!-- Core Stylesheet -->
+    {% comment %} <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> {% endcomment %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
-
+    
 </head>
 
 <body>
@@ -47,11 +48,91 @@
             </div>
         </div>
     </div>
+    
     <!-- ***** Top Search Area End ***** -->
 
     <!-- ***** Header Area Start ***** -->
     {% block header %}
+    
     <header class="header-area">
+        <!--Navbar-->
+        
+    {% block floatButons %}
+
+    
+    
+    <style>
+.sticky-container{
+    padding:0px;
+    margin:0px;
+    position:fixed;
+    right:-130px;
+    top:230px;
+    width:210px;
+    z-index: 1100;
+}
+.sticky li{
+    list-style-type:none;
+    background-color:;
+    color:#efefef;
+    height:43px;
+    padding:0px;
+    margin:0px 0px 1px -20px;
+    -webkit-transition:all 0.25s ease-in-out;
+    -moz-transition:all 0.25s ease-in-out;
+    -o-transition:all 0.25s ease-in-out;
+    transition:all 0.25s ease-in-out;
+    cursor:pointer;
+}
+.sticky .button:hover{
+    margin-left:-115px;
+}
+.sticky li img{
+    float:left;
+    margin:5px 4px;
+    margin-right:5px;
+}
+.sticky li p{
+    padding-top:5px;
+    margin:0px;
+    line-height:16px;
+    font-size:11px;
+}
+.sticky li p a{
+    text-decoration:none;
+    font-size:10px;
+    color:#2C3539;
+}
+.sticky li p a:hover{
+    text-decoration:none;
+}
+</style>
+
+<div class="sticky-container">
+    <ul class="sticky">
+        <li class="button">
+            <img src="https://img.icons8.com/cotton/2x/facebook.png" width="32" height="32">
+            <p><a href="#" target="_blank"><br>Facebook</a></p>
+        </li>
+        <li class="button">
+            <img src="https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-01-512.png" width="32" height="32">
+            <p><a href="https://wa.me/573107827073?text=Me%20interesa" target="_blank"><br>Whatsapp</a></p>
+        </li>
+        <li class="button">
+            <img src="http://dientezfelices.org/wp-content/uploads/2018/03/icono-telefono.png" width="32" height="32">
+            <p><a href="/contact" target=""><br>Contacto</a></p>
+        </li>
+        <li class="button">
+            
+            <p data-toggle="modal" data-target="#myModal"><a href="/appointment" class=""><br><img src="http://www.prooptics.com.co/Images/Icon_Appoitment.png" width="32" height="32">Agendar Cita<br></a></p>
+        </li>
+    </ul>
+</div>
+        
+{% endblock floatButons %}
+            
+        
+<!--/.Navbar-->
         <!-- Main Header Start -->
         <div class="main-header-area">
             <div class="classy-nav-container breakpoint-off">
@@ -76,7 +157,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="current-item"><a href="/">Inicio</a></li>
+                                <li class=""><a href="/">Inicio</a></li>
                                 <li><a href="#services">servicios</a>
                                     <ul class="dropdown">
                                         {% if statement_services_all %} {% for services_all in statement_services_all %}
@@ -93,7 +174,7 @@
 
                             <!-- Get A Quote -->
                             <div class="get-a-quote ml-4 mr-3">
-                                <a href="/appointment" class="btn uza-btn">agendar cita</a>
+                                <a href="/software" class="btn uza-btn">Software contable</a>
                             </div>
 
                             <!-- Login / Register -->
@@ -110,7 +191,12 @@
                 </nav>
             </div>
         </div>
+
+            {% comment %} modal citas {% endcomment %}
+            <!-- Button to Open the Modal -->
+
     </header>
+    
     {% endblock header %}
     <!-- ***** Header Area End ***** -->
 
@@ -148,6 +234,7 @@
                     </div>
                 </div>
             </div>
+            {% comment %} fin del modal citas {% endcomment %}
 
             <!-- Single Welcome Slide -->
             <div class="single-welcome-slide" style="background-image:url('{% static '/img/baner-free.png' %}'); background-position:center; repeat: no repeat;">
@@ -776,11 +863,13 @@
 
     <!-- ******* All JS Files ******* -->
     <!-- jQuery js -->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
+    {% comment %} <script src="{% static 'js/jquery.min.js' %}"></script> {% endcomment %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Popper js -->
     <script src="{% static 'js/popper.min.js' %}"></script>
     <!-- Bootstrap js -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% comment %} <script src="{% static 'js/bootstrap.min.js' %}"></script> {% endcomment %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- All js -->
     <script src="{% static 'js/uza.bundle.js' %}"></script>
     <!-- Active js -->

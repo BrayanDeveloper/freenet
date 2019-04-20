@@ -13,8 +13,10 @@
     <section class="uza-services-area section-padding-80-0">
         <div class="container">
             <div class="row">
+            
                 <!-- Section Heading -->
                 <div class="col-12">
+                <br><br><br>
                     <div class="section-heading text-center">
                         <h2>Nuestros Servicios</h2>
                     </div>
@@ -32,18 +34,18 @@
                 <div class="col-sm-4"> 
                     <!-- Card -->
                         <a href="/services_details?id={{ services.id }}">
-                        <div class="card">
+                        <div class="">
 
                             <!-- Card image -->
-                            <img class="card-img-top" src="/{{ services.image_service }}" alt="Card image cap">
+                            <img class="card-img-top" src="/{{ services.image_service }}" alt="Card image cap" style="height: 300px; width: 100%; border-radius:10%;">
 
                             <!-- Card content -->
                             <div class="card-body">
 
                                 <!-- Title -->
-                                <h4 class="card-title"><a>{{ services.name_service }}</a></h4>
+                                <h4 class="card-title text-center"><a style="text-transform: uppercase;">{{ services.name_service }}</a></h4>
                                 <!-- Text -->
-                                <p class="card-text">{{ services.description_service }}</p>
+                                {% comment %} <p class="card-text">{{ services.description_service }}</p> {% endcomment %}
                                 <!-- Button -->
                                 {% comment %} <a href="#" class="btn btn-primary">Button</a> {% endcomment %}
                             </div>
