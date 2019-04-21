@@ -108,7 +108,7 @@
 }
 </style>
 
-<div class="sticky-container">
+{% comment %} <div class="sticky-container">
     <ul class="sticky">
         <li class="button">
             <img src="https://img.icons8.com/cotton/2x/facebook.png" width="32" height="32">
@@ -127,7 +127,7 @@
             <p data-toggle="modal" data-target="#myModal"><a href="/appointment" class=""><br><img src="http://www.prooptics.com.co/Images/Icon_Appoitment.png" width="32" height="32">Agendar Cita<br></a></p>
         </li>
     </ul>
-</div>
+</div> {% endcomment %}
         
 {% endblock floatButons %}
             
@@ -342,11 +342,11 @@
                 <!-- Single Service Area -->
                 {% if statement_services_all %} {% for services in statement_services_all %}
                 <div class="col-6 col-lg-2" style="background-color:{{ services.color_background }};">
-                    <div class="single-service-area mb-80" style="height: 250px;">
+                    <div class="single-service-area mb-80" style="height: 160px;">
                         <!-- Service Icon -->
                         <a href="/services?id={{ services.id }}">
                             <div class="service-icon">
-                                <img src="{{ services.image_service }}" alt="" width="100%" style="border-radius:10%;">
+                                <img src="{{ services.image_service }}" alt="" width="100%" height="100px" style="border-radius:10%;">
                             </div>
                             <h5>{{ services.name_service }}</h5>
                             <p>{{ services.description_services }}</p>
@@ -365,7 +365,8 @@
                     </div>
                 </div>
                 {% endif %}
-
+                
+                
 
 
                 <!-- Single Service Area -->
