@@ -1312,11 +1312,11 @@ input:focus {
   z-index: 1;
   text-align: center; }
   .single-service-area .service-icon {
-    background-color: #e7f2fd;
+    background-color: transparent;
     width: 145px;
     height: 110px;
     font-size: 42px;
-    color: #303030;
+    color: #857f7f;
     text-align: center;
     line-height: 110px;
     border-radius: 80px 200px 200px 362px;
@@ -1333,12 +1333,12 @@ input:focus {
     transition-duration: 300ms;
     font-weight: 600; }
   .single-service-area:focus .service-icon, .single-service-area:hover .service-icon {
-    background-color: #1583e9;
+    background-color: transparent;
     color: #ffffff;
     -webkit-box-shadow: 0 6px 50px 8px rgba(21, 131, 233, 0.15);
-    box-shadow: 0 6px 50px 8px rgba(21, 131, 233, 0.15); }
+     }
   .single-service-area:focus h5, .single-service-area:hover h5 {
-    color: #1583e9; }
+    color: dodgerblue; }
 
 .cta-testimonial-cfa-area {
   position: relative;

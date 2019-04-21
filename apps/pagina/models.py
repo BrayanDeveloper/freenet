@@ -6,6 +6,7 @@ from django.db import models
 class Service(models.Model):
     name_service = models.CharField(max_length=500)
     description_service = models.CharField(max_length=6000)
+    color_background = models.CharField(max_length=60)
     image_service = models.ImageField(upload_to='static/img/images_services/')
     link_service = models.CharField(max_length=255)
     def __str__(self):
