@@ -18,7 +18,7 @@ h4,
 h5,
 h6 {
     font-family: $fonts;
-    color: $heading;
+    color: white;
     line-height: 1.4;
     font-weight: 600;
 }
@@ -27,13 +27,13 @@ a,
 a:active,
 a:focus,
 a:hover {
-    font-family: $fonts;
-    color: $heading;
-    text-decoration: none;
-    @include transition-duration(500ms);
-    outline: none;
-    font-size: 16px;
-    font-weight: 600;
+    // font-family: $fonts;
+    // color: $heading;
+    // text-decoration: none;
+    // @include transition-duration(500ms);
+    // outline: none;
+    // font-size: 16px;
+    // font-weight: 600;
 }
 
 li {
