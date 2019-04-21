@@ -56,6 +56,13 @@ class Personalization(models.Model):
     image_fondo = models.ImageField(upload_to='static/img/images_personalization/')
     link = models.CharField(max_length=600)
 
+class Team(models.Model):
+    name = models.CharField(max_length=90)
+    image = models.ImageField(upload_to='static/img/images_team_freenet/')
+    description = models.CharField(max_length=9000)
+    profeccion = models.CharField(max_length=900)
+
+
 
 
 
