@@ -157,19 +157,19 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class=""><a href="/">Inicio</a></li>
-                                <li><a href="#services">servicios</a>
+                                <li class=""><a href="/" style="color: dodgerblue;">Inicio</a></li>
+                                <li ><a href="#services" style="color: dodgerblue;">servicios</a>
                                     <ul class="dropdown">
                                         {% if statement_services_all %} {% for services_all in statement_services_all %}
-                                        <li><a href="/services?id={{ services_all.id }}">{{ services_all.name_service }}</a></li>
+                                        <li><a style="color: dodgerblue;" href="/services?id={{ services_all.id }}">{{ services_all.name_service }}</a></li>
                                         {% endfor %} {% else %}
-                                        <li><a href="#">no hay servicios</a></li>
+                                        <li><a style="color: dodgerblue;" href="#">no hay servicios</a></li>
                                         {% endif %}
                                     </ul>
                                 </li>
-                                <li><a href="/about">Nosotros</a></li>
-                                <li><a href="/contact">Contacto</a></li>
-                                <li><a href="/ask_frecuent">FAQ</a></li>
+                                <li><a style="color: dodgerblue;" href="/about">Nosotros</a></li>
+                                <li><a style="color: dodgerblue;" href="/contact">Contacto</a></li>
+                                <li><a style="color: dodgerblue;" href="/ask_frecuent">FAQ</a></li>
                             </ul>
 
                             <!-- Get A Quote -->
@@ -206,6 +206,8 @@
         <div class="welcome-slides owl-carousel">
 
             <!-- Single Welcome Slide -->
+            {% if data_personalization %}
+            {% for data in data_personalization %}
             <div class="single-welcome-slide">
                 <!-- Background Curve -->
                 <div class="background-curve">
@@ -213,15 +215,45 @@
                 </div>
 
                 <!-- Welcome Content -->
-                <div class="welcome-content h-100" style="background-image:url('{% static '/img/baner-free.png' %}'); background-position:center; repeat: no repeat;">
+                <div class="welcome-content h-100" style="background-image:url('/{{ data.image_fondo }}'); background-position:center; repeat: no repeat;">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text" style="background-color: {{ data.background_color_text }}; border-radius: {{ data.border_radius_background }}px;">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="color:{{ data.color_title }}; font-family:{{ data.font_type}}; font-size:{{ data.font_size}}px;"> <br><span style="color:{{ data.color_title }};">{{ data.title }}</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="400ms" style="color:{{ data.color_description }};font-family:{{ data.font_type}};font-size:{{ data.font_size}}px;">{{ data.description }}</h5>
+                                    {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-thumbnail">
+                                    <img src="/{{ data.image_transition }}" alt="" data-animation="slideInRight" data-delay="400ms">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="single-welcome-slide">
+                <!-- Background Curve -->
+                <div class="background-curve">
+                    <img src="./img/core-img/curve-1.png" alt="">
+                </div>
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100" style="background-position:center; repeat: no repeat;">
                     <div class="container h-100">
                         <div class="row h-100 align-items-center">
                             <!-- Welcome Text -->
                             <div class="col-12 col-md-6">
                                 <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms"> <br><span>Freenet Business Group</span></h2>
-                                    <h5 data-animation="fadeInUp" data-delay="400ms">Tu amigo en Todo</h5>
-                                    <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a>
+                                    <h2 data-animation="fadeInUp" data-delay="100ms"> <br><span>No hay titulo</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="400ms">no hay descripcion</h5>
+                                    {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
                                 </div>
                             </div>
                             <!-- Welcome Thumbnail -->
@@ -234,67 +266,14 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% comment %} fin del modal citas {% endcomment %}
 
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide" style="background-image:url('{% static '/img/baner-free.png' %}'); background-position:center; repeat: no repeat;">
-                <!-- Background Curve -->
-                <div class="background-curve">
-                    <img src="{% static './img/core-img/curve-1.png' %}" alt="">
-                </div>
-
-                <!-- Welcome Content -->
-                <div class="welcome-content h-100">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <!-- Welcome Text -->
-                            <div class="col-12 col-md-6">
-                                <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms"><br> <span>Servicios al instante </span></h2>
-                                    <h5 data-animation="fadeInUp" data-delay="400ms">Contactanos</h5>
-                                    <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">ya</a>
-                                </div>
-                            </div>
-                            <!-- Welcome Thumbnail -->
-                            <div class="col-12 col-md-6">
-                                <div class="welcome-thumbnail">
-                                    <img src="{% static './img/bg-img/1.png' %}" alt="" data-animation="slideInRight" data-delay="400ms">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide" style="background-image:url('{% static '/img/baner-free.png' %}'); background-position:center; repeat: no repeat;">
-                <!-- Background Curve -->
-                <div class="background-curve">
-                    <img src="./img/core-img/curve-1.png" alt="">
-                </div>
-
-                <!-- Welcome Content -->
-                <div class="welcome-content h-100">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <!-- Welcome Text -->
-                            <div class="col-12 col-md-6">
-                                <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms"> <br> <span>Asesoria</span></h2>
-                                    <h5 data-animation="fadeInUp" data-delay="400ms"></h5>
-                                    <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">ahora</a>
-                                </div>
-                            </div>
-                            <!-- Welcome Thumbnail -->
-                            <div class="col-12 col-md-6">
-                                <div class="welcome-thumbnail">
-                                    <img src="{% static './img/bg-img/1.png' %}" alt="" data-animation="slideInRight" data-delay="400ms">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
     </section>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent
+from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent, Personalization
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
@@ -8,7 +8,8 @@ from django.core.mail import send_mail
 
 def index(request):
 	statement_services_all = Service.objects.all()
-	context = {'statement_services_all': statement_services_all}
+	data_personalization = Personalization.objects.all()
+	context = {'statement_services_all': statement_services_all, 'data_personalization': data_personalization}
 	return render(request, 'blosure/index.html', context)
 
 def services(request):

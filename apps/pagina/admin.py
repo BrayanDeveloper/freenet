@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent
+from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent, Personalization
 # Register your models here.
 
 class Service_display(admin.ModelAdmin):
@@ -32,6 +32,11 @@ class AskDisplay(admin.ModelAdmin):
     list_filter = ['ask',]
     search_fields = ['ask','answer']
 
+class PersonalizationDisplay(admin.ModelAdmin):
+    list_display = ['title',]
+    list_filter = ['title',]
+    search_fields = ['title',]
+
 
 admin.site.register(Service, Service_display)
 admin.site.register(Service_plus, Service_list_display)
@@ -39,3 +44,4 @@ admin.site.register(Contact, Contact_display)
 admin.site.register(About, About_display)
 admin.site.register(Appointment, Appointment_display)
 admin.site.register(Ask_frecuent, AskDisplay)
+admin.site.register(Personalization, PersonalizationDisplay)

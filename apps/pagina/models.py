@@ -43,6 +43,19 @@ class Ask_frecuent(models.Model):
     answer = models.CharField(max_length=600)
     image = models.ImageField(upload_to='static/img/images_ask_frecuent/')
 
+class Personalization(models.Model):
+    title = models.CharField(max_length=600)
+    color_title = models.CharField(max_length=20)
+    description = models.CharField(max_length=9000)
+    color_description = models.CharField(max_length=20)
+    font_type = models.CharField(max_length=20)
+    font_size = models.CharField(max_length=20)
+    background_color_text = models.CharField(max_length=20)
+    border_radius_background = models.CharField(max_length=20)
+    image_transition = models.ImageField(upload_to='static/img/images_personalization/')
+    image_fondo = models.ImageField(upload_to='static/img/images_personalization/')
+    link = models.CharField(max_length=600)
+
 
 
 
