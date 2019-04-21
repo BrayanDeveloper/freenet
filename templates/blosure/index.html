@@ -11,7 +11,60 @@
 {% endblock paragrafoSeccion2 %}
 {% block linkVideoSeccion2 %}<a href="https://www.youtube.com/watch?v=9Y1oHw2cPxs" autoplay="" class="btn uza-btn btn-2 mt-4">ver Video explicativo</a>{% endblock linkVideoSeccion2 %}
 
-{% block seccion4 %}{% endblock seccion4 %}
+{% block seccion4 %}
+    <a name="team"></a>
+    <section class="uza-services-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center"><br>
+                        <h2>Nuestros Equipo</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Single Service Area -->
+
+
+                <!-- Single Service Area -->
+                {% if data_team %} {% for team in data_team %}
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <a href="/services?id={{ team.id }}">
+                            <div class="service-icon">
+                                <img src="{{ team.image }}" alt="" width="100%" style="border-radius:50%;">
+                            </div>
+                            <h5>{{ team.name }}</h5>
+                            <p>{{ team.description }}</p>
+                            <p style="color: dodgerblue">{{ team.profeccion }}</p>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %} {% else %}
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <div class="service-icon">
+                            <i class="icon_piechart"></i>
+                        </div>
+                        <h5>No tenemos Team</h5>
+                    
+                    </div>
+                </div>
+                {% endif %}
+
+
+
+                <!-- Single Service Area -->
+
+            </div>
+        </div>
+    </section>
+    {% endblock seccion4 %}
 {% block seccion5 %}{% endblock seccion5 %}
 {% block seccion6 %}{% endblock seccion6 %}
 {% block seccion7 %}{% endblock seccion7 %}
