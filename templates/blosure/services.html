@@ -31,19 +31,19 @@
                 <!-- Single Service Area -->
                 {% if statement_services %}
                 {% for services in statement_services %}
-                <div class="col-sm-4"> 
+                <div class="col-6 col-lg-2" style="background-color: {{ services.color_background }};"> 
                     <!-- Card -->
                         <a href="/services_details?id={{ services.id }}">
                         <div class="">
 
                             <!-- Card image -->
-                            <img class="card-img-top" src="/{{ services.image_service }}" alt="Card image cap" style="height: 300px; width: 100%; border-radius:10%;">
+                            <img class="card-img-top" src="/{{ services.image_service }}" alt="Card image cap" style="height: 145px; width: 100%; border-radius:10%;">
 
                             <!-- Card content -->
                             <div class="card-body">
 
                                 <!-- Title -->
-                                <h4 class="card-title text-center"><a style="text-transform: uppercase;">{{ services.name_service }}</a></h4>
+                                <h4 class="card-title text-center"><a href="/services_details?id={{ services.id }}" style="text-transform: uppercase; color: white;">{{ services.name_service }}</a></h4>
                                 <!-- Text -->
                                 {% comment %} <p class="card-text">{{ services.description_service }}</p> {% endcomment %}
                                 <!-- Button -->
@@ -97,7 +97,3 @@
     {% block seccion7 %}
 
     {% endblock seccion7 %}
-
-
-
-
