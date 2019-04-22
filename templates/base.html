@@ -157,8 +157,8 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class=""><a href="/" style="color: dodgerblue;">Inicio</a></li>
-                                <li ><a href="#services" style="color: dodgerblue;">servicios</a>
+                                <li class=""><a href="/" style="color: dodgerblue;"><img src="{% static 'img/icons-menu/house.png' %}" width="20px"> Inicio</a></li>
+                                <li ><a href="#services" style="color: dodgerblue;"><img src="{% static 'img/icons-menu/services.png' %}" width="20px"> servicios</a>
                                     <ul class="dropdown">
                                         {% if statement_services_all %} {% for services_all in statement_services_all %}
                                         <li><a style="color: dodgerblue;" href="/services?id={{ services_all.id }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
@@ -167,10 +167,10 @@
                                         {% endif %}
                                     </ul>
                                 </li>
-                                <li><a style="color: dodgerblue;" href="/about">Nosotros</a></li>
-                                <li><a style="color: dodgerblue;" href="#team">Team</a></li>
-                                <li><a style="color: dodgerblue;" href="/contact">Contacto</a></li>
-                                <li><a style="color: dodgerblue;" href="/ask_frecuent">FAQ</a></li>
+                                <li><a style="color: dodgerblue;" href="/about"><img src="{% static 'img/icons-menu/about.png' %}" width="20px"> Nosotros</a></li>
+                                <li><a style="color: dodgerblue;" href="#team"><img src="{% static 'img/icons-menu/team.png' %}" width="20px"> Team</a></li>
+                                <li><a style="color: dodgerblue;" href="/contact"><img src="{% static 'img/icons-menu/contact.png' %}" width="20px"> Contacto</a></li>
+                                {% comment %} <li><a style="color: dodgerblue;" href="/ask_frecuent">FAQ</a></li> {% endcomment %}
                             </ul>
 
                             <!-- Get A Quote -->
