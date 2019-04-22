@@ -18,6 +18,8 @@ class Service_plus(models.Model):
     description_service = models.CharField(max_length=9000)
     color_background = models.CharField(max_length=60)
     image_service = models.ImageField(upload_to='static/img/images_services/')
+    image_width = models.CharField(max_length=60)
+    image_height = models.CharField(max_length=60)
     link_service = models.CharField(max_length=255)
     price_service = models.CharField(max_length=255)
     developer_service = models.CharField(max_length=255)
