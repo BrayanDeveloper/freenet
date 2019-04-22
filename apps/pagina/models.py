@@ -63,6 +63,7 @@ class Team(models.Model):
     image = models.ImageField(upload_to='static/img/images_team_freenet/')
     description = models.CharField(max_length=9000)
     profeccion = models.CharField(max_length=900)
+    color_background = models.CharField(max_length=90)
 
 
 

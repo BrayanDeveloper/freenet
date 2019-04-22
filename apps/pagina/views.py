@@ -17,7 +17,8 @@ def services(request):
 	if request.method == "GET":
 		statement_services_all = Service.objects.all()
 		statement_services = Service_plus.objects.filter(id_service=request.GET.get('id'))
-		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all}
+		name = request.GET.get('name')
+		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all, 'name':name}
 		return render(request, 'blosure/services.html', context)
 	else:
 		statement_services_all = Service.objects.all()
