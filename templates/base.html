@@ -161,7 +161,7 @@
                                 <li ><a href="#services" style="color: dodgerblue;">servicios</a>
                                     <ul class="dropdown">
                                         {% if statement_services_all %} {% for services_all in statement_services_all %}
-                                        <li><a style="color: dodgerblue;" href="/services?id={{ services_all.id }}">{{ services_all.name_service }}</a></li>
+                                        <li><a style="color: dodgerblue;" href="/services?id={{ services_all.id }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
                                         {% endfor %} {% else %}
                                         <li><a style="color: dodgerblue;" href="#">no hay servicios</a></li>
                                         {% endif %}
