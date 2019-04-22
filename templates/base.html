@@ -768,101 +768,117 @@
 
     <!-- ***** Newsletter Area Start ***** -->
     {% block footer %}
-    <footer class="footer-area section-padding-80-0">
-        <div class="container">
-            <div class="row justify-content-between">
+    
+    
 
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-footer-widget mb-80">
-                        <!-- Widget Title -->
-                        <h4 class="widget-title">Contacto</h4>
 
-                        <!-- Footer Content -->
-                        <div class="footer-content mb-15">
-                            <h3>Tel: 594 08 76</h3>
-                            <p>Av 9 No. 11-65 El llano CUCUTA COLOMBIA <br> soporte@freenet-business.com</p>
-                        </div>
-                        <p class="mb-0">Lunes - viernes: 8:00 am - 8:00 pm <br>
-                        </p>
-                    </div>
-                </div>
 
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    {% comment %} <div class="single-footer-widget mb-80">
-                        <!-- Widget Title -->
-                        <h4 class="widget-title">Quick Link</h4>
 
-                        <!-- Nav -->
-                        <nav>
-                            <ul class="our-link">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Forum Registeration</a></li>
-                                <li><a href="#">Forum Sign In</a></li>
-                            </ul>
-                        </nav>
-                    </div> {% endcomment %}
-                </div>
 
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    {% comment %} <div class="single-footer-widget mb-80">
-                        <!-- Widget Title -->
-                        <h4 class="widget-title">Resources</h4>
-
-                        <!-- Nav -->
-                        <nav>
-                            <ul class="our-link">
-                                <li><a href="#">Customer Support</a></li>
-                                <li><a href="#">Privacy</a></li>
-                                <li><a href="#">Media &amp; Press</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div> {% endcomment %}
-                </div>
-
-                <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    {% comment %} <div class="single-footer-widget mb-80">
-                        <!-- Widget Title -->
-                        <h4 class="widget-title">About Us</h4>
-                        <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet.</p>
-
-                        <!-- Copywrite Text -->
-                        <div class="copywrite-text mb-30">
-                            <p>&copy; Copyright 2018
-                                <a href="#"></a>.</p>
-                        </div>
-
-                        <!-- Social Info -->
-                        <div class="footer-social-info">
-                            <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                            <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                    </div> {% endcomment %}
-                </div>
-
+    <!-- Footer -->
+<footer class="page-footer font-small blue pt-4" >
+    {% if data_footer%}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <h4>Contacto</h4>
             </div>
+        </div>
+    </div>
+    {% for footer in data_footer %}
+    <!-- Footer Links -->
+    <div class="container" style="background-color:{{ footer.color_background }};">
 
-            <div class="row" style="margin-bottom: 30px;">
+      <!-- Grid row -->
+      <div class="row">
 
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>
-                    document.write(new Date().getFullYear());
-                </script> All rights reserved | 2019 <i class="fa fa-check" aria-hidden="true"></i>  <a href="" target="">Freenet</a>
-            </div>
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase"></h5>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_page }}" style="width:20px; height:20px;"> {{ footer.page_main }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_schedule }}" style="width:20px; height:20px;"> Horario de Atencion: {{ footer.schedule }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_email }}" style="width:20px; height:20px;"> Email: {{ footer.email }}</p>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase"></h5>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> Telefono: {{ footer.phone }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> Direccion: {{ footer.address }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> Ciudad: {{ footer.city }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> Pais: {{ footer.country }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_copy }}" style="width:20px; height:20px;"> {{ footer.copy }}</p>
 
         </div>
-    </footer>
+        <!-- Grid column -->
+    </div>
+        
+    <!-- Copyright -->
+    {% endfor %}
+    {% else %}
+        <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Footer no</h5>
+          <p></p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase"></h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!"></a>
+              </li>
+             
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase"></h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!"></a>
+              </li>
+              
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    
+    {% endif %}
+
+  </footer>
+  <!-- Footer -->
     {% endblock footer %}
     <!-- ***** Newsletter Area End ***** -->
 
@@ -888,4 +904,4 @@
 
 </html>
 
-<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+{% comment %} <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> {% endcomment %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent, Personalization, Team
+from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent, Personalization, Team, Footer
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
@@ -9,8 +9,9 @@ from django.core.mail import send_mail
 def index(request):
 	statement_services_all = Service.objects.all()
 	data_personalization = Personalization.objects.all()
+	data_footer = Footer.objects.all()
 	data_team = Team.objects.all()
-	context = {'statement_services_all': statement_services_all, 'data_personalization': data_personalization, 'data_team': data_team}
+	context = {'statement_services_all': statement_services_all, 'data_personalization': data_personalization, 'data_team': data_team, 'data_footer':data_footer}
 	return render(request, 'blosure/index.html', context)
 
 def services(request):

@@ -65,7 +65,29 @@ class Team(models.Model):
     profeccion = models.CharField(max_length=900)
     color_background = models.CharField(max_length=90)
 
-
+class Footer(models.Model):
+    phone = models.CharField(max_length=90)
+    image_phone = models.ImageField(upload_to='static/img/images_footer/')
+    celphone = models.CharField(max_length=90)
+    image_celphone = models.ImageField(upload_to='static/img/images_footer/')
+    email = models.CharField(max_length=90)
+    image_email = models.ImageField(upload_to='static/img/images_footer/')
+    address = models.CharField(max_length=200)
+    image_address = models.ImageField(upload_to='static/img/images_footer/')
+    city = models.CharField(max_length=90)
+    image_city = models.ImageField(upload_to='static/img/images_footer/')
+    country = models.CharField(max_length=90)
+    image_country = models.ImageField(upload_to='static/img/images_footer/')
+    page_main = models.CharField(max_length=90)
+    image_page = models.ImageField(upload_to='static/img/images_footer/')
+    copy = models.CharField(max_length=90)
+    image_copy = models.ImageField(upload_to='static/img/images_footer/')
+    schedule = models.CharField(max_length=200)
+    image_schedule = models.ImageField(upload_to='static/img/images_footer/')
+    color_background = models.CharField(max_length=90)
+    color_text = models.CharField(max_length=90)
+    font_text = models.CharField(max_length=90)
+    font_size = models.CharField(max_length=90)
 
 
 
