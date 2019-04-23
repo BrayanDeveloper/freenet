@@ -41,30 +41,49 @@
         <div class="container">
             <div class="row">
                 <!-- Section Heading -->
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2 style="font-size:24px;">Nosotros</h2>
-                        <p></p>
+                <div class="col-12 col-lg-2">
+                    
+                </div>
+                <div class="col-12 col-lg-8">
+                    <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/8.jpg);">
+                        <!-- Post Content -->
+                        <div class="post-content">
+                        <h4>Nosotros</h4>
+                        <img src="{% static 'img/images_about/about.png' %}" width="10%" height="200"> 
+                        <img src="{% static 'img/images_about/project.png' %}" width="10%" height="200">
+                        <img src="{% static 'img/images_about/seo.png' %}" width="10%" height="200">
+                        <p>{% lorem how_many_paragraphs %}</p>
+                        </div>
+
                     </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                   
                 </div>
             </div>
 
             <div class="row">
-
+                    
                 <!-- Single Blog Post -->
                 {% if statement_about %}
                 {% for about in statement_about %}
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-2">
+                    
+                </div>
+                 <div class="col-12 col-lg-8">
                     <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/8.jpg);">
                         <!-- Post Content -->
                         <div class="post-content">
                             <span class="post-date"><span></span></span>
-                            <a href="#" class="post-title">{{ about.title }}</a>
-                            <img src="/{{ about.image }}" alt="" style="width:100%; height:300px;">
-                            <p>{{ about.description }}</p>
+                            <center><a href="#" class="post-title" style="text-aling:center; width: 100%;">{{ about.title }}</a></center>
+                            <center><img src="/{{ about.image }}" alt="" style="width:50%; height:300px;" class="btn btn-light"></center>
+                            <p style="text-aling:justify all; width: 100%;">{{ about.description }}</p>
                             {% comment %} <a href="#" class="read-more-btn"><i class="arrow_carrot-2right"></i></a> {% endcomment %}
                         </div>
                     </div>
+                </div>
+                 <div class="col-12 col-lg-2">
+                    
                 </div>
                 {% endfor %}
                 {% else %}

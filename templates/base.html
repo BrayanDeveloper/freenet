@@ -264,16 +264,16 @@
                 {% endif %}
         </div>
 
-            {% comment %} modal citas {% endcomment %}
-            <!-- Button to Open the Modal -->
+        
 
     </header>
     
     {% endblock header %}
     <!-- ***** Header Area End ***** -->
-
+    
     <!-- ***** Welcome Area Start ***** -->
     {% block seccion1 %}
+    
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
 
@@ -352,6 +352,13 @@
     {% endblock seccion1 %}
     <!-- ***** Welcome Area End ***** -->
     {% block seccion2 %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" style="background_color:red;">
+                <br><br><br><br><br>
+            </div>
+        </div>
+    </div>
     <section class="uza-about-us-area">
         <div class="container">
             <div class="row align-items-center">
@@ -847,108 +854,65 @@
 
 
     <!-- Footer -->
-<footer class="page-footer font-small blue pt-4" >
     {% if data_footer%}
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-12">
-                <h4>Contacto</h4>
-            </div>
-        </div>
-    </div>
+    
     {% for footer in data_footer %}
+<footer class="page-footer font-small blue pt-4" style="background-color:{{ footer.color_background }};" >
+    
     <!-- Footer Links -->
-    <div class="container" style="background-color:{{ footer.color_background }};">
+    <div class="container">
 
       <!-- Grid row -->
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
+        <div class="col-md-0 mt-md-0 mt-3">
+
+        </div>
+        <div class="col-md-3 mt-md-0 mt-3">
 
           <!-- Content -->
           <h5 class="text-uppercase"></h5>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_page }}" style="width:20px; height:20px;"> {{ footer.page_main }}</p>
+          <img src="{% static 'img/logo/logo.png' %}"><br><br>
           <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_schedule }}" style="width:20px; height:20px;"> Horario de Atencion: {{ footer.schedule }}</p>
           <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_email }}" style="width:20px; height:20px;"> Email: {{ footer.email }}</p>
         </div>
-        <div class="col-md-6 mt-md-0 mt-3">
+        <div class="col-md-5 mt-md-0 mt-3">
+            <br>
+          <center>
+          <img src="/{{ footer.icon_facebook }}" width="15%" height="200;" style="padding:5px;">
+          <img src="/{{ footer.icon_instagram }}" width="15%" height="200;" style="padding:5px;">
+          <img src="/{{ footer.icon_whatsapp }}" width="15%" height="200;" style="padding:5px;">
+          <img src="/{{ footer.icon_youtube }}" width="15%" height="200:" style="padding:5px;">
+          </center>
+          
 
-          <!-- Content -->
-          <h5 class="text-uppercase"></h5>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> Telefono: {{ footer.phone }}</p>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-3 mt-md-0 mt-3">
+
+        <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> Telefono: {{ footer.phone }}</p>
           <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> Direccion: {{ footer.address }}</p>
           <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> Ciudad: {{ footer.city }}</p>
           <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> Pais: {{ footer.country }}</p>
           <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_copy }}" style="width:20px; height:20px;"> {{ footer.copy }}</p>
-
+          
+          
         </div>
-        <!-- Grid column -->
     </div>
         
-    <!-- Copyright -->
-    {% endfor %}
-    {% else %}
-        <div class="container-fluid text-center text-md-left">
-
-      <!-- Grid row -->
-      <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-
-          <!-- Content -->
-          <h5 class="text-uppercase">Footer no</h5>
-          <p></p>
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none pb-3">
-
-        <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
-
-            <!-- Links -->
-            <h5 class="text-uppercase"></h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!"></a>
-              </li>
-             
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 mb-md-0 mb-3">
-
-            <!-- Links -->
-            <h5 class="text-uppercase"></h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!"></a>
-              </li>
-              
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
+    
 
     </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
     
-    {% endif %}
+    
+    
 
   </footer>
+    {% endfor %}
+    {% else %}
+    <h4>no footer</h4>
+  {% endif %}
   <!-- Footer -->
     {% endblock footer %}
     <!-- ***** Newsletter Area End ***** -->

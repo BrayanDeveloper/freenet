@@ -90,6 +90,10 @@ class Footer(models.Model):
     color_text = models.CharField(max_length=90)
     font_text = models.CharField(max_length=90)
     font_size = models.CharField(max_length=90)
+    icon_facebook = models.ImageField(upload_to='static/img/images_social/')
+    icon_whatsapp = models.ImageField(upload_to='static/img/images_social/')
+    icon_instagram = models.ImageField(upload_to='static/img/images_social/')
+    icon_youtube = models.ImageField(upload_to='static/img/images_social/')
 
 
 
