@@ -19,8 +19,13 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     
 </head>
-
+{% if data_page_personalization %}
+{% for page in data_page_personalization %}
+<body style="background-image:url(/{{ page.background_image }}); background-color:{{ page.background_color }}; background-repeat:{{ page.background_repeat }};">
+{% endfor %}
+{% else %}
 <body>
+{% endif %}
     <!-- Preloader -->
     <div id="preloader">
         <div class="wrapper">
