@@ -299,11 +299,11 @@
                                 </div>
                             </div>
                             <!-- Welcome Thumbnail -->
-                            <div class="col-12 col-md-6">
+                            {% comment %} <div class="col-12 col-md-6">
                                 <div class="welcome-thumbnail">
-                                    <img src="/{{ data.image_transition }}" alt="" data-animation="slideInRight" data-delay="400ms">
+                                    <img src="/{{ data.image_transition }}" width="50" height="300" alt="" data-animation="slideInRight" data-delay="400ms">
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -354,7 +354,7 @@
     {% block seccion2 %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-12" style="background_color:red;">
+            <div class="col-sm-12" style="background_color:;">
                 <br><br><br><br><br>
             </div>
         </div>
@@ -841,6 +841,7 @@
             <div class="border-line"></div>
         </div>
     </section>
+    
     {% endblock seccion7 %}
 
 
@@ -855,7 +856,15 @@
 
     <!-- Footer -->
     {% if data_footer%}
-    
+    <section class="uza-newsletter-area" style="background-color:grey;">
+        <div class="container" >
+            <div class="row align-items-center justify-content-between">
+                <!-- Newsletter Content -->
+                <div class="col-12 col-md-12 col-lg-12">
+                    <br><br><br><br>
+                </div>
+        </div>
+    </section>
     {% for footer in data_footer %}
 <footer class="page-footer font-small blue pt-4" style="background-color:{{ footer.color_background }};" >
     

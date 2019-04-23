@@ -31,7 +31,7 @@
                 <!-- Single Service Area -->
                 {% if statement_services %}
                 {% for services in statement_services %}
-                <div class="col-6 col-lg-2" style="background-color: {{ services.color_background }};"> 
+                <div class="col-6 col-lg-2" style="background-color: {{ services.color_background }}; border: 1px white solid;"> 
                     <!-- Card -->
                         <a href="/services_details?id={{ services.id }}">
                         <div class="">
