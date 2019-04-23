@@ -41,6 +41,8 @@ class About(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=9000)
     image = models.ImageField(upload_to='static/img/images_about/')
+    width_image = models.CharField(max_length=100)
+    height_image = models.CharField(max_length=100)
 
 class Ask_frecuent(models.Model):
     ask = models.CharField(max_length=600)
@@ -63,6 +65,9 @@ class Personalization(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=90)
     image = models.ImageField(upload_to='static/img/images_team_freenet/')
+    width_image = models.CharField(max_length=90)
+    height_image = models.CharField(max_length=90)
+    border_radius_image = models.CharField(max_length=90)
     description = models.CharField(max_length=9000)
     profeccion = models.CharField(max_length=900)
     color_background = models.CharField(max_length=90)
@@ -91,9 +96,13 @@ class Footer(models.Model):
     font_text = models.CharField(max_length=90)
     font_size = models.CharField(max_length=90)
     icon_facebook = models.ImageField(upload_to='static/img/images_social/')
+    url_facebook = models.CharField(max_length=900)
     icon_whatsapp = models.ImageField(upload_to='static/img/images_social/')
+    url_whatsapp = models.CharField(max_length=900)
     icon_instagram = models.ImageField(upload_to='static/img/images_social/')
+    url_instagram = models.CharField(max_length=900)
     icon_youtube = models.ImageField(upload_to='static/img/images_social/')
+    url_youtube = models.CharField(max_length=900)
 
 
 

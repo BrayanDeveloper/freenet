@@ -76,7 +76,7 @@
                         <div class="post-content">
                             <span class="post-date"><span></span></span>
                             <center><a href="#" class="post-title" style="text-aling:center; width: 100%;">{{ about.title }}</a></center>
-                            <center><img src="/{{ about.image }}" alt="" style="width:50%; height:300px;" class="btn btn-light"></center>
+                            <center><img src="/{{ about.image }}" alt="" style="width:{{ about.width_image }}; height:{{ about.height_image }};" class="btn btn-light"></center>
                             <p style="text-aling:justify all; width: 100%;">{{ about.description }}</p>
                             {% comment %} <a href="#" class="read-more-btn"><i class="arrow_carrot-2right"></i></a> {% endcomment %}
                         </div>
@@ -96,6 +96,8 @@
         </div>
     </section>
     {% endblock seccion6 %}
+    {% block seccion7 %}
+    {% endblock seccion7 %}
     
 
 
