@@ -140,9 +140,75 @@
 <!--/.Navbar-->
         <!-- Main Header Start -->
         <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
+        {% if data_menu %}
+                {% for menu in data_menu %}
+            <div class="classy-nav-container breakpoint-off" style="background-color:{{ menu.color_background }};">
                 <!-- Classy Menu -->
-                <nav class="classy-navbar justify-content-between" id="uzaNav">
+                
+                <nav class="classy-navbar justify-content-between" id="uzaNav" >
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href=""><img src="/{{ menu.logo }}" width="{{ menu.width_image }}"> </a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"><img src="{% static 'img/logo/logo.png' %}" width="20px"> </span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class=""><a href="/" style="color: dodgerblue;"><img src="{% static 'img/icons-menu/house.png' %}" width="20px"> {{ menu.item1 }}</a></li>
+                                <li ><a href="#services" style="color: dodgerblue;"><img src="{% static 'img/icons-menu/services.png' %}" width="20px"> {{ menu.item2 }}</a>
+                                    <ul class="dropdown" style="background-color:{{ menu.color_background_submenu }};">
+                                        {% if statement_services_all %} {% for services_all in statement_services_all %}
+                                        <li><a style="color: dodgerblue;" href="/services?id={{ services_all.id }}&name={{ services_all.name_service }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
+                                        {% endfor %} {% else %}
+                                        <li><a style="color: dodgerblue;" href="#">no hay servicios</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </li>
+                                <li><a style="color: dodgerblue;" href="/about"><img src="{% static 'img/icons-menu/about.png' %}" width="20px"> {{ menu.item3 }}</a></li>
+                                <li><a style="color: dodgerblue;" href="#team"><img src="{% static 'img/icons-menu/team.png' %}" width="20px"> {{ menu.item4 }}</a></li>
+                                <li><a style="color: dodgerblue;" href="/contact"><img src="{% static 'img/icons-menu/contact.png' %}" width="20px"> {{ menu.item5 }}</a></li>
+                                {% comment %} <li><a style="color: dodgerblue;" href="/ask_frecuent">FAQ</a></li> {% endcomment %}
+                            </ul>
+
+                            <!-- Get A Quote -->
+                            <div class="get-a-quote ml-4 mr-3">
+                                <a href="/software_contable" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">{{ menu.item6 }}</a>
+                                <style>
+                                    .item6:hover{
+                                        background-color:{{ menu.background_color_item6_hover }} !important;
+                                    }
+                                </style>
+                            </div>
+
+                            <!-- Login / Register -->
+
+                            <!-- Search Icon -->
+
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal" placeholder="Buscar Servicio">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+                
+
+            </div>
+            {% endfor %}
+                {% else %}
+                    <nav class="classy-navbar justify-content-between" id="uzaNav" style="background-color:{{ menu.color_background }};">
 
                     <!-- Logo -->
                     <a class="nav-brand" href=""><img src="{% static 'img/logo/logo.png' %}" width="90%"> </a>
@@ -195,7 +261,7 @@
 
                     </div>
                 </nav>
-            </div>
+                {% endif %}
         </div>
 
             {% comment %} modal citas {% endcomment %}
