@@ -7,7 +7,16 @@ class Service(models.Model):
     name_service = models.CharField(max_length=500)
     description_service = models.CharField(max_length=6000)
     color_background = models.CharField(max_length=60)
+    border = models.CharField(max_length=60)
+    border_radius = models.CharField(max_length=60)
+    color_text = models.CharField(max_length=60)
+    font_size = models.CharField(max_length=60)
+    text_transform = models.CharField(max_length=60)
+    font_family = models.CharField(max_length=60)
+    padding = models.CharField(max_length=60)
     image_service = models.ImageField(upload_to='static/img/images_services/')
+    width_image = models.CharField(max_length=60)
+    height_image = models.CharField(max_length=60)
     link_service = models.CharField(max_length=255)
     def __str__(self):
         return 'id servicio: ' + self.name_service
@@ -71,6 +80,14 @@ class Team(models.Model):
     description = models.CharField(max_length=9000)
     profeccion = models.CharField(max_length=900)
     color_background = models.CharField(max_length=90)
+    color_text = models.CharField(max_length=60)
+    font_size = models.CharField(max_length=60)
+    text_transform = models.CharField(max_length=60)
+    font_family = models.CharField(max_length=60)
+    padding_text = models.CharField(max_length=60)
+    text_aling = models.CharField(max_length=60)
+    border_radius = models.CharField(max_length=90)
+    border = models.CharField(max_length=90)
 
 class Footer(models.Model):
     phone = models.CharField(max_length=90)

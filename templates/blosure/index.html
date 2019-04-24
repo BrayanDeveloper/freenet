@@ -31,15 +31,15 @@
 
                 <!-- Single Service Area -->
                 {% if data_team %} {% for team in data_team %}
-                <div class="col-12 col-lg-3" style="background-color:{{ team.color_background }};">
+                <div class="col-12 col-lg-3" style="background-color:{{ team.color_background }}; border-radius:{{ team.border_radius}}; border:{{ team.border }};">
                     <div class="single-service-area mb-80">
                         <!-- Service Icon -->
                         {% comment %} <a href="/services?id={{ team.id }}"> {% endcomment %}
                             <div class="service-icon">
                                 <img src="{{ team.image }}" alt="" style="border-radius:{{ team.border_radius_image }}; padding:20px; margin-top:20px; width:{{ team.width_image }}; height:{{ team.height_image }};">
                             </div>
-                            <h5 style="text-transform:uppercase; color:#fff; font-size:16px; padding:20px;">{{ team.name }}</h5>
-                            <p style="text-transform:uppercase; color:#fff; font-size:16px; padding:20px; text-aling: justify;">{{ team.description }}</p>
+                            <h5 style="text-transform:{{ team.text_transform }}; color:{{ team.color_text }}; font-size:{{ team.font_size }}; padding:{{ team.padding_text }}; text-aling: {{ team.text_aling }};">{{ team.name }}</h5>
+                            <p style="text-transform:{{ team.text_transform }}; color:{{ team.color_text }}; font-size:{{ team.font_size }}; padding:{{ team.padding_text }}; text-aling: {{ team.text_aling }};">{{ team.description }}</p>
                             <p style="color: white;">{{ team.profeccion }}</p>
                         {% comment %} </a> {% endcomment %}
                     </div>
