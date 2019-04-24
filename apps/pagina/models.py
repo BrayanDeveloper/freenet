@@ -89,6 +89,8 @@ class Team(models.Model):
     border_radius = models.CharField(max_length=90)
     border = models.CharField(max_length=90)
 
+
+
 class Footer(models.Model):
     phone = models.CharField(max_length=90)
     image_phone = models.ImageField(upload_to='static/img/images_footer/')
