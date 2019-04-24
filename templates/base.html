@@ -850,21 +850,40 @@
     
 
 
-
-
+  
 
     <!-- Footer -->
     {% if data_footer%}
-    <section class="uza-newsletter-area" style="background-color:grey;">
+   
+    {% for footer in data_footer %}
+        
+    <section class="" style="background-color:{{ footer.background_color_copy }};>
         <div class="container" >
+        
+            <div class="row">
+                <!-- Newsletter Content -->
+                
+                
+                    {% if data_customers %}
+                    {% for customers in data_customers %}
+                    <div class="col-3 col-md-3">
+                    <img src="/{{ customers.image_customer }}" style="width:{{ customers.widt_image }}; height:{{ customers.height_image }}; border_radius:{{ customers.border_radius_image }}; border:{{ customers.border_image }}; padding:{{ customers.padding_image }}; margin:{{ customers.margin_image }};">
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                
+                
+          </div>
+        
             <div class="row align-items-center justify-content-between">
                 <!-- Newsletter Content -->
-                <div class="col-12 col-md-12 col-lg-12">
+                <div class="col-3 col-md-3 col-lg-3">
                     <br><br><br><br>
                 </div>
         </div>
+        {% endif %}
     </section>
-    {% for footer in data_footer %}
+     <br><br><br><br>
 <footer class="page-footer font-small blue pt-4" style="background-color:{{ footer.color_background }};" >
     
     <!-- Footer Links -->

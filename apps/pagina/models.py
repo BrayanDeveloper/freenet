@@ -129,4 +129,16 @@ class Footer(models.Model):
     url_youtube = models.CharField(max_length=900)
 
 
+class Customer(models.Model):
+    name = models.CharField(max_length=40)
+    image_customer = models.ImageField(upload_to='static/img/images_customers/')
+    with_image = models.CharField(max_length=100)
+    height_image = models.CharField(max_length=100)
+    border = models.CharField(max_length=100)
+    border_radius_image = models.CharField(max_length=100)
+    padding_image = models.CharField(max_length=100)
+    margin_image = models.CharField(max_length=100)
+    description = models.CharField(max_length=9000)
+    email = models.CharField(max_length=100)
+    cel_phone = models.CharField(max_length=12)
 
