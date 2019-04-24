@@ -897,18 +897,29 @@
 
         </div>
         <!-- Grid column -->
-        <div class="col-md-3 mt-md-0 mt-3">
+        
+        <div class="col-md-3 mt-md-0 mt-3 col-12">
 
-        <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> Telefono: {{ footer.phone }}</p>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> Direccion: {{ footer.address }}</p>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> Ciudad: {{ footer.city }}</p>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> Pais: {{ footer.country }}</p>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_copy }}" style="width:20px; height:20px;"> {{ footer.copy }}</p>
+        
+          <div style="">
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> Telefono: {{ footer.phone }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> Direccion: {{ footer.address }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> Ciudad: {{ footer.city }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> Pais: {{ footer.country }}</p>
+            
+          </div>
           
           
         </div>
-    </div>
         
+    </div>
+    
+        
+        
+    </div>
+    <div style="background-color:{{ footer.background_color_copy }}; padding:{{ footer.padding_copy }};" class="text-center">
+        <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_copy }}" style="width:20px; height:20px;"> {{ footer.copy }}</p>
+    </div>
     
 
     </div>
