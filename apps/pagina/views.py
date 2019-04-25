@@ -154,3 +154,26 @@ def ask_frecuent(request):
 	data_footer = Footer.objects.all()
 	context = {'ask_frecuents':statement, 'statement_services_all':statement_services_all, 'data_footer':data_footer, 'data_page_personalization':data_page_personalization, 'data_menu':data_menu}
 	return render(request, 'blosure/ask_frecuent.html', context)
+
+
+def team_unit(request):
+	if request.method == "GET":
+		statement_services_all = Service.objects.all()
+		data_footer = Footer.objects.all()
+		data_menu = Menu.objects.all()
+		data_team = Team.objects.filter(name=request.GET.get('name'))
+		data_page_personalization = Personalization_page.objects.all()
+		statement_services = Service_plus.objects.filter(id_service=request.GET.get('id'))
+		name = request.GET.get('name')
+		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all, 'name':name, 'data_footer':data_footer, 'data_page_personalization':data_page_personalization, 'data_menu':data_menu, 'data_team':data_team}
+		return render(request, 'blosure/team_unit.html', context)
+	else:
+		statement_services_all = Service.objects.all()
+		statement_services = Service_plus.objects.all()
+		data_menu = Menu.objects.all()
+		data_team = Team.objects.all()
+		data_footer = Footer.objects.all()
+		data_page_personalization = Personalization_page.objects.all()
+		context = {'statement_services': statement_services, 'statement_services_all': statement_services_all, 'name':name, 'data_footer':data_footer, 'data_page_personalization':data_page_personalization, 'data_menu':data_menu, 'data_team':data_team}
+		return render(request, 'blosure/team_unit.html', context)
+		

@@ -38,7 +38,7 @@ class Slider_setting_Display(admin.ModelAdmin):
     search_fields = ['title',]
 
 class TeamDisplay(admin.ModelAdmin):
-    list_display = ['name','profeccion']
+    list_display = ['name','profession']
     list_filter = ['name',]
     search_fields = ['name',]
 

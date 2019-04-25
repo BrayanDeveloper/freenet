@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}freenet º About{% endblock title %}
+
+{% block seccion1 %}
+<br><br><br><br><br>
+{% endblock seccion1 %}
+
+{% block seccion2 %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" style="background_color:;">
+                <br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+    {% if data_team %}
+    {% for team in data_team %}
+    <section class="uza-about-us-area">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- About Thumbnail -->
+                <div class="col-12 col-md-6">
+                    <div class="about-us-thumbnail mb-80">
+                        {% block imgSeccion2 %}<img src="/{{ team.image }}" alt="" style="width:{{ team.width_image }}; height:{{ team.height_image }}; border:{{ team.color_background }}; " class="btn btn-light">{% endblock imgSeccion2 %}
+                        <!-- Video Area -->
+                        <div class="uza-video-area hi-icon-effect-8">
+                            {% block linkVideo %}{% endblock linkVideo %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Us Content -->
+                <div class="col-12 col-md-6">
+                    <div class="about-us-content mb-80">
+                        {% block titleSeccion2 %}
+                            <h2>{{ team.name }}</h2>
+                            <p style="text-aling:{{ team.text_aling }}; width:{{ team.width_text }}; height:{{ team.height_text }}; padding:{{ team.padding_text }}; border:; border_radius:{{ team.border_radius }}; font-family:{{ team.font_family }}; font-size:{{ text.font_size }}; background-color:; color:black;">{{ team.profession }}</p>
+                        {% endblock titleSeccion2 %} 
+                        {% block paragrafoSeccion2 %}
+                        {% endblock paragrafoSeccion2 %}
+                        <p style="text-aling:{{ team.text_aling }}; width:{{ team.width_text }}; height:{{ team.height_text }}; padding:{{ team.padding_text }}; border:; border_radius:{{ team.border_radius }}; font-family:{{ team.font_family }}; font-size:{{ text.font_size }}; background-color:; color:black;">{{ team.description }}</p>
+                        <p style="text-aling:{{ team.text_aling }}; width:{{ team.width_text }}; height:{{ team.height_text }}; padding:{{ team.padding_text }}; border:; border_radius:{{ team.border_radius }}; font-family:{{ team.font_family }}; font-size:{{ text.font_size }}; background-color:; color:black;">{{ team.edad }}</p>
+                        <p style="text-aling:{{ team.text_aling }}; width:{{ team.width_text }}; height:{{ team.height_text }}; padding:{{ team.padding_text }}; border:; border_radius:{{ team.border_radius }}; font-family:{{ team.font_family }}; font-size:{{ text.font_size }}; background-color:; color:black;">{{ team.habilidades }}</p>
+                        <p style="text-aling:{{ team.text_aling }}; width:{{ team.width_text }}; height:{{ team.height_text }}; padding:{{ team.padding_text }}; border:; border_radius:{{ team.border_radius }}; font-family:{{ team.font_family }}; font-size:{{ text.font_size }}; background-color:; color:black;">{{ team.hobbies }}</p>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="">
+                        <p class="text-{{ team.text_aling }}" style="width:{{ team.width_text }}; height:{{ team.height_text }}; padding:{{ team.padding_text }}; border:; border_radius:{{ team.border_radius }}; font-family:{{ team.font_family }}; font-size:{{ text.font_size }}; background-color:; color:black;">{{ team.full_description }} {% lorem how_many_paragraphs %}</p>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+    
+        {% endfor %}
+        {% else %}
+            <h1>sobre nosotros</h1>
+        {% endif %}
+{% endblock seccion2 %}
+
+
+    {% block seccion3 %}
+
+    {% endblock seccion3 %}
+
+    {% block seccion4 %}
+    
+    {% endblock seccion4 %}
+    
+
+    {% block seccion5 %}
+    
+    {% endblock seccion5 %}
+
+    
+
+    {% block seccion6 %}
+    
+    {% endblock seccion6 %}
+    {% block seccion7 %}
+    {% endblock seccion7 %}
+    {% block footer %}
+    
+    
+
+
+  
+
+    <!-- Footer -->
+    {% if data_footer %}
+    {% if data_team %}
+   
+    {% for footer in data_footer %}
+    
+    {% block barra_prefooter %}
+    <section class="" style="background-color:{{ page.background_color_bar_team_redes }};">
+        <div class="container" >
+        
+            <div class="row">
+                <!-- Newsletter Content -->
+                
+                    <div class="col-12 col-md-5">
+                    
+                    </div>
+               
+                    <div class="col-12 col-md-7" style="height:10px; margin-top:-30px;">
+                    {% for team in data_team %}
+                    <br><br><br>
+                    <a href="{{ team.link_icon1 }}"><img src="/{{ team.icon1 }}" style="width:30px; height:30px;">
+                    <a href="{{ team.link_icon2 }}"><img src="/{{ team.icon2 }}" style="width:30px; height:30px;">
+                    <a href="{{ team.link_icon3 }}"><img src="/{{ team.icon3 }}" style="width:30px; height:30px;">
+                    <a href="{{ team.link_icon4 }}"><img src="/{{ team.icon4 }}" style="width:30px; height:30px;">
+                    {% endfor %}
+                    </div>
+               
+                    <div class="col-12 col-md-0">
+                    
+                    </div>
+               
+                   
+                
+                
+          </div>
+        
+            <div class="row align-items-center justify-content-between">
+                <!-- Newsletter Content -->
+                <div class="col-3 col-md-3 col-lg-3">
+                    <br><br><br><br>
+                </div>
+        </div>
+       
+    </section>
+    {% endblock %}
+     <br><br><br><br>
+<footer class="page-footer font-small blue pt-4" style="background-color:{{ footer.color_background }};" >
+    
+    <!-- Footer Links -->
+    <div class="container" >
+
+      <!-- Grid row -->
+      <div class="row" >
+
+        <!-- Grid column -->
+        <div class="col-md-0 mt-md-0 mt-3">
+
+        </div>
+        <div class="col-md-3 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase"></h5>
+          <img src="{% static 'img/logo/logo.png' %}"><br><br>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_schedule }}" style="width:20px; height:20px;"> {{ footer.schedule }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_email }}" style="width:20px; height:20px;"> {{ footer.email }}</p>
+        </div>
+        <div class="col-md-5 mt-md-0 mt-3" >
+            <br>
+          <center>
+          <a href="{{ footer.url_facebook }}" target="_blank"><img src="/{{ footer.icon_facebook }}" width="15%" height="200;" style="padding:5px;"></a>
+          <a href="{{ footer.url_instagram }}" target="_blank"><img src="/{{ footer.icon_instagram }}" width="15%" height="200;" style="padding:5px;"></a>
+          <a href="{{ footer.url_whatsapp }}" target="_blank"><img src="/{{ footer.icon_whatsapp }}" width="15%" height="200;" style="padding:5px;"></a>
+          <a href="{{ footer.url_youtube }}" target="_blank"><img src="/{{ footer.icon_youtube }}" width="15%" height="200:" style="padding:5px;"></a>
+          </center>
+          
+
+        </div>
+        <!-- Grid column -->
+        
+        <div class="col-md-3 mt-md-0 mt-3 col-12">
+
+        
+          <div style="">
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> {{ footer.phone }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> {{ footer.address }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> {{ footer.city }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> {{ footer.country }}</p>
+            
+          </div>
+          
+          
+        </div>
+        
+    </div>
+    
+        
+        
+    </div>
+    <div style="background-color:{{ footer.background_color_copy }}; padding:{{ footer.padding_copy }};" class="text-center">
+        <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;">Copyright © 2018 Freenet <img src="/{{ footer.image_copy }}" style="width:{{ footer.width_icon_copy }}; height:{{ footer.height_icon_copy }}; padding:{{ footer.padding_icon_copy }}; "><a style="font-family:{{ footer.font_family_footer }}; font-size:{{ footer.font_size_footer }};"> {{ footer.slogan }}</a></p>
+    </div>
+    
+
+    </div>
+    
+    
+    
+
+  </footer>
+    {% endfor %}
+    {% else %}
+    <h4>no footer</h4>
+  {% endif %}  
+  {% endif %}
+  <!-- Footer -->
+    {% endblock footer %}
+    
+
+
+
+
