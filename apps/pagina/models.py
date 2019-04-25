@@ -120,6 +120,7 @@ class Footer(models.Model):
     background_color_copy = models.CharField(max_length=90)
     padding_copy = models.CharField(max_length=90)
     schedule = models.CharField(max_length=200)
+    slogan = models.CharField(max_length=200)
     image_schedule = models.ImageField(upload_to='static/img/images_footer/')
     color_background = models.CharField(max_length=90)
     color_text = models.CharField(max_length=90)

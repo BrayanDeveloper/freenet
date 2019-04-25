@@ -6,6 +6,7 @@ class Personalization_page(models.Model):
     #background_image = models.ImageField(upload_to='static/img/images_personalization/')
     background_repeat = models.CharField(choices=image_repeat, max_length=30)
     background_color = models.CharField(max_length=90)
+    background_color_bar_customers = models.CharField(max_length=90)
     title_1 = models.CharField(max_length=90)
     title_2 = models.CharField(max_length=90)
     title_3 = models.CharField(max_length=90)
