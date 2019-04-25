@@ -139,6 +139,7 @@ class Footer(models.Model):
     url_instagram = models.CharField(max_length=900)
     icon_youtube = models.ImageField(upload_to='static/img/images_social/')
     url_youtube = models.CharField(max_length=900)
+    
 
 
 class Customer(models.Model):

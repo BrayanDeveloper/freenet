@@ -44,7 +44,14 @@ class Personalization_page(models.Model):
     border = models.CharField(max_length=90) 
     padding_text = models.CharField(max_length=90)
     border_radius = models.CharField(max_length=90)
-
+    text_contact = models.CharField(max_length=900)
+    text_color_contact = models.CharField(max_length=900)
+    background_color_contact = models.CharField(max_length=900)
+    font_family_contact = models.CharField(max_length=900)
+    font_size_contact = models.CharField(max_length=900)
+    border_contact = models.CharField(max_length=900)
+    border_radius_contact = models.CharField(max_length=900)
+    link_mape_contact = models.CharField(max_length=9000)
 
 
 class Menu(models.Model):
