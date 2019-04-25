@@ -1,7 +1,8 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% if data_page_personalization %}
+{% for page in data_page_personalization %}
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Freenet - Desarrollo de ideas imnovadoras">
@@ -12,15 +13,14 @@
     <title>{% block title %}base{% endblock title %}</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{% static 'img/favicon/favicon.png' %}">
+    <link rel="icon" href="/{{ page.favicon }}">
 
     <!-- Core Stylesheet -->
     {% comment %} <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> {% endcomment %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
     
 </head>
-{% if data_page_personalization %}
-{% for page in data_page_personalization %}
+
 <body style="background-image:url(/{{ page.background_image }}); background-color:{{ page.background_color }}; background-repeat:{{ page.background_repeat }};">
 
 <body>
@@ -407,6 +407,7 @@
                 <div class="col-12">
                     <div class="section-heading text-center"><br>
                         <h2 style="font-size:{{ page.font_size }}; font-family:{{ page.font_family_title }}; text_transform:{{ page.text_transform }}; padding:{{ page.padding_text }}; color:{{ page.color_text }}; border:{{ page.border }}; border_radius:{{ page.border_radius }}; text_aling:{{ page.text_aling }}; float:{{ page.float_text }};">{% block title_1 %}{{ page.title_1 }}{% endblock title_1 %}</h2>
+                        <p style="background-color:{{ page.description_area_background_color }}; color:{{ page.description_area_color }}; color:{{ page.description_area_color_text }}; padding:{{ page.description_area_padding }}; border:{{ page.description_area_border }}; border-radius:{{ page.description_area_border_radius }}; font-size:{{ page.description_area_font_size }}; font-family:{{ page.description_area_font_family }}; text-aling:{{ page.description_area_text_aling }}; width:{{ page.description_area_width }}; height:{{ page.description_area_height }};">{{ page.description_area_services_professional }}</p>
                     </div>
                 </div>
             </div>
@@ -937,7 +938,7 @@
         
     </div>
     <div style="background-color:{{ footer.background_color_copy }}; padding:{{ footer.padding_copy }};" class="text-center">
-        <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;">Copyright © 2018 Freenet <img src="/{{ footer.image_copy }}" style="width:20px; height:20px;"> {{ footer.slogan }}</p>
+        <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;">Copyright © 2018 Freenet <img src="/{{ footer.image_copy }}" style="width:{{ footer.width_icon_copy }}; height:{{ footer.height_icon_copy }}; padding:{{ footer.padding_icon_copy }}; "><a style="font-family:{{ footer.font_family_footer }}; font-size:{{ footer.font_size_footer }};">{{ footer.slogan }}</a></p>
     </div>
     
 
