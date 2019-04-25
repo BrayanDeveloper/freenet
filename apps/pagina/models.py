@@ -34,6 +34,8 @@ class Service_plus(models.Model):
     developer_service = models.CharField(max_length=255)
     id_service = models.ForeignKey(Service, on_delete=models.CASCADE)
 
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=40)
     message = models.CharField(max_length=9000)
@@ -58,8 +60,12 @@ class Ask_frecuent(models.Model):
     answer = models.CharField(max_length=600)
     image = models.ImageField(upload_to='static/img/images_ask_frecuent/')
 
-class Personalization(models.Model):
+class Slider_setting(models.Model):
     title = models.CharField(max_length=600)
+    horizontal_text_shadow = models.CharField(max_length=600)
+    vertical_text_shadow = models.CharField(max_length=600)
+    blur_radius_text_shadow = models.CharField(max_length=600)
+    color_text_shadow = models.CharField(max_length=600)
     color_title = models.CharField(max_length=20)
     description = models.CharField(max_length=9000)
     color_description = models.CharField(max_length=20)

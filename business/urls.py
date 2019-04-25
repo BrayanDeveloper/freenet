@@ -28,3 +28,4 @@ urlpatterns = [
     path('search_services/', search_services, name="search_services"),
     path('ask_frecuent/', ask_frecuent, name="ask_frecuent"),
 ]
+

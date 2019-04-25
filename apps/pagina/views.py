@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent, Personalization, Team, Footer, Customer
+from apps.pagina.models import Service, Service_plus, Contact, Appointment, About, Ask_frecuent, Slider_setting, Team, Footer, Customer
 from apps.personalization.models import Personalization_page, Menu
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -9,7 +9,7 @@ from django.core.mail import send_mail
 
 def index(request):
 	statement_services_all = Service.objects.all()
-	data_personalization = Personalization.objects.all()
+	data_personalization = Slider_setting.objects.all()
 	data_customers = Customer.objects.all()
 	data_menu = Menu.objects.all()
 	data_footer = Footer.objects.all()
