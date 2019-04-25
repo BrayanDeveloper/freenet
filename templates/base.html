@@ -902,8 +902,8 @@
           <!-- Content -->
           <h5 class="text-uppercase"></h5>
           <img src="{% static 'img/logo/logo.png' %}"><br><br>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_schedule }}" style="width:20px; height:20px;"> Horario de Atencion: {{ footer.schedule }}</p>
-          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_email }}" style="width:20px; height:20px;"> Email: {{ footer.email }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_schedule }}" style="width:20px; height:20px;"> {{ footer.schedule }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_email }}" style="width:20px; height:20px;"> {{ footer.email }}</p>
         </div>
         <div class="col-md-5 mt-md-0 mt-3">
             <br>
@@ -922,10 +922,10 @@
 
         
           <div style="">
-            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> Telefono: {{ footer.phone }}</p>
-            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> Direccion: {{ footer.address }}</p>
-            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> Ciudad: {{ footer.city }}</p>
-            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> Pais: {{ footer.country }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> {{ footer.phone }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> {{ footer.address }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> {{ footer.city }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> {{ footer.country }}</p>
             
           </div>
           
