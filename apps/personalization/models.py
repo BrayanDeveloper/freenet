@@ -10,8 +10,31 @@ class Personalization_page(models.Model):
     background_color_bar_customers = models.CharField(max_length=90)
     background_color_bar_team_redes = models.CharField(max_length=90)
 
+    description_service = models.CharField(max_length=9000)
+    font_family_description_service = models.CharField(max_length=900)
+    font_size_description_service = models.CharField(max_length=900)
+    color_text_description_service = models.CharField(max_length=900)
+    background_color_description_service = models.CharField(max_length=900)
+    border_description_service = models.CharField(max_length=900)
+    border_radius_description_service = models.CharField(max_length=900)
+    text_aling_description_service = models.CharField(max_length=900)
+
+    
+    
+    title_service = models.CharField(max_length=900)
+    font_family_service = models.CharField(max_length=900)
+    font_size_service = models.CharField(max_length=900)
+    color_text_service = models.CharField(max_length=900)
+    background_color_service = models.CharField(max_length=900)
+    border_service = models.CharField(max_length=900)
+    border_radius_service = models.CharField(max_length=900)
+
+
+
+
+
     title_1 = models.CharField(max_length=90)
-    description_area_services_professional = models.CharField(max_length=90)
+    description_area_services_professional = models.CharField(max_length=9000)
     description_area_background_color = models.CharField(max_length=90)
     description_area_color_text = models.CharField(max_length=90)
     description_area_padding = models.CharField(max_length=90)
@@ -23,7 +46,7 @@ class Personalization_page(models.Model):
     description_area_width = models.CharField(max_length=90)
     description_area_height = models.CharField(max_length=90)
 
-    description_team = models.CharField(max_length=90)
+    description_team = models.CharField(max_length=9000)
     description_team_background_color = models.CharField(max_length=90)
     description_team_color_text = models.CharField(max_length=90)
     description_team_padding = models.CharField(max_length=90)

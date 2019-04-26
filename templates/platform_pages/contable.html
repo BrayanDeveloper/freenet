@@ -22,16 +22,16 @@
     
 </head>
 
-<body style="background-image:url(/{{ page.image_title1 }}); background-color:{{ page.background_color_page }}; background-repeat:{{ page.background_repeat }};">
+<body style="background-color:{{ page.background_color_page }}; background-repeat:{{ page.background_repeat }};">
 
 <body>
 
     <!-- Preloader -->
-    <div id="preloader">
+    {% comment %} <div id="preloader">
         <div class="wrapper">
             <div class="cssload-loader"></div>
         </div>
-    </div>
+    </div> {% endcomment %}
 
     <!-- ***** Top Search Area Start ***** -->
     <div class="top-search-area">
@@ -167,7 +167,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="welcome-text" style="background-color: {{ page.background_color_title1 }}; ">
                                     <h2 data-animation="fadeInUp" data-delay="100ms" style="color:{{ page.color_title1 }}; font-family:{{ page.font_family_titles }}; font-size:{{ font.font_size_titles }}px; text-shadow: {{ page.horizontal_text_shadow }} {{ page.vertical_text_shadow }} {{ page.blur_radius_text_shadow }} {{ page.color_text_shadow }};"> <br><span style="color:{{ data.color_title1 }};">{{ page.title1 }}</span></h2>
-                                    <h5 data-animation="fadeInUp" data-delay="100ms" style="color:{{ page.color_description1 }}; font-family:{{ page.font_family_paragrafos }}; font-size:{{ font.font_size_paragrafos }}px; "> <br><span style="color:{{ page.color_description1 }};">{{ page.descripcion1 }}</span></h5>
+                                    <h5 data-animation="fadeInUp" data-delay="100ms" style="color:{{ page.color_descripcion1 }}; font-family:{{ page.font_family_paragrafos }}; font-size:{{ font.font_size_paragrafos }}px; "> <br><span style="color:{{ page.color_description1 }};">{{ page.description1 }}</span></h5>
                                     {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
                                 </div>
                             </div>

@@ -7,6 +7,7 @@ class Counter_page(models.Model):
     #background_image = models.ImageField(upload_to='static/img/images_personalization/')
     logo = models.ImageField(upload_to='static/img/logo/')
     width_logo = models.CharField(max_length=90)
+    background_color_page = models.CharField(max_length=90)
     font_family_titles = models.CharField(max_length=90)
     font_sizes_titles = models.CharField(max_length=90)
     background_color_titles = models.CharField(max_length=90)    

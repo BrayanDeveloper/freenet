@@ -1,3 +1,4 @@
+
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -189,41 +190,32 @@
                                     }
                                 </style>
                             </div>
-
                             <!-- Login / Register -->
-
                             <!-- Search Icon -->
-
                             <div class="search-icon" data-toggle="modal" data-target="#searchModal" placeholder="Buscar Servicio">
                                 <i class="icon_search"></i>
                             </div>
                         </div>
                         <!-- Nav End -->
-
                     </div>
                 </nav>
                 
-
             </div>
             {% endfor %}
                 {% else %}
                     <nav class="classy-navbar justify-content-between" id="uzaNav" style="background-color:{{ menu.color_background }};">
-
                     <!-- Logo -->
                     <a class="nav-brand" href=""><img src="{% static 'img/logo/logo.png' %}" width="90%"> </a>
-
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
                         <span class="navbarToggler"><span></span><span></span><span></span></span>
                     </div>
-
                     <!-- Menu -->
                     <div class="classy-menu">
                         <!-- Menu Close Button -->
                         <div class="classycloseIcon">
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"><img src="{% static 'img/logo/logo.png' %}" width="20px"> </span></div>
                         </div>
-
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
@@ -242,29 +234,22 @@
                                 <li><a style="color: {{ menu.color_text_menu }};;" href="/contact"><img src="{% static 'img/icons-menu/contact.png' %}" width="20px"> Contacto</a></li>
                                 {% comment %} <li><a style="color: dodgerblue;" href="/ask_frecuent">FAQ</a></li> {% endcomment %}
                             </ul>
-
                             <!-- Get A Quote -->
                             <div class="get-a-quote ml-4 mr-3">
                                 <a href="/software_contable" class="btn uza-btn">Software contable</a>
                             </div>
-
                             <!-- Login / Register -->
-
                             <!-- Search Icon -->
-
                             <div class="search-icon" data-toggle="modal" data-target="#searchModal" placeholder="Buscar Servicio">
                                 <i class="icon_search"></i>
                             </div>
                         </div>
                         <!-- Nav End -->
-
                     </div>
                 </nav>
                 {% endif %}
         </div>
-
         
-
     </header>
     
     {% endblock header %}
@@ -275,7 +260,6 @@
     
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
-
             <!-- Single Welcome Slide -->
             {% if data_personalization %}
             {% for data in data_personalization %}
@@ -284,7 +268,6 @@
                 <div class="background-curve">
                     <img src="./img/core-img/curve-1.png" alt="">
                 </div>
-
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100" style="background-image:url('/{{ data.image_fondo }}'); background-position:center; repeat: no repeat;">
                     <div class="container h-100">
@@ -314,7 +297,6 @@
                 <div class="background-curve">
                     <img src="./img/core-img/curve-1.png" alt="">
                 </div>
-
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100" style="background-position:center; repeat: no repeat;">
                     <div class="container h-100">
@@ -339,13 +321,10 @@
             </div>
             {% endif %}
             {% comment %} fin del modal citas {% endcomment %}
-
             <!-- Single Welcome Slide -->
             
-
             <!-- Single Welcome Slide -->
             
-
         </div>
     </section>
     {% endblock seccion1 %}
@@ -361,7 +340,6 @@
     <section class="uza-about-us-area">
         <div class="container">
             <div class="row align-items-center">
-
                 <!-- About Thumbnail -->
                 <div class="col-12 col-md-6">
                     <div class="about-us-thumbnail mb-80">
@@ -372,7 +350,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- About Us Content -->
                 <div class="col-12 col-md-6">
                     <div class="about-us-content mb-80">
@@ -386,7 +363,6 @@
                 </div>
             </div>
         </div>
-
         <!-- About Background Pattern -->
         <div class="about-bg-pattern">
             <img src="{% static './img/core-img/curve-2.png' %}" alt="">
@@ -395,11 +371,9 @@
     {% endblock seccion2 %}
     <!-- ***** About Us Area Start ***** -->
     <!-- ***** About Us Area End ***** -->
-
     <!-- ***** Services Area Start ***** -->
     <a name="services"></a>
     {% block seccion3 %}
-
     <section class="uza-services-area section-padding-80-0">
         <div class="container">
             <div class="row">
@@ -411,12 +385,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
-
                 <!-- Single Service Area -->
-
-
                 <!-- Single Service Area -->
                 {% if statement_services_all %} {% for services in statement_services_all %}
                 <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
@@ -445,17 +415,12 @@
                 {% endif %}
                 
                 
-
-
                 <!-- Single Service Area -->
-
             </div>
         </div>
     </section>
     {% endblock seccion3 %}
-
     {% block seccion4 %}
-
     <section class="uza-services-area section-padding-80-0">
         <div class="container">
             <div class="row">
@@ -466,12 +431,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
-
                 <!-- Single Service Area -->
-
-
                 <!-- Single Service Area -->
                 {% if data_team %} {% for team in data_team %}
                 <div class="col-12 col-lg-4">
@@ -499,11 +460,7 @@
                     </div>
                 </div>
                 {% endif %}
-
-
-
                 <!-- Single Service Area -->
-
             </div>
         </div>
     </section>
@@ -522,12 +479,10 @@
                 </div>
             </div>
         </div>
-
         <div class="container-fluid">
             <div class="row">
                 <!-- Portfolio Slides -->
                 <div class="portfolio-sildes owl-carousel">
-
                     <!-- Single Portfolio Slide -->
                     <div class="single-portfolio-slide">
                         <img src="./img/bg-img/3.jpg" alt="">
@@ -541,7 +496,6 @@
                             <a href="#"><i class="arrow_right"></i></a>
                         </div>
                     </div>
-
                     <!-- Single Portfolio Slide -->
                     <div class="single-portfolio-slide">
                         <img src="./img/bg-img/4.jpg" alt="">
@@ -555,7 +509,6 @@
                             <a href="#"><i class="arrow_right"></i></a>
                         </div>
                     </div>
-
                     <!-- Single Portfolio Slide -->
                     <div class="single-portfolio-slide">
                         <img src="./img/bg-img/5.jpg" alt="">
@@ -569,7 +522,6 @@
                             <a href="#"><i class="arrow_right"></i></a>
                         </div>
                     </div>
-
                     <!-- Single Portfolio Slide -->
                     <div class="single-portfolio-slide">
                         <img src="./img/bg-img/6.jpg" alt="">
@@ -583,7 +535,6 @@
                             <a href="#"><i class="arrow_right"></i></a>
                         </div>
                     </div>
-
                     <!-- Single Portfolio Slide -->
                     <div class="single-portfolio-slide">
                         <img src="./img/bg-img/5.jpg" alt="">
@@ -597,7 +548,6 @@
                             <a href="#"><i class="arrow_right"></i></a>
                         </div>
                     </div>
-
                     <!-- Single Portfolio Slide -->
                     <div class="single-portfolio-slide">
                         <img src="./img/bg-img/6.jpg" alt="">
@@ -611,11 +561,9 @@
                             <a href="#"><i class="arrow_right"></i></a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
         <!-- Client Feedback Area Start -->
         <div class="clients-feedback-area mt-80 section-padding-80 clearfix">
             <div class="container">
@@ -623,7 +571,6 @@
                     <div class="col-12">
                         <!-- Testimonial Slides -->
                         <div class="testimonial-slides owl-carousel">
-
                             <!-- Single Testimonial Slide -->
                             <div class="single-testimonial-slide d-flex align-items-center">
                                 <!-- Testimonial Thumbnail -->
@@ -650,7 +597,6 @@
                                     <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
                                 </div>
                             </div>
-
                             <!-- Single Testimonial Slide -->
                             <div class="single-testimonial-slide d-flex align-items-center">
                                 <!-- Testimonial Thumbnail -->
@@ -677,7 +623,6 @@
                                     <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
                                 </div>
                             </div>
-
                             <!-- Single Testimonial Slide -->
                             <div class="single-testimonial-slide d-flex align-items-center">
                                 <!-- Testimonial Thumbnail -->
@@ -704,19 +649,16 @@
                                     <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Client Feedback Area End -->
-
         <!-- Border -->
         <div class="container">
             <div class="border-line"></div>
         </div>
-
         <!-- Background Curve -->
         <div class="portfolio-bg-curve">
             <img src="./img/core-img/curve-3.png" alt="">
@@ -724,9 +666,7 @@
     </section>
     {% endblock seccion5 %}
     <!-- ***** Portfolio Area Start ***** -->
-
     <!-- ***** Portfolio Area End ***** -->
-
     <!-- ***** Blog Area Start ***** -->
     {% block seccion6 %}
     <section class="uza-blog-area">
@@ -734,7 +674,6 @@
         <div class="blog-bg-curve">
             <img src="./img/core-img/curve-4.png" alt="">
         </div>
-
         <!-- CTA Area Start -->
         <div class="uza-cta-area section-padding-0-80">
             <div class="container">
@@ -745,7 +684,6 @@
                             <h6>Hit the button below or give us a call!</h6>
                         </div>
                     </div>
-
                     <div class="col-12 col-lg-4">
                         <div class="cta-content mb-80">
                             <div class="call-now-btn">
@@ -757,7 +695,6 @@
             </div>
         </div>
         <!-- CTA Area End -->
-
         <div class="container">
             <div class="row">
                 <!-- Section Heading -->
@@ -768,9 +705,7 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
-
                 <!-- Single Blog Post -->
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/8.jpg);">
@@ -783,7 +718,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Single Blog Post -->
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/9.jpg);">
@@ -796,7 +730,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Single Blog Post -->
                 <div class="col-12 col-lg-4">
                     <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/10.jpg);">
@@ -809,12 +742,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
     {% endblock seccion6 %}
-
     <!-- ***** Blog Area End ***** -->
     {% block seccion7 %}
     <section class="uza-newsletter-area">
@@ -843,16 +774,11 @@
     </section>
     
     {% endblock seccion7 %}
-
-
     <!-- ***** Newsletter Area Start ***** -->
     {% block footer %}
     
     
-
-
   
-
     <!-- Footer -->
     {% if data_footer%}
    
@@ -890,16 +816,12 @@
     
     <!-- Footer Links -->
     <div class="container">
-
       <!-- Grid row -->
       <div class="row">
-
         <!-- Grid column -->
         <div class="col-md-0 mt-md-0 mt-3">
-
         </div>
         <div class="col-md-3 mt-md-0 mt-3">
-
           <!-- Content -->
           <h5 class="text-uppercase"></h5>
           <img src="{% static 'img/logo/logo.png' %}"><br><br>
@@ -915,12 +837,10 @@
           <a href="{{ footer.url_youtube }}" target="_blank"><img src="/{{ footer.icon_youtube }}" width="15%" height="200:" style="padding:5px;"></a>
           </center>
           
-
         </div>
         <!-- Grid column -->
         
         <div class="col-md-3 mt-md-0 mt-3 col-12">
-
         
           <div style="">
             <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> {{ footer.phone }}</p>
@@ -942,12 +862,10 @@
         <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;">Copyright © 2018 Freenet <img src="/{{ footer.image_copy }}" style="width:{{ footer.width_icon_copy }}; height:{{ footer.height_icon_copy }}; padding:{{ footer.padding_icon_copy }}; "><a style="font-family:{{ footer.font_family_footer }}; font-size:{{ footer.font_size_footer }};"> {{ footer.slogan }}</a></p>
     </div>
     
-
     </div>
     
     
     
-
   </footer>
     {% endfor %}
     {% else %}
@@ -956,11 +874,8 @@
   <!-- Footer -->
     {% endblock footer %}
     <!-- ***** Newsletter Area End ***** -->
-
     <!-- ***** Footer Area Start ***** -->
-
     <!-- ***** Footer Area End ***** -->
-
     <!-- ******* All JS Files ******* -->
     <!-- jQuery js -->
     {% comment %} <script src="{% static 'js/jquery.min.js' %}"></script> {% endcomment %}
@@ -974,13 +889,22 @@
     <script src="{% static 'js/uza.bundle.js' %}"></script>
     <!-- Active js -->
     <script src="{% static 'js/default-assets/active.js' %}"></script>
-
 </body>
 {% endfor %}
 {% else %}
 <h1>no hay page</h1>
 {% endif %}
-
 </html>
-
 {% comment %} <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> {% endcomment %}
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
