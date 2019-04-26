@@ -1,8 +1,9 @@
+{% if data_page_counter %}
+{% for page in data_page_counter %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-{% if data_page_personalization %}
-{% for page in data_page_personalization %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Freenet - Desarrollo de ideas imnovadoras">
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>{% block title %}base{% endblock title %}</title>
+    <title>{% block title %}{{ page.title_pestana }}{% endblock title %}</title>
 
     <!-- Favicon -->
     <link rel="icon" href="/{{ page.favicon }}">
@@ -21,7 +22,7 @@
     
 </head>
 
-<body style="background-image:url(/{{ page.background_image }}); background-color:{{ page.background_color }}; background-repeat:{{ page.background_repeat }};">
+<body style="background-image:url(/{{ page.image_title1 }}); background-color:{{ page.background_color_image }}; background-repeat:{{ page.background_repeat }};">
 
 <body>
 
@@ -141,13 +142,13 @@
         <div class="main-header-area">
         {% if data_menu %}
                 {% for menu in data_menu %}
-            <div class="classy-nav-container breakpoint-off" style="background-color:{{ menu.color_background }};">
+            <div class="classy-nav-container breakpoint-off" style="">
                 <!-- Classy Menu -->
                 
                 <nav class="classy-navbar justify-content-between" id="uzaNav" >
 
                     <!-- Logo -->
-                    <a class="nav-brand" href=""><img src="/{{ menu.logo }}" width="{{ menu.width_image }}"> </a>
+                    <a class="nav-brand" href=""><img src="/{{ page.logo }}" width="{{ page.width_logo }}"> </a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -182,12 +183,12 @@
 
                             <!-- Get A Quote -->
                             <div class="get-a-quote ml-4 mr-3">
-                                <a href="http://freecounter.tk/" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">{{ menu.item6 }}</a>
-                                <style>
+                                <a href="/counter" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">{{ menu.item6 }}</a>
+                                {% comment %} <style>
                                     .item6:hover{
                                         background-color:{{ menu.background_color_item6_hover }} !important;
                                     }
-                                </style>
+                                </style> {% endcomment %}
                             </div>
 
                             <!-- Login / Register -->
@@ -277,8 +278,6 @@
         <div class="welcome-slides owl-carousel">
 
             <!-- Single Welcome Slide -->
-            {% if data_personalization %}
-            {% for data in data_personalization %}
             <div class="single-welcome-slide">
                 <!-- Background Curve -->
                 <div class="background-curve">
@@ -286,14 +285,14 @@
                 </div>
 
                 <!-- Welcome Content -->
-                <div class="welcome-content h-100" style="background-image:url('/{{ data.image_fondo }}'); background-position:center; repeat: no repeat;">
+                <div class="welcome-content h-100" style="background-image:url('/{{ page.image_title1 }}'); background-position:center; repeat: no repeat;">
                     <div class="container h-100">
                         <div class="row h-100 align-items-center">
                             <!-- Welcome Text -->
                             <div class="col-12 col-md-6">
-                                <div class="welcome-text" style="background-color: {{ data.background_color_text }}; border-radius: {{ data.border_radius_background }}px;">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="color:{{ data.color_title }}; font-family:{{ data.font_type}}; font-size:{{ data.font_size}}px; text-shadow: {{ data.horizontal_text_shadow }} {{ data.vertical_text_shadow }} {{ data.blur_radius_text_shadow }} {{ data.color_text_shadow }};"> <br><span style="color:{{ data.color_title }};">{{ data.title }}</span></h2>
-                                    <h5 data-animation="fadeInUp" data-delay="400ms" style="color:{{ data.color_description }};font-family:{{ data.font_type}};font-size:{{ data.font_size}}px;">{{ data.description }}</h5>
+                                <div class="welcome-text" style="background-color: {{ page.background_color_title1 }}; ">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="color:{{ page.color_title1 }}; font-family:{{ page.font_family_titles }}; font-size:{{ font.font_size_titles }}px; text-shadow: {{ page.horizontal_text_shadow }} {{ page.vertical_text_shadow }} {{ page.blur_radius_text_shadow }} {{ page.color_text_shadow }};"> <br><span style="color:{{ data.color_title1 }};">{{ page.title1 }}</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="100ms" style="color:{{ page.color_description1 }}; font-family:{{ page.font_family_paragrafos }}; font-size:{{ font.font_size_paragrafos }}px; "> <br><span style="color:{{ page.color_description1 }};">{{ page.descripcion1 }}</span></h5>
                                     {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
                                 </div>
                             </div>
@@ -307,37 +306,6 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
-            {% else %}
-            <div class="single-welcome-slide">
-                <!-- Background Curve -->
-                <div class="background-curve">
-                    <img src="./img/core-img/curve-1.png" alt="">
-                </div>
-
-                <!-- Welcome Content -->
-                <div class="welcome-content h-100" style="background-position:center; repeat: no repeat;">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <!-- Welcome Text -->
-                            <div class="col-12 col-md-6">
-                                <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms"> <br><span>No hay titulo</span></h2>
-                                    <h5 data-animation="fadeInUp" data-delay="400ms">no hay descripcion</h5>
-                                    {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
-                                </div>
-                            </div>
-                            <!-- Welcome Thumbnail -->
-                            <div class="col-12 col-md-6">
-                                <div class="welcome-thumbnail">
-                                    <img src="./img/bg-img/1.png" alt="" data-animation="slideInRight" data-delay="400ms">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
             {% comment %} fin del modal citas {% endcomment %}
 
             <!-- Single Welcome Slide -->
@@ -348,7 +316,7 @@
 
         </div>
     </section>
-    {% endblock seccion1 %}
+    {% endblock %}
     <!-- ***** Welcome Area End ***** -->
     {% block seccion2 %}
     <div class="container">
@@ -365,10 +333,10 @@
                 <!-- About Thumbnail -->
                 <div class="col-12 col-md-6">
                     <div class="about-us-thumbnail mb-80">
-                        {% block imgSeccion2 %}<img src="{% static './img/bg-img/2.jpg' %}" alt="">{% endblock imgSeccion2 %}
+                        {% block imgSeccion2 %}<img src="/{{ page.image_seccion2 }}" alt="" style="width:{{ page.width_image_seccion2 }}; height:{{ page.height_image_seccion2 }}; border:{{ page.border_image_seccion2 }}; border-radius:{{ page.border_radius_image_seccion2 }}; padding:{{ page.padding_image_seccion2 }};">{% endblock imgSeccion2 %}
                         <!-- Video Area -->
                         <div class="uza-video-area hi-icon-effect-8">
-                            {% block linkVideo %}<a href="https://www.youtube.com/watch?v=9Y1oHw2cPxs" autoplay="" class="hi-icon video-play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>{% endblock linkVideo %}
+
                         </div>
                     </div>
                 </div>
@@ -377,11 +345,8 @@
                 <div class="col-12 col-md-6">
                     <div class="about-us-content mb-80">
                         {% block titleSeccion2 %}
-                        <h2>We're a Agency Team &amp; Digital Marketing</h2>{% endblock titleSeccion2 %} {% block paragrafoSeccion2 %}
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-                        <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est Lorem ipsum dolor sit amet ipsumlor eut consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore et dolore magna
-                            liquyam erat.</p>
-                        {% endblock paragrafoSeccion2 %} {% block linkVideoSeccion2 %}{% endblock linkVideoSeccion2 %}
+                        <h2>{% endblock titleSeccion2 %}{{ page.seccion2_title }}{% block paragrafoSeccion2 %}</h2>
+                        <p style="font-size:{{ page.font_size_paragrafos }}; font-family:{{ page.font_family_paragrafos }};">{{ page.description_seccion2 }}</p>
                     </div>
                 </div>
             </div>
@@ -392,12 +357,12 @@
             <img src="{% static './img/core-img/curve-2.png' %}" alt="">
         </div>
     </section>
-    {% endblock seccion2 %}
+    {% endblock %}
     <!-- ***** About Us Area Start ***** -->
     <!-- ***** About Us Area End ***** -->
 
     <!-- ***** Services Area Start ***** -->
-    <a name="services"></a>
+    <a name="planes"></a>
     {% block seccion3 %}
 
     <section class="uza-services-area section-padding-80-0">
@@ -406,19 +371,15 @@
                 <!-- Section Heading -->
                 <div class="col-12">
                     <div class="section-heading text-center"><br>
-                        <h2 style="font-size:{{ page.font_size }}; font-family:{{ page.font_family_title }}; text_transform:{{ page.text_transform }}; padding:{{ page.padding_text }}; color:{{ page.color_text }}; border:{{ page.border }}; border_radius:{{ page.border_radius }}; text_aling:{{ page.text_aling }}; float:{{ page.float_text }};">{% block title_1 %}{{ page.title_1 }}{% endblock title_1 %}</h2>
-                        <p style="background-color:{{ page.description_area_background_color }}; color:{{ page.description_area_color }}; color:{{ page.description_area_color_text }}; padding:{{ page.description_area_padding }}; border:{{ page.description_area_border }}; border-radius:{{ page.description_area_border_radius }}; font-size:{{ page.description_area_font_size }}; font-family:{{ page.description_area_font_family }}; text-aling:{{ page.description_area_text_aling }}; width:{{ page.description_area_width }}; height:{{ page.description_area_height }};">{{ page.description_area_services_professional }}</p>
+                        <h2 style="font-size:{{ page.font_size_titles }}; font-family:{{ page.font_family_titles }}; padding:{{ page.padding_titles }}; color:{{ page.color_titles }}; border:{{ page.border_titles }}; border_radius:{{ page.border_radius_titles }}; text_aling:{{ page.text_aling_titles }};">{{ page.seccion3_title}}</h2>
+                        <p style="background-color:{{ page.background_color_paragrafos }}; color:{{ page.color_paragrafos }}; padding:{{ page.padding_paragrafos }}; border:{{ page.border_paragrafos }}; border-radius:{{ page.border_radius_paragrafos }}; font-size:{{ page.font_size_paragrafos }}; font-family:{{ page.font_family_paragrafos }}; text-aling:{{ page.text_aling_paragrafos }}; width:{{ page.width_paragrafos }}; height:{{ page.height_paragrafos }};">{{ page.seccion3_description }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
 
-                <!-- Single Service Area -->
-
-
-                <!-- Single Service Area -->
-                {% if statement_services_all %} {% for services in statement_services_all %}
+                {% comment %} {% if statement_services_all %} {% for services in statement_services_all %}
                 <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
                     <div class="single-service-area mb-80" style="height: 150px; width: 100%;">
                         <!-- Service Icon -->
@@ -443,16 +404,16 @@
                     </div>
                 </div>
                 {% endif %}
-                
+                 {% endcomment %}
                 
 
 
-                <!-- Single Service Area -->
+                <!-- Single caracteristicas Area -->
 
             </div>
         </div>
     </section>
-    {% endblock seccion3 %}
+    {% endblock %}
 
     {% block seccion4 %}
 
@@ -462,28 +423,24 @@
                 <!-- Section Heading -->
                 <div class="col-12">
                     <div class="section-heading text-center"><br>
-                        <h2 style="font-size:{{ page.font_size }}; font-family:{{ page.font_family_title }}; text_transform:{{ page.text_transform }}; padding:{{ page.padding_text }}; color:{{ page.color_text }}; border:{{ page.border }}; border_radius:{{ page.border_radius }}; text_aling:{{ page.text_aling }}; float:{{ page.float_text }};">{% block title_2 %}{{ page.title_2 }}{% endblock title_2 %}</h2>
+                        <h2 style="font-size:{{ page.font_size_titles }}; font-family:{{ page.font_family_titles }}; padding:{{ page.padding_titles }}; color:{{ page.color_titles }}; border:{{ page.border_titles }}; border_radius:{{ page.border_radius_titles }}; text_aling:{{ page.text_aling_titles }};">{{ page.seccion4_title}}</h2>
+                        <p style="background-color:{{ page.background_color_paragrafos }}; color:{{ page.color_paragrafos }}; padding:{{ page.padding_paragrafos }}; border:{{ page.border_paragrafos }}; border-radius:{{ page.border_radius_paragrafos }}; font-size:{{ page.font_size_paragrafos }}; font-family:{{ page.font_family_paragrafos }}; text-aling:{{ page.text_aling_paragrafos }}; width:{{ page.width_paragrafos }}; height:{{ page.height_paragrafos }};">{{ page.seccion4_description }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
 
-                <!-- Single Service Area -->
-
-
-                <!-- Single Service Area -->
-                {% if data_team %} {% for team in data_team %}
-                <div class="col-12 col-lg-4">
-                    <div class="single-service-area mb-80">
+                {% comment %} {% if statement_services_all %} {% for services in statement_services_all %}
+                <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
+                    <div class="single-service-area mb-80" style="height: 150px; width: 100%;">
                         <!-- Service Icon -->
-                        <a href="/services?id={{ team.id }}">
+                        <a href="/services?id={{ services.id }}&name={{ services.name_service }}">
                             <div class="service-icon">
-                                <img src="{{ team.image }}" alt="" width="100%" style="border-radius:50%;">
+                                <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
                             </div>
-                            <h5>{{ team.name }}</h5>
-                            <p>{{ team.description }}</p>
-                            <p style="color: dodgerblue">{{ team.profeccion }}</p>
+                            <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
+                            <p>{{ services.description_services }}</p>
                         </a>
                     </div>
                 </div>
@@ -494,355 +451,39 @@
                         <div class="service-icon">
                             <i class="icon_piechart"></i>
                         </div>
-                        <h5>No tenemos Team</h5>
-                    
+                        <h5>No hay servicios</h5>
+                        <p>ahora</p>
                     </div>
                 </div>
                 {% endif %}
+                 {% endcomment %}
+                
 
 
-
-                <!-- Single Service Area -->
+                <!-- Single caracteristicas Area -->
 
             </div>
         </div>
     </section>
-    {% endblock seccion4 %}
+    {% endblock %}
     <!-- ***** Services Area End ***** -->
     {% block seccion5 %}
-    <section class="uza-portfolio-area section-padding-80">
-        <div class="container">
-            <div class="row">
-                <!-- Section Heading -->
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>Our Portfolio</h2>
-                        <p>We stay on top of our industry by being experts in yours.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Portfolio Slides -->
-                <div class="portfolio-sildes owl-carousel">
-
-                    <!-- Single Portfolio Slide -->
-                    <div class="single-portfolio-slide">
-                        <img src="./img/bg-img/3.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h4>Digital Marketing</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est</p>
-                        </div>
-                        <!-- View More -->
-                        <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Portfolio Slide -->
-                    <div class="single-portfolio-slide">
-                        <img src="./img/bg-img/4.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h4>Digital Marketing</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est</p>
-                        </div>
-                        <!-- View More -->
-                        <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Portfolio Slide -->
-                    <div class="single-portfolio-slide">
-                        <img src="./img/bg-img/5.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h4>Digital Marketing</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est</p>
-                        </div>
-                        <!-- View More -->
-                        <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Portfolio Slide -->
-                    <div class="single-portfolio-slide">
-                        <img src="./img/bg-img/6.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h4>Digital Marketing</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est</p>
-                        </div>
-                        <!-- View More -->
-                        <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Portfolio Slide -->
-                    <div class="single-portfolio-slide">
-                        <img src="./img/bg-img/5.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h4>Digital Marketing</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est</p>
-                        </div>
-                        <!-- View More -->
-                        <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Portfolio Slide -->
-                    <div class="single-portfolio-slide">
-                        <img src="./img/bg-img/6.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h4>Digital Marketing</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est</p>
-                        </div>
-                        <!-- View More -->
-                        <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Client Feedback Area Start -->
-        <div class="clients-feedback-area mt-80 section-padding-80 clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Testimonial Slides -->
-                        <div class="testimonial-slides owl-carousel">
-
-                            <!-- Single Testimonial Slide -->
-                            <div class="single-testimonial-slide d-flex align-items-center">
-                                <!-- Testimonial Thumbnail -->
-                                <div class="testimonial-thumbnail">
-                                    <img src="./img/bg-img/7.jpg" alt="">
-                                </div>
-                                <!-- Testimonial Content -->
-                                <div class="testimonial-content">
-                                    <h4>“Colorlib Ltd’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and
-                                        profitable.”</h4>
-                                    <!-- Ratings -->
-                                    <div class="ratings">
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                    </div>
-                                    <!-- Author Info -->
-                                    <div class="author-info">
-                                        <h5>Darrell Goodman <span>- CEO colorlib</span></h5>
-                                    </div>
-                                    <!-- Quote Icon -->
-                                    <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
-                                </div>
-                            </div>
-
-                            <!-- Single Testimonial Slide -->
-                            <div class="single-testimonial-slide d-flex align-items-center">
-                                <!-- Testimonial Thumbnail -->
-                                <div class="testimonial-thumbnail">
-                                    <img src="./img/bg-img/23.jpg" alt="">
-                                </div>
-                                <!-- Testimonial Content -->
-                                <div class="testimonial-content">
-                                    <h4>“Colorlib Ltd’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and
-                                        profitable.”</h4>
-                                    <!-- Ratings -->
-                                    <div class="ratings">
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                    </div>
-                                    <!-- Author Info -->
-                                    <div class="author-info">
-                                        <h5>Darrell Goodman <span>- CEO colorlib</span></h5>
-                                    </div>
-                                    <!-- Quote Icon -->
-                                    <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
-                                </div>
-                            </div>
-
-                            <!-- Single Testimonial Slide -->
-                            <div class="single-testimonial-slide d-flex align-items-center">
-                                <!-- Testimonial Thumbnail -->
-                                <div class="testimonial-thumbnail">
-                                    <img src="./img/bg-img/24.jpg" alt="">
-                                </div>
-                                <!-- Testimonial Content -->
-                                <div class="testimonial-content">
-                                    <h4>“Colorlib Ltd’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and
-                                        profitable.”</h4>
-                                    <!-- Ratings -->
-                                    <div class="ratings">
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                    </div>
-                                    <!-- Author Info -->
-                                    <div class="author-info">
-                                        <h5>Darrell Goodman <span>- CEO colorlib</span></h5>
-                                    </div>
-                                    <!-- Quote Icon -->
-                                    <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Client Feedback Area End -->
-
-        <!-- Border -->
-        <div class="container">
-            <div class="border-line"></div>
-        </div>
-
-        <!-- Background Curve -->
-        <div class="portfolio-bg-curve">
-            <img src="./img/core-img/curve-3.png" alt="">
-        </div>
-    </section>
-    {% endblock seccion5 %}
+    
+    {% endblock %}
     <!-- ***** Portfolio Area Start ***** -->
 
     <!-- ***** Portfolio Area End ***** -->
 
     <!-- ***** Blog Area Start ***** -->
     {% block seccion6 %}
-    <section class="uza-blog-area">
-        <!-- Background Curve -->
-        <div class="blog-bg-curve">
-            <img src="./img/core-img/curve-4.png" alt="">
-        </div>
-
-        <!-- CTA Area Start -->
-        <div class="uza-cta-area section-padding-0-80">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-8">
-                        <div class="cta-content mb-80">
-                            <h2>Interested in working with us?</h2>
-                            <h6>Hit the button below or give us a call!</h6>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="cta-content mb-80">
-                            <div class="call-now-btn">
-                                <a href="#"><span>Call us now:</span> (+65) 1234 5678</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- CTA Area End -->
-
-        <div class="container">
-            <div class="row">
-                <!-- Section Heading -->
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>Our Latest Blogs</h2>
-                        <p>Hit the button below or give us a call!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-
-                <!-- Single Blog Post -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/8.jpg);">
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <span class="post-date"><span>23</span> August, 2018</span>
-                            <a href="#" class="post-title">SEO: The Movie By Ignite Visibility</a>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
-                            <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/9.jpg);">
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <span class="post-date"><span>13</span> December, 2018</span>
-                            <a href="#" class="post-title">What Curling Irons Are The Best Ones</a>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
-                            <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/10.jpg);">
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <span class="post-date"><span>08</span> July, 2018</span>
-                            <a href="#" class="post-title">Amazon REV Workshop: Road to Seattle</a>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
-                            <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    {% endblock seccion6 %}
+    
+    {% endblock %}
 
     <!-- ***** Blog Area End ***** -->
     {% block seccion7 %}
-    <section class="uza-newsletter-area">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <!-- Newsletter Content -->
-                <div class="col-12 col-md-6 col-lg-6">
-                    <div class="nl-content mb-80">
-                        <h2>Subscribe to our Newsletter</h2>
-                        <p>Subscribe our newsletter gor get notification about new updates, etc...</p>
-                    </div>
-                </div>
-                <!-- Newsletter Form -->
-                <div class="col-12 col-md-6 col-lg-5">
-                    <div class="nl-form mb-80">
-                        <form action="#" method="post">
-                            <input type="email" name="nl-email" value="" placeholder="Your Email">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Border Bottom -->
-            <div class="border-line"></div>
-        </div>
-    </section>
     
-    {% endblock seccion7 %}
+    
+    {% endblock %}
 
 
     <!-- ***** Newsletter Area Start ***** -->
@@ -857,7 +498,7 @@
     {% if data_footer%}
    
     {% for footer in data_footer %}
-    {% block barra_prefooter %}
+    {% comment %} {% block barra_prefooter %}
     <section class="" style="background-color:{{ page.background_color_bar_customers }};">
         <div class="container" >
         
@@ -884,7 +525,7 @@
         </div>
         {% endif %}
     </section>
-    {% endblock %}
+    {% endblock %} {% endcomment %}
      <br><br><br><br>
 <footer class="page-footer font-small blue pt-4" style="background-color:{{ footer.color_background }};" >
     
@@ -952,9 +593,9 @@
     {% endfor %}
     {% else %}
     <h4>no footer</h4>
-  {% endif %}
+    {% endif %}
   <!-- Footer -->
-    {% endblock footer %}
+    {% endblock %}
     <!-- ***** Newsletter Area End ***** -->
 
     <!-- ***** Footer Area Start ***** -->
@@ -976,11 +617,13 @@
     <script src="{% static 'js/default-assets/active.js' %}"></script>
 
 </body>
-{% endfor %}
-{% else %}
-<h1>no hay page</h1>
-{% endif %}
+
 
 </html>
 
 {% comment %} <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> {% endcomment %}
+{% endblock %}
+{% endfor %}
+{% else %}
+<h1>Esta Pagina esta en desarrollo.</h1>
+{% endif %}
