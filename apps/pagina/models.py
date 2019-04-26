@@ -138,7 +138,7 @@ class Footer(models.Model):
     font_size = models.CharField(max_length=90)
     image_country = models.ImageField(upload_to='static/img/images_footer/')
     page_main = models.CharField(max_length=90)
-    image_page = models.ImageField(upload_to='static/img/images_footer/')
+    image_logo_footer = models.ImageField(upload_to='static/img/images_footer/')
     copy = models.CharField(max_length=90)
     font_family_footer = models.CharField(max_length=90)
     width_icon_copy = models.CharField(max_length=90)
