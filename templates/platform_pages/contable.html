@@ -22,7 +22,7 @@
     
 </head>
 
-<body style="background-image:url(/{{ page.image_title1 }}); background-color:{{ page.background_color_image }}; background-repeat:{{ page.background_repeat }};">
+<body style="background-image:url(/{{ page.image_title1 }}); background-color:{{ page.background_color_page }}; background-repeat:{{ page.background_repeat }};">
 
 <body>
 
@@ -62,93 +62,20 @@
     <header class="header-area">
         <!--Navbar-->
         
-    {% block floatButons %}
-
-    
-    
-    {% comment %} <style>
-.sticky-container{
-    padding:0px;
-    margin:0px;
-    position:fixed;
-    right:-130px;
-    top:230px;
-    width:210px;
-    z-index: 1100;
-}
-.sticky li{
-    list-style-type:none;
-    background-color:;
-    color:#efefef;
-    height:43px;
-    padding:0px;
-    margin:0px 0px 1px -20px;
-    -webkit-transition:all 0.25s ease-in-out;
-    -moz-transition:all 0.25s ease-in-out;
-    -o-transition:all 0.25s ease-in-out;
-    transition:all 0.25s ease-in-out;
-    cursor:pointer;
-}
-.sticky .button:hover{
-    margin-left:-115px;
-}
-.sticky li img{
-    float:left;
-    margin:5px 4px;
-    margin-right:5px;
-}
-.sticky li p{
-    padding-top:5px;
-    margin:0px;
-    line-height:16px;
-    font-size:11px;
-}
-.sticky li p a{
-    text-decoration:none;
-    font-size:10px;
-    color:#2C3539;
-}
-.sticky li p a:hover{
-    text-decoration:none;
-}
-</style> {% endcomment %}
-
-{% comment %} <div class="sticky-container">
-    <ul class="sticky">
-        <li class="button">
-            <img src="https://img.icons8.com/cotton/2x/facebook.png" width="32" height="32">
-            <p><a href="#" target="_blank"><br>Facebook</a></p>
-        </li>
-        <li class="button">
-            <img src="https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-01-512.png" width="32" height="32">
-            <p><a href="https://wa.me/573107827073?text=Me%20interesa" target="_blank"><br>Whatsapp</a></p>
-        </li>
-        <li class="button">
-            <img src="http://dientezfelices.org/wp-content/uploads/2018/03/icono-telefono.png" width="32" height="32">
-            <p><a href="/contact" target=""><br>Contacto</a></p>
-        </li>
-        <li class="button">
-            
-            <p data-toggle="modal" data-target="#myModal"><a href="/appointment" class=""><br><img src="http://www.prooptics.com.co/Images/Icon_Appoitment.png" width="32" height="32">Agendar Cita<br></a></p>
-        </li>
-    </ul>
-</div> {% endcomment %}
-        
-{% endblock floatButons %}
-            
+              
         
 <!--/.Navbar-->
         <!-- Main Header Start -->
         <div class="main-header-area">
         {% if data_menu %}
                 {% for menu in data_menu %}
-            <div class="classy-nav-container breakpoint-off" style="">
+            <div class="classy-nav-container breakpoint-off" style="background-color:{{ menu.color_background }};">
                 <!-- Classy Menu -->
                 
                 <nav class="classy-navbar justify-content-between" id="uzaNav" >
 
                     <!-- Logo -->
-                    <a class="nav-brand" href=""><img src="/{{ page.logo }}" width="{{ page.width_logo }}"> </a>
+                    <a class="nav-brand" href=""><img src="/{{ page.logo }}" width="{{ menu.width_image }}"> </a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -183,12 +110,12 @@
 
                             <!-- Get A Quote -->
                             <div class="get-a-quote ml-4 mr-3">
-                                <a href="/counter" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">{{ menu.item6 }}</a>
-                                {% comment %} <style>
+                                <a href="http://freecounter.tk" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">Iniciar Sesion</a>
+                                <style>
                                     .item6:hover{
                                         background-color:{{ menu.background_color_item6_hover }} !important;
                                     }
-                                </style> {% endcomment %}
+                                </style>
                             </div>
 
                             <!-- Login / Register -->
@@ -208,59 +135,7 @@
             </div>
             {% endfor %}
                 {% else %}
-                    <nav class="classy-navbar justify-content-between" id="uzaNav" style="background-color:{{ menu.color_background }};">
-
-                    <!-- Logo -->
-                    <a class="nav-brand" href=""><img src="{% static 'img/logo/logo.png' %}" width="90%"> </a>
-
-                    <!-- Navbar Toggler -->
-                    <div class="classy-navbar-toggler">
-                        <span class="navbarToggler"><span></span><span></span><span></span></span>
-                    </div>
-
-                    <!-- Menu -->
-                    <div class="classy-menu">
-                        <!-- Menu Close Button -->
-                        <div class="classycloseIcon">
-                            <div class="cross-wrap"><span class="top"></span><span class="bottom"><img src="{% static 'img/logo/logo.png' %}" width="20px"> </span></div>
-                        </div>
-
-                        <!-- Nav Start -->
-                        <div class="classynav">
-                            <ul id="nav">
-                                <li class=""><a href="/" style="color: {{ menu.color_text_menu }};"><img src="{% static 'img/icons-menu/house.png' %}" width="20px"> Inicio</a></li>
-                                <li ><a href="#services" style="color: {{ menu.color_text_menu }};;"><img src="{% static 'img/icons-menu/services.png' %}" width="20px"> servicios</a>
-                                    <ul class="dropdown">
-                                        {% if statement_services_all %} {% for services_all in statement_services_all %}
-                                        <li><a style="color: {{ menu.color_text_submenu }};;" href="/services?id={{ services_all.id }}&name={{ services_all.name_service }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
-                                        {% endfor %} {% else %}
-                                        <li><a style="color: {{ menu.color_text_menu }};;" href="#">no hay servicios</a></li>
-                                        {% endif %}
-                                    </ul>
-                                </li>
-                                <li><a style="color: {{ menu.color_text_menu }};;" href="/about"><img src="{% static 'img/icons-menu/about.png' %}" width="20px"> Nosotros</a></li>
-                                <li><a style="color: {{ menu.color_text_menu }};;" href="#team"><img src="{% static 'img/icons-menu/team.png' %}" width="20px"> Team</a></li>
-                                <li><a style="color: {{ menu.color_text_menu }};;" href="/contact"><img src="{% static 'img/icons-menu/contact.png' %}" width="20px"> Contacto</a></li>
-                                {% comment %} <li><a style="color: dodgerblue;" href="/ask_frecuent">FAQ</a></li> {% endcomment %}
-                            </ul>
-
-                            <!-- Get A Quote -->
-                            <div class="get-a-quote ml-4 mr-3">
-                                <a href="/software_contable" class="btn uza-btn">Software contable</a>
-                            </div>
-
-                            <!-- Login / Register -->
-
-                            <!-- Search Icon -->
-
-                            <div class="search-icon" data-toggle="modal" data-target="#searchModal" placeholder="Buscar Servicio">
-                                <i class="icon_search"></i>
-                            </div>
-                        </div>
-                        <!-- Nav End -->
-
-                    </div>
-                </nav>
+                    
                 {% endif %}
         </div>
 
