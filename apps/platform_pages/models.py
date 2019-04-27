@@ -59,13 +59,15 @@ class Counter_page(models.Model):
     seccion3_description = models.CharField(max_length=9000)
 
     seccion4_title = models.CharField(max_length=90)
-    seccion4_decription = models.CharField(max_length=9000)
+    seccion4_description = models.CharField(max_length=9000)
+
+    for_page = models.CharField(max_length=30)
 
     def __str__(self):
         return 'id page: ' + self.title1
 
 
-class Caracterist(models.Model):
+class Caracteristicas(models.Model):
     caracteristicas_title = models.CharField(max_length=90)
     description_caracteristicas = models.CharField(max_length=9000)
     image_caracteristica = models.ImageField(upload_to='static/img/images_counter/')
@@ -73,6 +75,12 @@ class Caracterist(models.Model):
     padding_caracteristica = models.CharField(max_length=90)
     border_caracteristica = models.CharField(max_length=90)
     border_radius_caracteristica = models.CharField(max_length=90)
+    width_image = models.CharField(max_length=90)
+    height_image = models.CharField(max_length=90)
+    border_image = models.CharField(max_length=90)
+    border_radius_image = models.CharField(max_length=90)
+    background_color_contenedor = models.CharField(max_length=90)
+    height_contenedor = models.CharField(max_length=90)
     id_counter_page = models.ForeignKey(Counter_page, on_delete=models.CASCADE)
 
 
@@ -84,4 +92,11 @@ class Plan(models.Model):
     padding_plan = models.CharField(max_length=90)
     border_plan = models.CharField(max_length=90)
     border_radius_plan = models.CharField(max_length=90)
+    width_image = models.CharField(max_length=90)
+    height_image = models.CharField(max_length=90)
+    border_image = models.CharField(max_length=90)
+    border_radius_image = models.CharField(max_length=90)
+    background_color_contenedor = models.CharField(max_length=90)
+    height_contenedor = models.CharField(max_length=90)
     id_counter_page = models.ForeignKey(Counter_page, on_delete=models.CASCADE)
+
