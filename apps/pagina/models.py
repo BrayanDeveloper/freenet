@@ -90,6 +90,7 @@ class Slider_setting(models.Model):
 
 class Team(models.Model):
     name = models.CharField(max_length=90)
+    user_name = models.CharField(max_length=190)
     image = models.ImageField(upload_to='static/img/images_team_freenet/')
     width_image = models.CharField(max_length=90)
     height_image = models.CharField(max_length=90)

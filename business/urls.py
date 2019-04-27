@@ -28,7 +28,7 @@ urlpatterns = [
     path('services_details/', services_details, name="services_details"),
     path('search_services/', search_services, name="search_services"),
     path('ask_frecuent/', ask_frecuent, name="ask_frecuent"),
-    path('team_unit/', team_unit, name="team_unit"),
+    path('team_unit/<str:user_name>/', team_unit, name="team_unit"),
     path('counter/', counter, name="counter"),
 ]
 

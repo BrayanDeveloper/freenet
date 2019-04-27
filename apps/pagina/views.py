@@ -156,12 +156,12 @@ def ask_frecuent(request):
 	return render(request, 'blosure/ask_frecuent.html', context)
 
 
-def team_unit(request):
+def team_unit(request,user_name):
 	if request.method == "GET":
 		statement_services_all = Service.objects.all()
 		data_footer = Footer.objects.all()
 		data_menu = Menu.objects.all()
-		data_team = Team.objects.filter(name=request.GET.get('name'))
+		data_team = Team.objects.filter(user_name=user_name)
 		data_page_personalization = Personalization_page.objects.all()
 		statement_services = Service_plus.objects.filter(id_service=request.GET.get('id'))
 		name = request.GET.get('name')
