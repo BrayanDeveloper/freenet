@@ -1,5 +1,5 @@
-{% if data_page_counter %}
-{% for page in data_page_counter %}
+{% if data_page_publicidad %}
+{% for page in data_page_publicidad %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +110,7 @@
 
                             <!-- Get A Quote -->
                             <div class="get-a-quote ml-4 mr-3">
-                                <a href="http://freecounter.tk" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">Iniciar Sesion</a>
+                                {% comment %} <a href="http://freecounter.tk" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">Iniciar Sesion</a> {% endcomment %}
                                 {% comment %} <style>
                                     .item6:hover{
                                         background-color:{{ menu.background_color_item6_hover }} !important;
@@ -251,7 +251,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            {% comment %} <div class="row">
             {% if data_caracteristicas %}
             {% for caracteristicas in data_caracteristicas %}
                 <div class="col-4 col-sm-4">
@@ -281,7 +281,7 @@
                 <h4>No tiene Caracteristicas</h4>    
             </div>
             {% endif %}
-            </div> 
+            </div>  {% endcomment %}
             <div class="row">
 
                 {% comment %} {% if statement_services_all %} {% for services in statement_services_all %}
@@ -333,7 +333,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            {% comment %} <div class="row">
             {% if data_planes %}
             {% for planes in data_planes %}
                 <div class="col-4 col-sm-4" style="background-color:{{ planes.background_color_contenedor }}; height:{{ planes.height_contenedor }};">
@@ -363,7 +363,7 @@
                 <h4>No tiene Planes</h4>    
             </div>
             {% endif %}
-            </div> 
+            </div>  {% endcomment %}
             <div class="row">
 
             <div class="row">
