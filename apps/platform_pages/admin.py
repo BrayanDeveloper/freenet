@@ -10,7 +10,7 @@ class DisplayCaracteristicas(admin.ModelAdmin):
 class DisplayPlanes(admin.ModelAdmin):
     list_display = ['plan_title',]
 
-def DisplayPublicidad_page(admin.ModelAdmin):
+class DisplayPublicidad_page(admin.ModelAdmin):
     list_display = ['title_pestana',]
 
 

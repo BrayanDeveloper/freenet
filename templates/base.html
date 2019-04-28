@@ -169,7 +169,11 @@
                                 <li ><a href="#services" style="color: {{ menu.color_text_menu }};"><img src="{% static 'img/icons-menu/services.png' %}" width="20px"> {{ menu.item2 }}</a>
                                     <ul class="dropdown" style="background-color:{{ menu.color_background_submenu }};">
                                         {% if statement_services_all %} {% for services_all in statement_services_all %}
+                                        {% if services_all.link_service == 'publicidad' %}
+                                        <li><a style="color: {{ menu.color_text_submenu }};" href="/publicidad"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
+                                        {% else %}
                                         <li><a style="color: {{ menu.color_text_submenu }};" href="/services?id={{ services_all.id }}&name={{ services_all.name_service }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
+                                        {% endif %}
                                         {% endfor %} {% else %}
                                         <li><a style="color: {{ menu.color_text_menu }};" href="#">no hay servicios</a></li>
                                         {% endif %}
@@ -224,7 +228,11 @@
                                 <li ><a href="#services" style="color: {{ menu.color_text_menu }};;"><img src="{% static 'img/icons-menu/services.png' %}" width="20px"> servicios</a>
                                     <ul class="dropdown">
                                         {% if statement_services_all %} {% for services_all in statement_services_all %}
+                                        {% if services_all.link == 'publicidad' %}
+                                        <li><a style="color: {{ menu.color_text_submenu }};;" href="/publicidad"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
+                                        {% else %}
                                         <li><a style="color: {{ menu.color_text_submenu }};;" href="/services?id={{ services_all.id }}&name={{ services_all.name_service }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
+                                        {% endif %}
                                         {% endfor %} {% else %}
                                         <li><a style="color: {{ menu.color_text_menu }};;" href="#">no hay servicios</a></li>
                                         {% endif %}
@@ -397,13 +405,24 @@
                 <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
                     <div class="single-service-area mb-80" style="height: 150px; width: 100%;">
                         <!-- Service Icon -->
-                        <a href="/services?id={{ services.id }}&name={{ services.name_service }}">
-                            <div class="service-icon">
-                                <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
-                            </div>
-                            <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
-                            <p>{{ services.description_services }}</p>
-                        </a>
+                        {% if services.link_service == 'publicidad' %}
+                            <a href="/publicidad">
+                                <div class="service-icon">
+                                    <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
+                                </div>
+                                <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
+                                <p>{{ services.description_services }}</p>
+                            </a>
+                        {% else %}
+                            <a href="/services?id={{ services.id }}&name={{ services.name_service }}">
+                                <div class="service-icon">
+                                    <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
+                                </div>
+                                <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
+                                <p>{{ services.description_services }}</p>
+                            </a>
+                        {% endif %}
+                        
                     </div>
                 </div>
                 {% endfor %} {% else %}
