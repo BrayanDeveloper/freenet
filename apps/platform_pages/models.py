@@ -1,5 +1,5 @@
 from django.db import models
-
+from autoslug import AutoSlugField
 # Create your models here.
 class Counter_page(models.Model):
     favicon = models.ImageField(upload_to='static/img/favicon/')
@@ -10,7 +10,7 @@ class Counter_page(models.Model):
     background_color_page = models.CharField(max_length=90)
     font_family_titles = models.CharField(max_length=90)
     font_sizes_titles = models.CharField(max_length=90)
-    background_color_titles = models.CharField(max_length=90)    
+    background_color_titles = models.CharField(max_length=90)
     color_titles = models.CharField(max_length=90)
     width_titles = models.CharField(max_length=90)
     height_titles = models.CharField(max_length=90)
@@ -20,14 +20,14 @@ class Counter_page(models.Model):
     border_radius_titles = models.CharField(max_length=90)
     font_family_paragrafos = models.CharField(max_length=90)
     font_sizes_paragrafos = models.CharField(max_length=90)
-    background_color_paragrafos = models.CharField(max_length=90)    
+    background_color_paragrafos = models.CharField(max_length=90)
     color_paragrafos = models.CharField(max_length=90)
     width_paragrafos = models.CharField(max_length=90)
     text_aling_paragrafos = models.CharField(max_length=90)
     height_paragrafos = models.CharField(max_length=90)
     border_paragrafos = models.CharField(max_length=90)
     border_radius_paragrafos = models.CharField(max_length=90)
-    
+
 
 
     title1 = models.CharField(max_length=90)
@@ -51,8 +51,8 @@ class Counter_page(models.Model):
     height_image_seccion2 = models.CharField(max_length=90)
     padding_image_seccion2 = models.CharField(max_length=90)
     border_image_seccion2 = models.CharField(max_length=90)
-    border_radius_image_seccion2 = models.CharField(max_length=90)  
-    
+    border_radius_image_seccion2 = models.CharField(max_length=90)
+
 
 
     seccion3_title = models.CharField(max_length=90)
@@ -110,7 +110,7 @@ class Publicidad_page(models.Model):
     background_color_page = models.CharField(max_length=90)
     font_family_titles = models.CharField(max_length=90)
     font_sizes_titles = models.CharField(max_length=90)
-    background_color_titles = models.CharField(max_length=90)    
+    background_color_titles = models.CharField(max_length=90)
     color_titles = models.CharField(max_length=90)
     width_titles = models.CharField(max_length=90)
     height_titles = models.CharField(max_length=90)
@@ -120,14 +120,14 @@ class Publicidad_page(models.Model):
     border_radius_titles = models.CharField(max_length=90)
     font_family_paragrafos = models.CharField(max_length=90)
     font_sizes_paragrafos = models.CharField(max_length=90)
-    background_color_paragrafos = models.CharField(max_length=90)    
+    background_color_paragrafos = models.CharField(max_length=90)
     color_paragrafos = models.CharField(max_length=90)
     width_paragrafos = models.CharField(max_length=90)
     text_aling_paragrafos = models.CharField(max_length=90)
     height_paragrafos = models.CharField(max_length=90)
     border_paragrafos = models.CharField(max_length=90)
     border_radius_paragrafos = models.CharField(max_length=90)
-    
+
 
 
     title1 = models.CharField(max_length=90)
@@ -151,8 +151,8 @@ class Publicidad_page(models.Model):
     height_image_seccion2 = models.CharField(max_length=90)
     padding_image_seccion2 = models.CharField(max_length=90)
     border_image_seccion2 = models.CharField(max_length=90)
-    border_radius_image_seccion2 = models.CharField(max_length=90)  
-    
+    border_radius_image_seccion2 = models.CharField(max_length=90)
+
 
 
     seccion3_title = models.CharField(max_length=90)
