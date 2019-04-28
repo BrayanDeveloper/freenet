@@ -1,0 +1,566 @@
+{% if data_page_publicidad %}
+{% for page in data_page_publicidad %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Freenet - Desarrollo de ideas imnovadoras">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>{% block title %}{{ page.title_pestana }}{% endblock title %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/{{ page.favicon }}">
+
+    <!-- Core Stylesheet -->
+    {% comment %} <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+</head>
+
+<body style="background-color:{{ page.background_color_page }}; background-repeat:{{ page.background_repeat }};">
+
+<body>
+
+    <!-- Preloader -->
+    {% comment %} <div id="preloader">
+        <div class="wrapper">
+            <div class="cssload-loader"></div>
+        </div>
+    </div> {% endcomment %}
+
+    <!-- ***** Top Search Area Start ***** -->
+    <div class="top-search-area">
+        <!-- Search Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!-- Close Button -->
+                        <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                        <!-- Form -->
+                        <form action="{% url 'search_services' %}" method="post">
+                            {% csrf_token %}
+                            <input type="search" name="search" class="form-control" required="" placeholder="Buscar Servicio...">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ***** Top Search Area End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    {% block header %}
+    
+    <header class="header-area">
+        <!--Navbar-->
+        
+              
+        
+<!--/.Navbar-->
+        <!-- Main Header Start -->
+        <div class="main-header-area">
+        {% if data_menu %}
+                {% for menu in data_menu %}
+            <div class="classy-nav-container breakpoint-off" style="background-color:{{ menu.color_background }};">
+                <!-- Classy Menu -->
+                
+                <nav class="classy-navbar justify-content-between" id="uzaNav" >
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href=""><img src="/{{ page.logo }}" width="{{ menu.width_image }}"> </a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"><img src="{% static 'img/logo/logo.png' %}" width="20px"> </span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class=""><a href="/" style="color: {{ menu.color_text_menu }};"><img src="{% static 'img/icons-menu/house.png' %}" width="20px"> {{ menu.item1 }}</a></li>
+                                <li ><a href="#services" style="color: {{ menu.color_text_menu }};"><img src="{% static 'img/icons-menu/services.png' %}" width="20px"> {{ menu.item2 }}</a>
+                                    <ul class="dropdown" style="background-color:{{ menu.color_background_submenu }};">
+                                        {% if statement_services_all %} {% for services_all in statement_services_all %}
+                                        <li><a style="color: {{ menu.color_text_submenu }};" href="/services?id={{ services_all.id }}&name={{ services_all.name_service }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
+                                        {% endfor %} {% else %}
+                                        <li><a style="color: {{ menu.color_text_menu }};" href="#">no hay servicios</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </li>
+                                <li><a style="color: {{ menu.color_text_menu }};" href="/about"><img src="{% static 'img/icons-menu/about.png' %}" width="20px"> {{ menu.item3 }}</a></li>
+                                <li><a style="color: {{ menu.color_text_menu }};" href="#team"><img src="{% static 'img/icons-menu/team.png' %}" width="20px"> {{ menu.item4 }}</a></li>
+                                <li><a style="color: {{ menu.color_text_menu }};" href="/contact"><img src="{% static 'img/icons-menu/contact.png' %}" width="20px"> {{ menu.item5 }}</a></li>
+                                {% comment %} <li><a style="color: dodgerblue;" href="/ask_frecuent">FAQ</a></li> {% endcomment %}
+                            </ul>
+
+                            <!-- Get A Quote -->
+                            <div class="get-a-quote ml-4 mr-3">
+                                {% comment %} <a href="http://freecounter.tk" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">Iniciar Sesion</a> {% endcomment %}
+                                {% comment %} <style>
+                                    .item6:hover{
+                                        background-color:{{ menu.background_color_item6_hover }} !important;
+                                    }
+                                </style> {% endcomment %}
+                            </div>
+
+                            <!-- Login / Register -->
+
+                            <!-- Search Icon -->
+
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal" placeholder="Buscar Servicio">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+                
+
+            </div>
+            {% endfor %}
+                {% else %}
+                    
+                {% endif %}
+        </div>
+
+        
+
+    </header>
+    
+    {% endblock header %}
+    <!-- ***** Header Area End ***** -->
+    
+    <!-- ***** Welcome Area Start ***** -->
+    {% block seccion1 %}
+    
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide">
+                <!-- Background Curve -->
+                <div class="background-curve">
+                    <img src="./img/core-img/curve-1.png" alt="">
+                </div>
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100" style="background-image:url('/{{ page.image_title1 }}'); background-position:center; repeat: no repeat;">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text" style="background-color: {{ page.background_color_title1 }}; ">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="color:{{ page.color_title1 }}; font-family:{{ page.font_family_titles }}; font-size:{{ font.font_size_titles }}px; text-shadow: {{ page.horizontal_text_shadow }} {{ page.vertical_text_shadow }} {{ page.blur_radius_text_shadow }} {{ page.color_text_shadow }};"> <br><span style="color:{{ data.color_title1 }};">{{ page.title1 }}</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="100ms" style="color:{{ page.color_descripcion1 }}; font-family:{{ page.font_family_paragrafos }}; font-size:{{ font.font_size_paragrafos }}px; "> <br><span style="color:{{ page.color_description1 }};">{{ page.description1 }}</span></h5>
+                                    {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            {% comment %} <div class="col-12 col-md-6">
+                                <div class="welcome-thumbnail">
+                                    <img src="/{{ data.image_transition }}" width="50" height="300" alt="" data-animation="slideInRight" data-delay="400ms">
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% comment %} fin del modal citas {% endcomment %}
+
+            <!-- Single Welcome Slide -->
+            
+
+            <!-- Single Welcome Slide -->
+            
+
+        </div>
+    </section>
+    {% endblock %}
+    <!-- ***** Welcome Area End ***** -->
+    {% block seccion2 %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" style="background_color:;">
+                <br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <section class="uza-about-us-area">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- About Thumbnail -->
+                <div class="col-12 col-md-6">
+                    <div class="about-us-thumbnail mb-80">
+                        {% block imgSeccion2 %}<img src="/{{ page.image_seccion2 }}" alt="" style="width:{{ page.width_image_seccion2 }}; height:{{ page.height_image_seccion2 }}; border:{{ page.border_image_seccion2 }}; border-radius:{{ page.border_radius_image_seccion2 }}; padding:{{ page.padding_image_seccion2 }};">{% endblock imgSeccion2 %}
+                        <!-- Video Area -->
+                        <div class="uza-video-area hi-icon-effect-8">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Us Content -->
+                <div class="col-12 col-md-6">
+                    <div class="about-us-content mb-80">
+                        {% block titleSeccion2 %}
+                        <h2>{% endblock titleSeccion2 %}{{ page.seccion2_title }}{% block paragrafoSeccion2 %}</h2>
+                        <p style="font-size:{{ page.font_size_paragrafos }}; font-family:{{ page.font_family_paragrafos }};">{{ page.description_seccion2 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Background Pattern -->
+        <div class="about-bg-pattern">
+            <img src="{% static './img/core-img/curve-2.png' %}" alt="">
+        </div>
+    </section>
+    {% endblock %}
+    <!-- ***** About Us Area Start ***** -->
+    <!-- ***** About Us Area End ***** -->
+
+    <!-- ***** Services Area Start ***** -->
+    <a name="planes"></a>
+    {% block seccion3 %}
+
+    <section class="uza-services-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center"><br>
+                        <h2 style="font-size:{{ page.font_size_titles }}; font-family:{{ page.font_family_titles }}; padding:{{ page.padding_titles }}; color:{{ page.color_titles }}; border:{{ page.border_titles }}; border_radius:{{ page.border_radius_titles }}; text_aling:{{ page.text_aling_titles }};">{{ page.seccion3_title}}</h2>
+                        <p style="background-color:{{ page.background_color_paragrafos }}; color:{{ page.color_paragrafos }}; padding:{{ page.padding_paragrafos }}; border:{{ page.border_paragrafos }}; border-radius:{{ page.border_radius_paragrafos }}; font-size:{{ page.font_size_paragrafos }}; font-family:{{ page.font_family_paragrafos }}; text-aling:{{ page.text_aling_paragrafos }}; width:{{ page.width_paragrafos }}; height:{{ page.height_paragrafos }};">{{ page.seccion3_description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% comment %} <div class="row">
+            {% if data_caracteristicas %}
+            {% for caracteristicas in data_caracteristicas %}
+                <div class="col-4 col-sm-4">
+                    <!-- Card -->
+                    <div class="card" style="background-color:{{ caracteristicas.background_color_contenedor }}; height:{{ caracteristicas.height_contenedor }};">
+
+                    <!-- Card image -->
+                    <img class="card-img-top" src="/{{ caracteristicas.image_caracteristica }}" style="width:{{ caracteristicas.width_image }}; height:{{ caracteristicas.height_image }}; border:{{ caracteristicas.border_image }}; border_radius:{{ caracteristicas.border_radius_image }}; padding:{{ caracteristicas.padding_image }};" alt="Card image cap">
+
+                    <!-- Card content -->
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title">{{ caracteristicas.caracteristicas_title }}<a></a></h4>
+                        <!-- Text -->
+                        <p class="card-text">{{ caracteristicas.description_caracteristicas }}</p>
+                        <!-- Button -->
+
+                    </div>
+
+                    </div>
+                    <!-- Card -->
+                </div>
+                {% endfor %}
+            {% else %}
+            <div class="col-12 col-sm-12">
+                <h4>No tiene Caracteristicas</h4>    
+            </div>
+            {% endif %}
+            </div>  {% endcomment %}
+            <div class="row">
+
+                {% comment %} {% if statement_services_all %} {% for services in statement_services_all %}
+                <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
+                    <div class="single-service-area mb-80" style="height: 150px; width: 100%;">
+                        <!-- Service Icon -->
+                        <a href="/services?id={{ services.id }}&name={{ services.name_service }}">
+                            <div class="service-icon">
+                                <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
+                            </div>
+                            <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
+                            <p>{{ services.description_services }}</p>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %} {% else %}
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <div class="service-icon">
+                            <i class="icon_piechart"></i>
+                        </div>
+                        <h5>No hay servicios</h5>
+                        <p>ahora</p>
+                    </div>
+                </div>
+                {% endif %}
+                 {% endcomment %}
+                
+
+
+                <!-- Single caracteristicas Area -->
+
+            </div>
+        </div>
+    </section>
+    {% endblock seccion3 %}
+
+    {% block seccion4 %}
+
+    <section class="uza-services-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center"><br>
+                        <h2 style="font-size:{{ page.font_size_titles }}; font-family:{{ page.font_family_titles }}; padding:{{ page.padding_titles }}; color:{{ page.color_titles }}; border:{{ page.border_titles }}; border_radius:{{ page.border_radius_titles }}; text_aling:{{ page.text_aling_titles }};">{{ page.seccion4_title}}</h2>
+                        <p style="background-color:{{ page.background_color_paragrafos }}; color:{{ page.color_paragrafos }}; padding:{{ page.padding_paragrafos }}; border:{{ page.border_paragrafos }}; border-radius:{{ page.border_radius_paragrafos }}; font-size:{{ page.font_size_paragrafos }}; font-family:{{ page.font_family_paragrafos }}; text-aling:{{ page.text_aling_paragrafos }}; width:{{ page.width_paragrafos }}; height:{{ page.height_paragrafos }};">{{ page.seccion4_description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% comment %} <div class="row">
+            {% if data_planes %}
+            {% for planes in data_planes %}
+                <div class="col-4 col-sm-4" style="background-color:{{ planes.background_color_contenedor }}; height:{{ planes.height_contenedor }};">
+                    <!-- Card -->
+                    <div class="card">
+
+                    <!-- Card image -->
+                    <img class="card-img-top" src="/{{ planes.image_plan }}" style="width:{{ planes.width_image }}; height:{{ planes.height_image }}; border:{{ planes.border_image }}; border_radius:{{ planes.border_radius_image }}; padding:{{ planes.padding_image }};" alt="Card image cap">
+
+                    <!-- Card content -->
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title">{{ planes.plan_title }}<a></a></h4>
+                        <!-- Text -->
+                        <p class="card-text">{{ planes.description_plan }}</p>
+                        <!-- Button -->
+
+                    </div>
+
+                    </div>
+                    <!-- Card -->
+                </div>
+                {% endfor %}
+            {% else %}
+            <div class="col-12 col-sm-12">
+                <h4>No tiene Planes</h4>    
+            </div>
+            {% endif %}
+            </div>  {% endcomment %}
+            <div class="row">
+
+            <div class="row">
+
+                {% comment %} {% if statement_services_all %} {% for services in statement_services_all %}
+                <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
+                    <div class="single-service-area mb-80" style="height: 150px; width: 100%;">
+                        <!-- Service Icon -->
+                        <a href="/services?id={{ services.id }}&name={{ services.name_service }}">
+                            <div class="service-icon">
+                                <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
+                            </div>
+                            <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
+                            <p>{{ services.description_services }}</p>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %} {% else %}
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <div class="service-icon">
+                            <i class="icon_piechart"></i>
+                        </div>
+                        <h5>No hay servicios</h5>
+                        <p>ahora</p>
+                    </div>
+                </div>
+                {% endif %}
+                 {% endcomment %}
+                
+
+
+                <!-- Single caracteristicas Area -->
+
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <!-- ***** Services Area End ***** -->
+    {% block seccion5 %}
+    
+    {% endblock %}
+    <!-- ***** Portfolio Area Start ***** -->
+
+    <!-- ***** Portfolio Area End ***** -->
+
+    <!-- ***** Blog Area Start ***** -->
+    {% block seccion6 %}
+    
+    {% endblock %}
+
+    <!-- ***** Blog Area End ***** -->
+    {% block seccion7 %}
+    
+    
+    {% endblock %}
+
+
+    <!-- ***** Newsletter Area Start ***** -->
+    {% block footer %}
+    
+    
+
+
+  
+
+    <!-- Footer -->
+    {% if data_footer%}
+   
+    {% for footer in data_footer %}
+    {% comment %} {% block barra_prefooter %}
+    <section class="" style="background-color:{{ page.background_color_bar_customers }};">
+        <div class="container" >
+        
+            <div class="row">
+                <!-- Newsletter Content -->
+                
+                
+                    {% if data_customers %}
+                    {% for customers in data_customers %}
+                    <div class="col-3 col-md-3">
+                    <img src="/{{ customers.image_customer }}" style="width:{{ customers.widt_image }}; height:{{ customers.height_image }}; border_radius:{{ customers.border_radius_image }}; border:{{ customers.border_image }}; padding:{{ customers.padding_image }}; margin:{{ customers.margin_image }};">
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                
+                
+          </div>
+        
+            <div class="row align-items-center justify-content-between">
+                <!-- Newsletter Content -->
+                <div class="col-3 col-md-3 col-lg-3">
+                    <br><br><br><br>
+                </div>
+        </div>
+        {% endif %}
+    </section>
+    {% endblock %} {% endcomment %}
+     <br><br><br><br>
+<footer class="page-footer font-small blue pt-4" style="background-color:{{ footer.color_background }};" >
+    
+    <!-- Footer Links -->
+    <div class="container">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-0 mt-md-0 mt-3">
+
+        </div>
+        <div class="col-md-3 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase"></h5>
+          <img src="{% static 'img/logo/logo.png' %}"><br><br>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_schedule }}" style="width:20px; height:20px;"> {{ footer.schedule }}</p>
+          <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_email }}" style="width:20px; height:20px;"> {{ footer.email }}</p>
+        </div>
+        <div class="col-md-5 mt-md-0 mt-3">
+            <br>
+          <center>
+          <a href="{{ footer.url_facebook }}" target="_blank"><img src="/{{ footer.icon_facebook }}" width="15%" height="200;" style="padding:5px;"></a>
+          <a href="{{ footer.url_instagram }}" target="_blank"><img src="/{{ footer.icon_instagram }}" width="15%" height="200;" style="padding:5px;"></a>
+          <a href="{{ footer.url_whatsapp }}" target="_blank"><img src="/{{ footer.icon_whatsapp }}" width="15%" height="200;" style="padding:5px;"></a>
+          <a href="{{ footer.url_youtube }}" target="_blank"><img src="/{{ footer.icon_youtube }}" width="15%" height="200:" style="padding:5px;"></a>
+          </center>
+          
+
+        </div>
+        <!-- Grid column -->
+        
+        <div class="col-md-3 mt-md-0 mt-3 col-12">
+
+        
+          <div style="">
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_phone }}" style="width:20px; height:20px;"> {{ footer.phone }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_address }}" style="width:20px; height:20px;"> {{ footer.address }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_city }}" style="width:20px; height:20px;"> {{ footer.city }}</p>
+            <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;"><img src="/{{ footer.image_country }}" style="width:20px; height:20px;"> {{ footer.country }}</p>
+            
+          </div>
+          
+          
+        </div>
+        
+    </div>
+    
+        
+        
+    </div>
+    <div style="background-color:{{ footer.background_color_copy }}; padding:{{ footer.padding_copy }};" class="text-center">
+        <p style="color:{{ footer.color_text }}; font-family:{{ footer.font_text }}; font-size:{{ footer.font_size }}px;">Copyright © 2018 Freenet <img src="/{{ footer.image_copy }}" style="width:{{ footer.width_icon_copy }}; height:{{ footer.height_icon_copy }}; padding:{{ footer.padding_icon_copy }}; "><a style="font-family:{{ footer.font_family_footer }}; font-size:{{ footer.font_size_footer }};"> {{ footer.slogan }}</a></p>
+    </div>
+    
+
+    </div>
+    
+    
+    
+
+  </footer>
+    {% endfor %}
+    {% else %}
+    <h4>no footer</h4>
+    {% endif %}
+  <!-- Footer -->
+    {% endblock %}
+    <!-- ***** Newsletter Area End ***** -->
+
+    <!-- ***** Footer Area Start ***** -->
+
+    <!-- ***** Footer Area End ***** -->
+
+    <!-- ******* All JS Files ******* -->
+    <!-- jQuery js -->
+    {% comment %} <script src="{% static 'js/jquery.min.js' %}"></script> {% endcomment %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    {% comment %} <script src="{% static 'js/bootstrap.min.js' %}"></script> {% endcomment %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- All js -->
+    <script src="{% static 'js/uza.bundle.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/default-assets/active.js' %}"></script>
+
+</body>
+
+
+</html>
+
+{% comment %} <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> {% endcomment %}
+{% endblock %}
+{% endfor %}
+{% else %}
+<h1>Esta Pagina esta en desarrollo.</h1>
+{% endif %}

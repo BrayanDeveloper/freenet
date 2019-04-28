@@ -184,11 +184,12 @@
                             <!-- Get A Quote -->
                             <div class="get-a-quote ml-4 mr-3">
                                 <a href="/counter" class="btn uza-btn item6" style="background-color:{{ menu.background_color_item6 }};">{{ menu.item6 }}</a>
-                                <style>
+                                {% comment %} <style>
                                     .item6:hover{
                                         background-color:{{ menu.background_color_item6_hover }} !important;
                                     }
-                                </style>
+                                </style> {% endcomment %}
+                                
                             </div>
                             <!-- Login / Register -->
                             <!-- Search Icon -->
@@ -277,6 +278,10 @@
                                 <div class="welcome-text" style="background-color: {{ data.background_color_text }}; border-radius: {{ data.border_radius_background }}px;">
                                     <h2 data-animation="fadeInUp" data-delay="100ms" style="color:{{ data.color_title }}; font-family:{{ data.font_type}}; font-size:{{ data.font_size}}px; text-shadow: {{ data.horizontal_text_shadow }} {{ data.vertical_text_shadow }} {{ data.blur_radius_text_shadow }} {{ data.color_text_shadow }};"> <br><span style="color:{{ data.color_title }};">{{ data.title }}</span></h2>
                                     <h5 data-animation="fadeInUp" data-delay="400ms" style="color:{{ data.color_description }};font-family:{{ data.font_type}};font-size:{{ data.font_size}}px;">{{ data.description }}</h5>
+                                    {% if data.link == 'publicidad' %}
+                                    <a href="/publicidad" class="btn" style="border-radius: {{ data.border_radius_background }}px; background-color:{{ data.color_title }}; color:{{ data.color_description }}; font-family:{{ data.font_type}}; width:50%;">Entra</a>
+                                    {% else %}
+                                    {% endif %}
                                     {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.platform_pages.models import Counter_page, Caracteristicas, Plan
+from apps.platform_pages.models import Counter_page, Caracteristicas, Plan, Publicidad_page
 from apps.pagina.models import Service, Slider_setting, Footer
 from apps.personalization.models import Menu
 # Create your views here.
@@ -19,4 +19,15 @@ def counter (request):
 
     context = { 'statement_services_all': statement_services_all, 'data_page_counter': data_page_counter, 'data_footer':data_footer, 'data_menu':data_menu, 'data_caracteristicas':data_caracteristicas, 'data_planes':data_planes }
     return render(request, 'platform_pages/contable.html', context)
+
+def publicidad (request):
+    statement_services_all = Service.objects.all()
+    data_personalization = Slider_setting.objects.all()
+    
+    data_footer = Footer.objects.all()
+    data_page_publicidad = Publicidad_page.objects.all()
+    data_menu = Menu.objects.all()
+
+    context = { 'statement_services_all': statement_services_all, 'data_page_publicidad': data_page_publicidad, 'data_footer':data_footer, 'data_menu':data_menu }
+    return render(request, 'platform_pages/publicidad.html', context)
     
