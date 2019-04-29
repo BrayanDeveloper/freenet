@@ -1,11 +1,9 @@
 from django.db import models
-from autoslug import AutoSlugField
 # Create your models here.
 
 
 class Service(models.Model):
     name_service = models.CharField(max_length=500)
-    slug = AutoSlugField(populate_from='services')
     description_service = models.CharField(max_length=6000)
     color_background = models.CharField(max_length=60)
     border = models.CharField(max_length=60)

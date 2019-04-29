@@ -1,10 +1,9 @@
 from django.db import models
-from autoslug import AutoSlugField
+
 # Create your models here.
 class Counter_page(models.Model):
     favicon = models.ImageField(upload_to='static/img/favicon/')
     title_pestana = models.CharField(max_length=90)
-    #background_image = models.ImageField(upload_to='static/img/images_personalization/')
     logo = models.ImageField(upload_to='static/img/logo/')
     width_logo = models.CharField(max_length=90)
     background_color_page = models.CharField(max_length=90)
@@ -72,6 +71,8 @@ class Caracteristicas(models.Model):
     description_caracteristicas = models.CharField(max_length=9000)
     image_caracteristica = models.ImageField(upload_to='static/img/images_counter/')
     background_color_caracteristica = models.CharField(max_length=90)
+    font_family = models.CharField(max_length=90)
+    font_size = models.CharField(max_length=90)
     padding_caracteristica = models.CharField(max_length=90)
     border_caracteristica = models.CharField(max_length=90)
     border_radius_caracteristica = models.CharField(max_length=90)
@@ -86,8 +87,25 @@ class Caracteristicas(models.Model):
 
 class Plan(models.Model):
     plan_title = models.CharField(max_length=90)
+    icono_plan = models.ImageField(upload_to='static/img/images_counter/')
+    width_icon = models.CharField(max_length=9000)
+    height_icon = models.CharField(max_length=9000)
+    padding_icon = models.CharField(max_length=9000)
+    text_aling_title = models.CharField(max_length=9000)
+    font_family_title = models.CharField(max_length=9000)
+    font_family_description = models.CharField(max_length=9000)
+    padding_text_title = models.CharField(max_length=9000)
     description_plan = models.CharField(max_length=9000)
+    text_aling_description = models.CharField(max_length=9000)
+    padding_text_description = models.CharField(max_length=9000)
+    color_background_caja_texto = models.CharField(max_length=90)
+    color_background_caja_description = models.CharField(max_length=90)
     image_plan = models.ImageField(upload_to='static/img/images_counter/')
+    price_plan = models.CharField(max_length=9000)
+    color_background_caja_price = models.CharField(max_length=9000)
+    text_aling_price = models.CharField(max_length=9000)
+    color_text_price = models.CharField(max_length=9000)
+    padding_price = models.CharField(max_length=9000)
     background_color_plan = models.CharField(max_length=90)
     padding_plan = models.CharField(max_length=90)
     border_plan = models.CharField(max_length=90)

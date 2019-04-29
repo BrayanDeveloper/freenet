@@ -265,7 +265,7 @@
                     <div class="card-body">
 
                         <!-- Title -->
-                        <h4 class="card-title">{{ caracteristicas.caracteristicas_title }}<a></a></h4>
+                        <h4 class="card-title" style="font-family:{{ caracteristicas.font_family }}; font-size:{{ caracteristicas.font_size }};">{{ caracteristicas.caracteristicas_title }}<a></a></h4>
                         <!-- Text -->
                         <p class="card-text">{{ caracteristicas.description_caracteristicas }}</p>
                         <!-- Button -->
@@ -347,9 +347,10 @@
                     <div class="card-body">
 
                         <!-- Title -->
-                        <h4 class="card-title">{{ planes.plan_title }}<a></a></h4>
+                        <img src="/{{ planes.icono_plan }}" style="width:{{ planes.width_icon }}; height:{{ planes.height_icon }}; padding:{{ planes.padding_icon }};"><h4 class="card-title text-{{ planes.text_aling_title }}" style="background-color:{{ planes.color_background_caja_texto }}; font-size:{{ planes.font_size }}; font-family:{{ planes.font_family_title }}; padding:{{ planes.padding_text_title }};" >{{ planes.plan_title }}<a></a></h4>
                         <!-- Text -->
-                        <p class="card-text">{{ planes.description_plan }}</p>
+                        <p class="card-text text-{{ planes.text_aling_description }}" style="background-color:{{ planes.color_background_caja_description }}; font-size:{{ planes.font_size }}; font-family:{{ planes.font_family_description }}; padding:{{ planes.padding_text_description }};">{{ planes.description_plan }}</p>
+                        <p class="card-text text-{{ planes.text_aling_price }}" style="background-color:{{ planes.color_background_caja_price }}; font-size:{{ planes.font_size_price }}; font-family:{{ planes.font_family_price }}; padding:{{ planes.padding_text_price }}; color:{{ planes.color_text_price }};">{{ planes.price_plan }}</p>
                         <!-- Button -->
 
                     </div>
