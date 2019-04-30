@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
 from apps.pagina.views import index, services, contact, appointment, about, services_details, search_services, ask_frecuent, team_unit
 from apps.platform_pages.views import counter, publicidad
 
@@ -31,5 +32,6 @@ urlpatterns = [
     path('team_unit/<str:user_name>/', team_unit, name="team_unit"),
     path('counter/', counter, name="counter"),
     path('publicidad/', publicidad, name="publicidad"),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 

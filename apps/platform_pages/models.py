@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 class Counter_page(models.Model):
     favicon = models.ImageField(upload_to='static/img/favicon/')
@@ -58,7 +58,7 @@ class Counter_page(models.Model):
     seccion3_description = models.CharField(max_length=9000)
 
     seccion4_title = models.CharField(max_length=90)
-    seccion4_description = models.CharField(max_length=9000)
+    seccion4_description = RichTextField(blank=True, null=True)
 
     for_page = models.CharField(max_length=30)
 
@@ -86,34 +86,19 @@ class Caracteristicas(models.Model):
 
 
 class Plan(models.Model):
-    plan_title = models.CharField(max_length=90)
+    plan_title = RichTextField(blank=True, null=True)
     icono_plan = models.ImageField(upload_to='static/img/images_counter/')
     width_icon = models.CharField(max_length=9000)
     height_icon = models.CharField(max_length=9000)
     padding_icon = models.CharField(max_length=9000)
-    text_aling_title = models.CharField(max_length=9000)
-    font_family_title = models.CharField(max_length=9000)
-    font_family_description = models.CharField(max_length=9000)
-    padding_text_title = models.CharField(max_length=9000)
-    description_plan = models.CharField(max_length=9000)
+    
+    description_plan = RichTextField(blank=True, null=True)
     text_aling_description = models.CharField(max_length=9000)
     padding_text_description = models.CharField(max_length=9000)
     color_background_caja_texto = models.CharField(max_length=90)
     color_background_caja_description = models.CharField(max_length=90)
     image_plan = models.ImageField(upload_to='static/img/images_counter/')
-    price_plan = models.CharField(max_length=9000)
-    color_background_caja_price = models.CharField(max_length=9000)
-    text_aling_price = models.CharField(max_length=9000)
-    color_text_price = models.CharField(max_length=9000)
-    padding_price = models.CharField(max_length=9000)
-    background_color_plan = models.CharField(max_length=90)
-    padding_plan = models.CharField(max_length=90)
-    border_plan = models.CharField(max_length=90)
-    border_radius_plan = models.CharField(max_length=90)
-    width_image = models.CharField(max_length=90)
-    height_image = models.CharField(max_length=90)
-    border_image = models.CharField(max_length=90)
-    border_radius_image = models.CharField(max_length=90)
+    price_plan = RichTextField(blank=True, null=True)
     background_color_contenedor = models.CharField(max_length=90)
     height_contenedor = models.CharField(max_length=90)
     id_counter_page = models.ForeignKey(Counter_page, on_delete=models.CASCADE)
