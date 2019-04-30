@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.pagina',
     'apps.personalization',
     'apps.platform_pages',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
