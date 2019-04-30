@@ -97,7 +97,6 @@ class Plan(models.Model):
     padding_text_description = models.CharField(max_length=9000)
     color_background_caja_texto = models.CharField(max_length=90)
     color_background_caja_description = models.CharField(max_length=90)
-    image_plan = models.ImageField(upload_to='static/img/images_counter/')
     price_plan = RichTextField(blank=True, null=True)
     background_color_contenedor = models.CharField(max_length=90)
     height_contenedor = models.CharField(max_length=90)
