@@ -341,13 +341,13 @@
                     <div class="card">
 
                     <!-- Card image -->
-                    {% comment %} <img class="card-img-top" src="/{{ planes.image_plan }}" style="width:{{ planes.width_image }}; height:{{ planes.height_image }}; border:{{ planes.border_image }}; border_radius:{{ planes.border_radius_image }}; padding:{{ planes.padding_image }};" alt="Card image cap"> {% endcomment %}
+                    <img src="/{{ planes.icono_plan }}" style="width:{{ planes.width_icon }}; height:{{ planes.height_icon }}; padding:{{ planes.padding_icon }};"><h4 class="card-title text-{{ planes.text_aling_title }}" style="background-color:{{ planes.color_background_caja_texto }}; font-size:{{ planes.font_size }}; font-family:{{ planes.font_family_title }}; padding:{{ planes.padding_text_title }};" >{{ planes.plan_title|safe }}<a></a></h4>
 
                     <!-- Card content -->
                     <div class="card-body">
 
                         <!-- Title -->
-                        <img src="/{{ planes.icono_plan }}" style="width:{{ planes.width_icon }}; height:{{ planes.height_icon }}; padding:{{ planes.padding_icon }};"><h4 class="card-title text-{{ planes.text_aling_title }}" style="background-color:{{ planes.color_background_caja_texto }}; font-size:{{ planes.font_size }}; font-family:{{ planes.font_family_title }}; padding:{{ planes.padding_text_title }};" >{{ planes.plan_title|safe }}<a></a></h4>
+                        
                         <!-- Text -->
                         {{ planes.description_plan|safe }}
                         {{ planes.price_plan|safe }}
