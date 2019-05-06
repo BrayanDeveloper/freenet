@@ -257,8 +257,8 @@
                 <div class="col-12">
                 <br><br><br>
                     <div class="section-heading text-center">
-                        <h2 style="font-size:{{ page.font_size_service }}; font-family:{{ page.font_family_service }}; color:{{ page.color_text_service }}; background-color:{{ page.background_color_service }}; border:{{ page.border_service }}; border-radius:{{ page.border_radius_service }};">{{ page.title_seccion_servicios }} </h2>
-                        <p class="text-{{ page.text_aling_description_service }}" style="font-size:{{ page.font_size_description_service }}; font-family:{{ page.font_family_description_service }}; color:{{ page.color_text_description_service }}; background-color:{{ page.background_color_description_service }}; border:{{ page.border_description_service }}; border-radius:{{ page.border_description_radius_service }};">{{ page.descripcion_seccion_servicios }} </h2>
+                        {{ page.title_seccion_servicios|safe }}
+                        {{ page.descripcion_seccion_servicios|safe }}
                     </div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                     <div class="hvrbox">
                     <br>
                         {{ publicidad_services.name_service|safe }}
-                        <img src="/{{ publicidad_services.imagen }}" style="width:{{ services.image_width }}; height:{{ services.image_height }};" alt="Mountains" class="hvrbox-layer_bottom">
+                        <img src="/{{ publicidad_services.imagen }}" style="width:{{ publicidad_services.image_width }}; height:{{ publicidad_services.image_height }};" alt="Mountains" class="hvrbox-layer_bottom">
                         <div class="hvrbox-layer_top">
                             <div class="hvrbox-text">{{ publicidad_services.description_service|safe }}</div>
                         </div>

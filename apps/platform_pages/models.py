@@ -130,8 +130,8 @@ class Publicidad_page(models.Model):
     border_paragrafos = models.CharField(max_length=90)
     border_radius_paragrafos = models.CharField(max_length=90)
 
-    title_seccion_servicios = models.CharField(max_length=9000)
-    descripcion_seccion_servicios = models.CharField(max_length=9000)
+    title_seccion_servicios = RichTextField()
+    descripcion_seccion_servicios = RichTextField()
 
     title1 = models.CharField(max_length=90)
     color_title1 = models.CharField(max_length=90)
