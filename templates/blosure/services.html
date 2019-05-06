@@ -35,24 +35,82 @@
                 <div class="col-6 col-lg-2" style="background-color: {{ services.color_background }}; border: 1px white solid;"> 
                     <!-- Card -->
                         <a href="/services_details?id={{ services.id }}">
-                        <div class="">
+                        
 
-                            <!-- Card image -->
-                            <img src="/{{ services.image_service }}" alt="" width="{{ services.image_width }}" height="{{ services.image_height }}" style="border-radius:10%; padding:20px; margin-top:20px;">
+                   
+    <div class="hvrbox">
+    <br>
+        {{ services.name_service|safe }}
+        <img src="/{{ services.image_service }}" style="width:{{ services.image_width }}; height:{{ services.image_height }};" alt="Mountains" class="hvrbox-layer_bottom">
+        <div class="hvrbox-layer_top">
+            <div class="hvrbox-text">{{ services.description_service|safe }}</div>
+        </div>
+    </div>
 
-                            <!-- Card content -->
-                            <div class="card-body">
-
-                                <!-- Title -->
-                                <h4 class="card-title text-center"><a href="/services_details?id={{ services.id }}" style="text-transform: uppercase; color: white;">{{ services.name_service }}</a></h4>
-                                <!-- Text -->
-                                {% comment %} <p class="card-text">{{ services.description_service }}</p> {% endcomment %}
-                                <!-- Button -->
-                                {% comment %} <a href="#" class="btn btn-primary">Button</a> {% endcomment %}
-                            </div>
-
-                        </div>
-
+                        
+                    </a>
+        <style>
+            .hvrbox * {
+                box-sizing: border-box;
+            }
+            .hvrbox {
+                position: relative;
+                display: inline-block;
+                overflow: hidden;
+                max-width: 100%;
+                height: auto;
+            }
+            .hvrbox img {
+                max-width: 100%;
+            }
+            .hvrbox .hvrbox-layer_bottom {
+                display: block;
+            }
+            .hvrbox .hvrbox-layer_top {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                color: #fff;
+                padding: 15px;
+                -moz-transition: all 0.4s ease-in-out 0s;
+                -webkit-transition: all 0.4s ease-in-out 0s;
+                -ms-transition: all 0.4s ease-in-out 0s;
+                transition: all 0.4s ease-in-out 0s;
+            }
+            .hvrbox:hover .hvrbox-layer_top,
+            .hvrbox.active .hvrbox-layer_top {
+                opacity: 1;
+            }
+            .hvrbox .hvrbox-text {
+                text-align: center;
+                font-size: 18px;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -moz-transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            .hvrbox .hvrbox-text_mobile {
+                font-size: 15px;
+                border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+                border-top: 1px solid rgba(179, 179, 179, 0.7);
+                margin-top: 5px;
+                padding-top: 2px;
+                display: none;
+            }
+            .hvrbox.active .hvrbox-text_mobile {
+                display: block;
+            }
+        </style>
                         
                         </a>
                         <!-- Card -->

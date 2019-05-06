@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
@@ -22,8 +23,8 @@ class Service(models.Model):
 
 
 class Service_plus(models.Model):
-    name_service = models.CharField(max_length=500)
-    description_service = models.CharField(max_length=9000)
+    name_service = RichTextField()
+    description_service = RichTextField()
     color_background = models.CharField(max_length=60)
     image_service = models.ImageField(upload_to='static/img/images_services/')
     image_width = models.CharField(max_length=60)
@@ -76,7 +77,14 @@ class Slider_setting(models.Model):
     blur_radius_text_shadow = models.CharField(max_length=600)
     color_text_shadow = models.CharField(max_length=600)
     color_title = models.CharField(max_length=20)
+
     description = models.CharField(max_length=9000)
+
+    horizontal_text_shadow_description = models.CharField(max_length=600)
+    vertical_text_shadow_description = models.CharField(max_length=600)
+    blur_radius_text_shadow_description = models.CharField(max_length=600)
+    color_text_shadow_description = models.CharField(max_length=600)
+
     color_description = models.CharField(max_length=20)
     font_type = models.CharField(max_length=20)
     font_size = models.CharField(max_length=20)
@@ -87,13 +95,13 @@ class Slider_setting(models.Model):
     link = models.CharField(max_length=600)
 
 class Team(models.Model):
-    name = models.CharField(max_length=90)
+    name = RichTextField()
     user_name = models.CharField(max_length=190)
     image = models.ImageField(upload_to='static/img/images_team_freenet/')
     width_image = models.CharField(max_length=90)
     height_image = models.CharField(max_length=90)
     border_radius_image = models.CharField(max_length=90)
-    description = models.CharField(max_length=9000)
+    description = RichTextField()
     full_description = models.CharField(max_length=90000)
     edad = models.CharField(max_length=9000)
     habilidades = models.CharField(max_length=9000)

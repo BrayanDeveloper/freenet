@@ -41,9 +41,9 @@
                             <div class="service-icon">
                                 <img src="{{ team.image }}" alt="" style="border-radius:{{ team.border_radius_image }}; padding:20px; margin-top:20px; width:{{ team.width_image }}; height:{{ team.height_image }};">
                             </div>
-                            <h5 style="text-transform:{{ team.text_transform }}; color:{{ team.color_text }}; font-size:{{ team.font_size }}; padding:{{ team.padding_text }}; text-aling: {{ team.text_aling }};">{{ team.name }}</h5>
-                            <p class="text-{{ team.text_aling }}" style="text-transform:{{ team.text_transform }}; color:{{ team.color_text }}; font-size:{{ team.font_size }}; padding:{{ team.padding_text }};">{{ team.description }}</p>
-                            <p class="text-{{ team.text_aling }}" style="text-transform:{{ team.text_transform }}; color:{{ team.color_text }}; font-size:{{ team.font_size }}; padding:{{ team.padding_text }};">{{ team.profession }}</p>
+                            {{ team.name|safe }}</h5>
+                            {{ team.description|safe }}
+                            {% comment %} <p class="text-{{ team.text_aling }}" style="text-transform:{{ team.text_transform }}; color:{{ team.color_text }}; font-size:{{ team.font_size }}; padding:{{ team.padding_text }};">{{ team.profession }}</p> {% endcomment %}
                         {% comment %} </a> {% endcomment %}
                         </a>
                     </div>

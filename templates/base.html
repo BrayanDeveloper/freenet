@@ -180,6 +180,8 @@
                                         {% if statement_services_all %} {% for services_all in statement_services_all %}
                                         {% if services_all.link_service == 'publicidad' %}
                                         <li><a style="color: {{ menu.color_text_submenu }};" href="/publicidad"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
+                                        {% elif services_all.link_service == 'contable' %}
+                                        <li><a style="color: {{ menu.color_text_submenu }};" href="/counter"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
                                         {% else %}
                                         <li><a style="color: {{ menu.color_text_submenu }};" href="/services?id={{ services_all.id }}&name={{ services_all.name_service }}"><img src="/{{ services_all.image_service }}" width="10%"> {{ services_all.name_service }}</a></li>
                                         {% endif %}
@@ -294,10 +296,11 @@
                             <div class="col-12 col-md-6">
                                 <div class="welcome-text" style="background-color: {{ data.background_color_text }}; border-radius: {{ data.border_radius_background }}px;">
                                     <h2 data-animation="fadeInUp" data-delay="100ms" style="color:{{ data.color_title }}; font-family:{{ data.font_type}}; font-size:{{ data.font_size}}px; text-shadow: {{ data.horizontal_text_shadow }} {{ data.vertical_text_shadow }} {{ data.blur_radius_text_shadow }} {{ data.color_text_shadow }};"> <br><span style="color:{{ data.color_title }};">{{ data.title }}</span></h2>
-                                    <h5 data-animation="fadeInUp" data-delay="400ms" style="color:{{ data.color_description }};font-family:{{ data.font_type}};font-size:{{ data.font_size}}px;">{{ data.description }}</h5>
+                                    <h5 data-animation="fadeInUp" data-delay="100ms" style="color:{{ data.color_description }}; font-family:{{ data.font_type}}; font-size:{{ data.font_size}}px; text-shadow: {{ data.horizontal_text_shadow_description }} {{ data.vertical_text_shadow_description }} {{ data.blur_radius_text_shadow_description }} {{ data.color_text_shadow_description }};"> <br><span style="color_description:{{ data.color_title }};">{{ data.description }}</span></h5>
                                     {% if data.link == 'publicidad' %}
                                     <a href="/publicidad" class="btn" style="border-radius: {{ data.border_radius_background }}px; background-color:{{ data.color_title }}; color:{{ data.color_description }}; font-family:{{ data.font_type}}; width:50%;">Entra</a>
-                                    {% else %}
+                                    {% elif  data.link == 'contable' %}
+                                    <a href="/counter" class="btn" style="border-radius: {{ data.border_radius_background }}px; background-color:{{ data.color_title }}; color:{{ data.color_description }}; font-family:{{ data.font_type}}; width:50%;">Entra</a> %}
                                     {% endif %}
                                     {% comment %} <a href="#" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Explorar</a> {% endcomment %}
                                 </div>
