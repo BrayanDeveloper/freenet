@@ -79,7 +79,7 @@
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
-                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        <span sclass="navbarToggler"><span></span><span></span><span></span></span>
                     </div>
 
                     <!-- Menu -->
@@ -251,69 +251,132 @@
                     </div>
                 </div>
             </div>
-            {% comment %} <div class="row">
-            {% if data_caracteristicas %}
-            {% for caracteristicas in data_caracteristicas %}
-                <div class="col-4 col-sm-4">
-                    <!-- Card -->
-                    <div class="card" style="background-color:{{ caracteristicas.background_color_contenedor }}; height:{{ caracteristicas.height_contenedor }};">
-
-                    <!-- Card image -->
-                    <img class="card-img-top" src="/{{ caracteristicas.image_caracteristica }}" style="width:{{ caracteristicas.width_image }}; height:{{ caracteristicas.height_image }}; border:{{ caracteristicas.border_image }}; border_radius:{{ caracteristicas.border_radius_image }}; padding:{{ caracteristicas.padding_image }};" alt="Card image cap">
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <h4 class="card-title">{{ caracteristicas.caracteristicas_title }}<a></a></h4>
-                        <!-- Text -->
-                        <p class="card-text">{{ caracteristicas.description_caracteristicas }}</p>
-                        <!-- Button -->
-
+            <div class="row">
+            
+                <!-- Section Heading -->
+                <div class="col-12">
+                <br><br><br>
+                    <div class="section-heading text-center">
+                        <h2 style="font-size:{{ page.font_size_service }}; font-family:{{ page.font_family_service }}; color:{{ page.color_text_service }}; background-color:{{ page.background_color_service }}; border:{{ page.border_service }}; border-radius:{{ page.border_radius_service }};">{{ page.title_seccion_servicios }} </h2>
+                        <p class="text-{{ page.text_aling_description_service }}" style="font-size:{{ page.font_size_description_service }}; font-family:{{ page.font_family_description_service }}; color:{{ page.color_text_description_service }}; background-color:{{ page.background_color_description_service }}; border:{{ page.border_description_service }}; border-radius:{{ page.border_description_radius_service }};">{{ page.descripcion_seccion_servicios }} </h2>
                     </div>
-
-                    </div>
-                    <!-- Card -->
                 </div>
-                {% endfor %}
-            {% else %}
-            <div class="col-12 col-sm-12">
-                <h4>No tiene Caracteristicas</h4>    
             </div>
-            {% endif %}
-            </div>  {% endcomment %}
+           
             <div class="row">
 
-                {% comment %} {% if statement_services_all %} {% for services in statement_services_all %}
-                <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
-                    <div class="single-service-area mb-80" style="height: 150px; width: 100%;">
-                        <!-- Service Icon -->
-                        <a href="/services?id={{ services.id }}&name={{ services.name_service }}">
-                            <div class="service-icon">
-                                <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
-                            </div>
-                            <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
-                            <p>{{ services.description_services }}</p>
-                        </a>
+                <!-- Single Service Area -->
+
+
+                <!-- Single Service Area -->
+                {% if data_services_publicidad %}
+                {% for publicidad_services in data_services_publicidad %}
+                <div class="col-6 col-lg-2" style="background-color: {{ publicidad_services.color_background }}; border: 1px white solid;"> 
+                    <!-- Card -->
+                        <a href="/services_publicidad_details?id={{ publicidad_services.id }}">
+                        
+
+               
+                    <div class="hvrbox">
+                    <br>
+                        {{ publicidad_services.name_service|safe }}
+                        <img src="/{{ publicidad_services.imagen }}" style="width:{{ services.image_width }}; height:{{ services.image_height }};" alt="Mountains" class="hvrbox-layer_bottom">
+                        <div class="hvrbox-layer_top">
+                            <div class="hvrbox-text">{{ publicidad_services.description_service|safe }}</div>
+                        </div>
                     </div>
+                
+                        
+                    </a>
+        <style>
+            .hvrbox * {
+                box-sizing: border-box;
+            }
+            .hvrbox {
+                position: relative;
+                display: inline-block;
+                overflow: hidden;
+                max-width: 100%;
+                height: auto;
+            }
+            .hvrbox img {
+                max-width: 100%;
+            }
+            .hvrbox .hvrbox-layer_bottom {
+                display: block;
+            }
+            .hvrbox .hvrbox-layer_top {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                color: #fff;
+                padding: 15px;
+                -moz-transition: all 0.4s ease-in-out 0s;
+                -webkit-transition: all 0.4s ease-in-out 0s;
+                -ms-transition: all 0.4s ease-in-out 0s;
+                transition: all 0.4s ease-in-out 0s;
+            }
+            .hvrbox:hover .hvrbox-layer_top,
+            .hvrbox.active .hvrbox-layer_top {
+                opacity: 1;
+            }
+            .hvrbox .hvrbox-text {
+                text-align: center;
+                font-size: 18px;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -moz-transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            .hvrbox .hvrbox-text_mobile {
+                font-size: 15px;
+                border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+                border-top: 1px solid rgba(179, 179, 179, 0.7);
+                margin-top: 5px;
+                padding-top: 2px;
+                display: none;
+            }
+            .hvrbox.active .hvrbox-text_mobile {
+                display: block;
+            }
+        </style>
+                        
+                        </a>
+                        <!-- Card -->
                 </div>
-                {% endfor %} {% else %}
+                {% endfor %}
+                {% else %}
+
+                    
+            </div>
+                
                 <div class="col-12 col-lg-4">
                     <div class="single-service-area mb-80">
                         <!-- Service Icon -->
                         <div class="service-icon">
                             <i class="icon_piechart"></i>
                         </div>
-                        <h5>No hay servicios</h5>
+                        <h5>No hay servicios Relacionados</h5>
                         <p>ahora</p>
                     </div>
                 </div>
                 {% endif %}
-                 {% endcomment %}
-                
 
 
-                <!-- Single caracteristicas Area -->
+
+
+
+                <!-- Single Service Area -->
 
             </div>
         </div>
@@ -333,71 +396,11 @@
                     </div>
                 </div>
             </div>
-            {% comment %} <div class="row">
-            {% if data_planes %}
-            {% for planes in data_planes %}
-                <div class="col-4 col-sm-4" style="background-color:{{ planes.background_color_contenedor }}; height:{{ planes.height_contenedor }};">
-                    <!-- Card -->
-                    <div class="card">
-
-                    <!-- Card image -->
-                    <img class="card-img-top" src="/{{ planes.image_plan }}" style="width:{{ planes.width_image }}; height:{{ planes.height_image }}; border:{{ planes.border_image }}; border_radius:{{ planes.border_radius_image }}; padding:{{ planes.padding_image }};" alt="Card image cap">
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <h4 class="card-title">{{ planes.plan_title }}<a></a></h4>
-                        <!-- Text -->
-                        <p class="card-text">{{ planes.description_plan }}</p>
-                        <!-- Button -->
-
-                    </div>
-
-                    </div>
-                    <!-- Card -->
-                </div>
-                {% endfor %}
-            {% else %}
-            <div class="col-12 col-sm-12">
-                <h4>No tiene Planes</h4>    
-            </div>
-            {% endif %}
-            </div>  {% endcomment %}
+        
             <div class="row">
 
-            <div class="row">
-
-                {% comment %} {% if statement_services_all %} {% for services in statement_services_all %}
-                <div class="col-12 col-lg-2" style="background-color:{{ services.color_background }}; border:{{ services.border }}; border-radius:{{ services.border_radius }};">
-                    <div class="single-service-area mb-80" style="height: 150px; width: 100%;">
-                        <!-- Service Icon -->
-                        <a href="/services?id={{ services.id }}&name={{ services.name_service }}">
-                            <div class="service-icon">
-                                <img src="{{ services.image_service }}" alt="" width="{{ services.width_image }}" height="{{ services.height_image }}" style="border-radius:10%; padding:20px; margin-top:20px;">
-                            </div>
-                            <h5 style="text-transform:{{ services.text_transform }}; color:{{ services.color_text }}; font-size:{{ services.font_size }}; padding:{{ services.padding }}; font-family:{{ services.font_family }};">{{ services.name_service }}</h5>
-                            <p>{{ services.description_services }}</p>
-                        </a>
-                    </div>
-                </div>
-                {% endfor %} {% else %}
-                <div class="col-12 col-lg-4">
-                    <div class="single-service-area mb-80">
-                        <!-- Service Icon -->
-                        <div class="service-icon">
-                            <i class="icon_piechart"></i>
-                        </div>
-                        <h5>No hay servicios</h5>
-                        <p>ahora</p>
-                    </div>
-                </div>
-                {% endif %}
-                 {% endcomment %}
-                
-
-
-                <!-- Single caracteristicas Area -->
+          
+              
 
             </div>
         </div>

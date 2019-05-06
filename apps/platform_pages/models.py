@@ -130,7 +130,8 @@ class Publicidad_page(models.Model):
     border_paragrafos = models.CharField(max_length=90)
     border_radius_paragrafos = models.CharField(max_length=90)
 
-
+    title_seccion_servicios = models.CharField(max_length=9000)
+    descripcion_seccion_servicios = models.CharField(max_length=9000)
 
     title1 = models.CharField(max_length=90)
     color_title1 = models.CharField(max_length=90)
@@ -166,4 +167,14 @@ class Publicidad_page(models.Model):
     for_page = models.CharField(max_length=30)
 
     def __str__(self):
-        return 'id page: ' + self.title1
+        return 'id page: ' + self.title_pestana
+
+class servicios_publicidad_page(models.Model):
+    name_service = RichTextField()
+    description_service = RichTextField()
+    color_background = models.CharField(max_length=900)
+    imagen = models.ImageField(upload_to='static/img/images_page_publicidad/')
+    image_width = models.CharField(max_length=900)
+    image_height = models.CharField(max_length=900)
+    id_publicidad_page = models.ForeignKey(Publicidad_page, on_delete=models.CASCADE)
+    for_page = models.CharField(max_length=30)

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from apps.pagina.views import index, services, contact, appointment, about, services_details, search_services, ask_frecuent, team_unit
-from apps.platform_pages.views import counter, publicidad
+from apps.platform_pages.views import counter, publicidad, publicidad_services
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +32,7 @@ urlpatterns = [
     path('team_unit/<str:user_name>/', team_unit, name="team_unit"),
     path('counter/', counter, name="counter"),
     path('publicidad/', publicidad, name="publicidad"),
+    path('services_publicidad_details/', publicidad_services, name="publicidad_services"),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
