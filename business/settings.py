@@ -25,10 +25,10 @@ SECRET_KEY = 'zy^)9*z5ent=6^d@lqd%9d6c8b)r)ui4i!adk!6oexrim-m%jh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #para usar desde servidor web o vps
-ALLOWED_HOSTS = ['freenetsas.herokuapp.com']
+#ALLOWED_HOSTS = ['freenetsas.herokuapp.com']
 
 #para usar localmente la app
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'business.urls'
@@ -139,7 +139,7 @@ USE_TZ = True
 
 
 #para usar desde servidor web o vps
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
